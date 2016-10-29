@@ -1,18 +1,17 @@
 @require '../../global-styles'
 
 // Docs
-.doc-box,
-.api-box
+.doc-box
   margin 0
   padding 1rem 0
-  //width 100%
+.api-box
+  margin 0
+  padding 0
 .api-box__code,
 .doc-box__code
   border 0.0625rem solid $color--mfm__primary--2
   $display-flex()
   $flex-direction(column)
-//.api-box__code
-//  padding 0 0 1rem
 .doc-box__code .md-tabs__tab-bar
   background-color $color--mfm__primary--2
 .doc-box__action
@@ -28,8 +27,6 @@
 
 // Responsive
 @media only screen and (min-width: 840px)
-  .api-box__code .code-box
-    width calc(50% - 0.5rem)
   .api-box__code.with-one-box .code-box,
   .api-box__code .code-box.code__css
     width 100%

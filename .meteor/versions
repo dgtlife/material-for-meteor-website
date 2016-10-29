@@ -23,7 +23,7 @@ deps@1.0.12
 dgtlife:app-navigator@0.8.3
 dgtlife:app-platform@1.2.2
 dgtlife:code-prism@0.6.0
-dgtlife:material@0.6.7
+dgtlife:material@0.6.8
 diff-sequence@1.0.6
 ecmascript@0.5.8_1
 ecmascript-runtime@0.3.14_1

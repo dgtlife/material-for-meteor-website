@@ -29,7 +29,7 @@ _.extend(Mlib, {
       Nav.toScreen('Home');
       Meteor.setTimeout(function () {
         _scrollToDemo();
-      }, 500);
+      }, 650);
     }
   },
 

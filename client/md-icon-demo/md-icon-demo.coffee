@@ -26,17 +26,47 @@ Nav.registerScreen 'MD Icon API',
   pathPattern: /^\/md-icon-api$/
 
 Template.md_icon__api.helpers
-  codeJS__select: ->
+  tabs__select: ->
+    [
+      name: "md-icon--select__js"
+      label: "JavaScript"
+      ripple: true
+    ,
+      name: "md-icon--select__cs"
+      label: "CoffeeScript"
+      ripple: true
+    ]
+  tabs__define: ->
+    [
+      name: "md-icon--define__js"
+      label: "JavaScript"
+      ripple: true
+    ,
+      name: "md-icon--define__cs"
+      label: "CoffeeScript"
+      ripple: true
+    ]
+  tabs__rendering: ->
+    [
+      name: "md-icon--rendering__spacebars"
+      label: "Spacebars"
+      ripple: true
+    ,
+      name: "md-icon--rendering__jade"
+      label: "Jade"
+      ripple: true
+    ]
+  code__select__js: ->
     C.getText 'md-icon-api--select__js.txt'
-  codeCS__select: ->
+  code__select__cs: ->
     C.getText 'md-icon-api--select__coffee.txt'
-  codeJS__define: ->
+  code__define__js: ->
     C.getText 'md-icon-api--define__js.txt'
-  codeCS__define: ->
+  code__define__cs: ->
     C.getText 'md-icon-api--define__coffee.txt'
-  code__spacebars__rendering: ->
+  code__rendering__spacebars: ->
     C.getText 'md-icon-api--rendering__spacebars.txt'
-  code__jade__rendering: ->
+  code__rendering__jade: ->
     C.getText 'md-icon-api--rendering__jade.txt'
   codeCss__styles: ->
     C.getText 'md-icon-api--styles__css.txt'

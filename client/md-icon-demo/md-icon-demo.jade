@@ -35,16 +35,25 @@ template(name="md_icon__demo")
 template(name="md_icon__api")
   h2.api__title MD Icon API
   .api__description
+    p An MD Icon is an SVG icon component (cf. iron-icon).
     p
-      span An MD Icon is an SVG icon component (cf. iron-icon).
+      | Material for Meteor contains all the icons that are part of Polymer's
+      | iron-icons set. However, it allows the user to select the icons that the
+      | app uses as opposed to loading all available icons. See the
+      | 'General use' section for details.
     p
-      span Material for Meteor contains all the icons that are part of Polymer's iron-icons set. However, it allows the user to select the icons that the app uses as opposed to loading all available icons. See the 'General use' section for details.
-    p
-      span.strong The icons included with the Material for Meteor package are provided as a convenience only. There is no implied intention to provide for all possible icon needs with this set. Compatible SVG icons are available from
+      span.strong
+        | The icons included with the Material for Meteor package are provided
+        | as a convenience only.
+      | There is no implied intention to provide for all possible icon needs
+      | with this set. Compatible SVG icons are available from
       a(href="https://design.google.com/icons/" target="_blank") Material Design
-      span , the official site,
-      a(href="https://materialdesignicons.com/" target="_blank") Material Design Icons
-      span , a community site, and elsewhere on the Internet.
+      | , the official site,
+      a(
+        href="https://materialdesignicons.com/"
+        target="_blank"
+        ) Material Design Icons
+      | , a community site, and elsewhere on the Internet.
   .divider--api
   .api__heading API Reference
   .api__template
@@ -83,7 +92,9 @@ template(name="md_icon__api")
           td.param
             code badge_count
           td.type string
-          td.desc A value that automatically configures the icon as a badged icon (optional)
+          td.desc
+            | A value that automatically configures the icon as a badged icon
+            | (optional)
         tr
           td.param
             code icon
@@ -96,10 +107,14 @@ template(name="md_icon__api")
         .fake-cell.method
           code MD.selectIcons(iconConfigs)
         .fake-cell.desc
-          p A server-side function that defines which of the included icons to use in the app.
+          p
+            | A server-side function that defines which of the included icons to
+            | use in the app.
           p
             code.inline iconConfigs
-            span is an array of objects, each of which defines a (sub)set of icons to be selected from the available sets and 'compiled' into the app. The available sets are:
+            | is an array of objects, each of which defines a (sub)set of icons
+            | to be selected from the available sets and 'compiled' into the
+            | app. The available sets are:
             ul
               li av
               li base
@@ -116,14 +131,20 @@ template(name="md_icon__api")
         .fake-cell.method
           code MD.defineIconAssets(assetConfig)
         .fake-cell.desc
-          p A server-side function that defines an asset file with SVG icons and the set of icons from that file that are to be 'compiled' for use in the app.
+          p
+            | A server-side function that defines an asset file with SVG icons
+            | and the set of icons from that file that are to be 'compiled' for
+            | use in the app.
           p
             code.inline assetConfig
-            span is an object with two keys,
+            | is an object with two keys,
             code.inline iconsDefinedByG
-            span and
+            | and
             code.inline iconsDefinedBySvg
-            span , each of which is an array of objects. Each member of each array defines an asset file, lists the icons by id to be selected from the file, and defines the optional customization applied to each icon id using any of the following keys:
+            | , each of which is an array of objects. Each member of each array
+            | defines an asset file, lists the icons by id to be selected from
+            | the file, and defines the optional customization applied to each
+            | icon id using any of the following keys:
             ul
               li stripPrefix (string)
               li stripSuffix (string)
@@ -134,89 +155,116 @@ template(name="md_icon__api")
   .divider--api
   .api__heading General use
   .api__description
-    p Before any icons can be rendered on the screens of the app, all icons to be used in the app must be selected from among those that are included with the package. The package includes (all the) icons available in the Polymer iron-icons distribution.
-    p If a desired icon is not in the included set, and the user has the SVG source, then that icon can also be added.
-    p At startup, the server reads the icons from these files and compiles the icon metadata needed for the app. It stores this metadata in an array, and serves a copy to any client at client startup.
+    p
+      | Before any icons can be rendered on the screens of the app, all icons to
+      | be used in the app must be selected from among those that are included
+      | with the package. The package includes (all the) icons available in the
+      | Polymer iron-icons distribution.
+    p
+      | If a desired icon is not in the included set, and the user has the SVG
+      | source, then that icon can also be added.
+    p
+      | At startup, the server reads the icons from these files and compiles the
+      | icon metadata needed for the app. It stores this metadata in an array,
+      | and serves a copy to any client at client startup.
   .api__section.section--metadata
     .section__title Icon metadata
     .section__description
       p
-        span To select icons from the included sets call the
+        | To select icons from the included sets call the
         code.inline MD.selectIcons()
-        span function as in the example below.
+        | function as in the example below.
       p In this example, the user directs the package to select:
         ul
           li
-            span all the icons from the
+            | all the icons from the
             code.inline base
-            span set,
+            | set,
           li
-            span four from the
+            | four from the
             code.inline communication
-            span set,
+            | set,
           li
-            span one from the
+            | one from the
             code.inline image
-            span set.
+            | set.
     +api_box(
       id="md-icon-api--select"
-      code__js=codeJS__select
-      code__coffee=codeCS__select
+      num__tabs="2"
+      tabs=tabs__select
+      name__js="md-icon--select__js"
+      name__cs="md-icon--select__cs"
+      code__js=code__select__js
+      code__cs=code__select__cs
     )
     .section__description
       p
-        span To define and select custom icons from one or more
+        | To define and select custom icons from one or more
         code.inline .svg
-        span files, call the
+        | files, call the
         code.inline MD.defineIconAssets()
-        span function.
+        | function.
       p In the example that follows, the user directs the package to extract:
         ul
           li
-            span three icons from a file named
+            | three icons from a file named
             code.inline custom-gs-1.svg
-            span which contains icons defined by g tags.
-            span The user further requires that any underscores in the icon id be converted to hyphens.
+            | which contains icons defined by g tags. The user further requires
+            | that any underscores in the icon id be converted to hyphens.
           li
-            span four icons from a file named
+            | four icons from a file named
             code.inline social-gs-2.svg
-            span which also contains icons defined by g tags.
-            span The user further requires that any underscores in the icon id be converted to hyphens.
+            | which also contains icons defined by g tags. The user further
+            | requires that any underscores in the icon id be converted to hyphens.
           li
-            span five icons from a file named
+            | five icons from a file named
             code.inline custom-svgs.svg
-            span which contains icons defined by svg tags.
-            span The user further requires that the prefix
+            | which contains icons defined by svg tags. The user further
+            | requires that the prefix
             code.inline ic_
-            span , and the suffix
+            | , and the suffix
             code.inline _24px
-            span  be stripped from each icon id, and that the resulting string be prefixed with
+            |  be stripped from each icon id, and that the resulting string be
+            | prefixed with
             code.inline my-
-            span to create the final id stored with the icon. As with the other icons, the user requires that any underscores in the icon id be converted to hyphens.
+            | to create the final id stored with the icon. As with the other
+            | icons, the user requires that any underscores in the icon id be
+            | converted to hyphens.
     +api_box(
       id="md-icon-api--define"
-      code__js=codeJS__define
-      code__coffee=codeCS__define
+      num__tabs="2"
+      tabs=tabs__define
+      name__js="md-icon--define__js"
+      name__cs="md-icon--define__cs"
+      code__js=code__define__js
+      code__cs=code__define__cs
     )
   .api__section.section--metadata
     .section__title Icon rendering
     .section__description
       p
-        span Once the required icons have been selected for the app, an individual icon can be rendered anywhere on the page using the
+        | Once the required icons have been selected for the app, an individual
+        | icon can be rendered anywhere on the page using the
         code.inline md_icon
-        span template.
+        | template.
     +api_box(
       id="md-icon-api--rendering"
-      code__spacebars=code__spacebars__rendering
-      code__jade=code__jade__rendering
+      num__tabs="2"
+      tabs=tabs__rendering
+      name__spacebars="md-icon--rendering__spacebars"
+      name__jade="md-icon--rendering__jade"
+      code__spacebars=code__rendering__spacebars
+      code__jade=code__rendering__jade
     )
   .api__section.section--styles
     .section__title Icon styles
     .section__description
       p
-        span Changes to the icon color or size can be effected by changing the properties of the
+        | Changes to the icon color or size can be effected by changing the
+        | properties of the
         code.inline .md-icon
-        span class. At least one additional class is required for selectivity, otherwise all icons will receive the style changes.
+        | class. At least one additional class is required for selectivity,
+        | otherwise all icons will receive the style changes.
     +api_box(
       id="md-icon-api--styles"
       code__css=codeCss__styles

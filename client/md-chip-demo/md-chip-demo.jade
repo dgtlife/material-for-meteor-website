@@ -1,0 +1,32 @@
+template(name="md_chip__demo")
+  .component-title MD Chip
+  .demo-box
+    .demo-group
+      .demo--chip
+        .element-title A basic chip (text-only).
+        +md_chip(label="Potato")
+      .demo--chip
+        .element-title A chip with an image.
+        +md_chip(image="/eye.png" label="Right Eye")
+      .demo--chip
+        .element-title A chip with an icon.
+        +md_chip(icon="account-circle" label="Anonymous")
+      .demo--chip
+        .element-title A chip with an icon and a Delete button.
+        +md_chip(icon="event" label="Optional" deletable=true)
+  p.docs The above chips are generated using the following code.
+  +doc_box(
+    id="doc-box--md-chip"
+    id__tabs="md-chip__tabs"
+    tabs=tabs
+    name__spacebars="md-chip__spacebars"
+    name__jade="md-chip__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Chip API"
+  )
+
+//- MD Chip API Docs.
+template(name="md_chip__api")
+  h2.api__title MD Chip API
+  +coming_soon__api

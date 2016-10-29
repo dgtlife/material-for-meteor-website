@@ -1,0 +1,106 @@
+template(name="md_image__demo")
+  .component-title MD Image
+  p.docs
+    | An MD Image is an image display component that offers convenient sizing
+    | and loading options not available in the HTML
+    code.inline!=imgTag
+    | tag.
+  p.docs
+    | For the demos of an image loading over a background and a placeholder,
+    | the image loading from the internet is delayed by 10 secs, and the
+    | fade-in time is increased to 5 secs (not the actual 0.35 secs in the
+    | package). In order to observe the features, reload the page and quickly
+    | click MD Image on the Catalog menu.
+  .demo-box
+    .demo-group.vertical-when-narrow
+      .demo--image
+        .element-title Image at intrinsic size
+        +md_image(
+          alt="test image 1"
+          src="/traffic.jpg"
+        )
+      .demo--image
+        .element-title Manually scaled image
+        +md_image(
+          alt="test image 2"
+          src="/traffic.jpg"
+          height="147"
+          width="150"
+        )
+    .demo-group
+      .demo--image.fixed-size
+        .element-title Image with 'contain' sizing
+        +md_image(
+          alt="test image 2"
+          bg_url="/traffic.jpg"
+          height="100"
+          width="150"
+          sizing="contain"
+        )
+      .demo--image.fixed-size
+        .element-title Image with 'cover' sizing
+        +md_image(
+          alt="test image 2"
+          bg_url="/traffic.jpg"
+          height="100"
+          width="150"
+          sizing="cover"
+        )
+    .demo-group
+      .demo--image.fixed-size
+        .element-title With placeholder background and fade
+        +md_image(
+          alt="test image 3"
+          src="http://deelay.me/10000/http://lorempixel.com/150/150"
+          height="150"
+          width="150"
+          bg_color="rgb(180,180,180)"
+          fade=""
+        )
+      .demo--image.fixed-size
+        .element-title With placeholder background and no fade
+        +md_image(
+          alt="test image 3"
+          src="http://deelay.me/10000/http://lorempixel.com/150/150"
+          height="150"
+          width="150"
+          bg_color="rgb(180,180,180)"
+        )
+    .demo-group
+      .demo--image.fixed-size
+        .element-title With placeholder image and fade
+        +md_image(
+          alt="test image 3"
+          src="http://deelay.me/10000/http://lorempixel.com/150/150"
+          height="150"
+          width="150"
+          placeholder=placeholderImage
+          fade=""
+        )
+      .demo--image.fixed-size
+        .element-title With placeholder image and no fade
+        +md_image(
+          alt="test image 3"
+          src="http://deelay.me/10000/http://lorempixel.com/150/150"
+          height="150"
+          width="150"
+          placeholder=placeholderImage
+        )
+  p.docs The above image demos are generated using the following code.
+  +doc_box(
+    id="doc-box--md-image"
+    id__tabs="md-image__tabs"
+    tabs=tabs
+    name__spacebars="md-image__spacebars"
+    name__jade="md-image__jade"
+    name__js="md-image__js"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    code__js=code__js
+    api_screen="MD Image API"
+  )
+
+//- MD Image API Docs.
+template(name="md_image__api")
+  h2.api__title MD Image API
+  +coming_soon__api

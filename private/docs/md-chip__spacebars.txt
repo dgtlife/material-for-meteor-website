@@ -1,0 +1,11 @@
+<!-- A basic chip  text-only }}. -->
+{{> md_chip label="Potato"}}
+
+<!-- A chip with an image. -->
+{{> md_chip image="/eye.png" label="Eye Guy"}}
+
+<!-- A chip with an icon. -->
+{{> md_chip icon="account-circle" label="Anonymous"}}
+
+<!-- A chip with an icon and a Delete button. -->
+{{> md_chip icon="account-circle" label="Optional" deletable=true}}

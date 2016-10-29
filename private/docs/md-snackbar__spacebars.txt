@@ -1,0 +1,2 @@
+<!-- The snackbar template. Place it (one only) at the bottom of the page. -->
+{{> md_snackbar}}

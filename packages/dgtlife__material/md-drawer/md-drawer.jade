@@ -1,0 +1,46 @@
+//- @file Defines the template for MD Drawer
+    @author Derek Gransaull <derek@dgtlife.com>
+    @copyright DGTLife, LLC 2015
+
+    Created on 12/11/2015
+
+//-////////////////////////////  MD DRAWER /////////////////////////////////////
+//- An MD Drawer is a component that provides a drawer panel that is initially
+    hidden off-screen, but can slide horizontally on to the screen to reveal
+    its content.
+template(name="md_drawer")
+  .md-drawer(
+    data-drawer=position
+    id=id
+    class=classes
+    data-width=width
+    data-responsive-width=responsive_width
+  )
+    if has_header
+      .md-drawer__header(
+        data-drawer-header=""
+        id=header__id
+        class=header__classes
+      )
+        +Template.dynamic(template=header__content)
+    if has_toolbar
+      +md_toolbar(
+        drawer_toolbar=""
+        id=toolbar__id
+        classes=toolbar__classes
+        content=toolbar__content
+        use_bar_templates=use_bar_templates
+        top_content=toolbar__top_content
+        middle_content=toolbar__middle_content
+        bottom_content=toolbar__bottom_content
+      )
+    if has_menu
+      +md_menu(
+        id=menu__id
+        classes="md-drawer__menu"
+        _drawer_menu=""
+        menu_items=menu__items
+        content=menu__content
+      )
+    else
+      +Template.dynamic(template=drawer__content)

@@ -1,0 +1,32 @@
+<!-- Using a content template -->
+{{> md_card id="demo--card-1" content="card_content_1"}}
+{{> md_card id="demo--card-2" content="card_content_2"}}
+
+<template name="card_content_1">
+  <div class="md-card__content">
+    <h3>This is an MD Card</h3>
+    <p>You're in full control here.</p>
+    <p>Put anything you want on the card.</p>
+  </div>
+  <div class="md-card__actions">
+    {{> md_button label="action 1"}}
+    {{> md_button label="action 2"}}
+  </div>
+</template>
+
+<template name="card_content_2">
+  <div class="md-card__content">
+    <h3>Another MD Card</h3>
+    {{> md_image
+      alt="test image 2"
+      bg_url="/traffic.jpg"
+      height="150"
+      width="280"
+      sizing="cover"
+    }}
+    <p>You can put an MD Image on a card.</p>
+  </div>
+  <div class="md-card__actions">
+    {{> md_button label="action 3"}}
+  </div>
+</template>

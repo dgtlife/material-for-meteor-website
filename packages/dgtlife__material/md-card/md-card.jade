@@ -1,0 +1,23 @@
+//- @file Defines the template for the MD Card.
+    @author Derek Gransaull <derek@dgtlife.com>
+    @copyright DGTLife, LLC 2015
+
+    Created on 12/23/2015
+
+//-//////////////////////////////  MD CARD  ////////////////////////////////////
+template(name="md_card")
+  if data_from_array
+    .md-card.md-card__selector(
+      data-card=""
+      id=id
+      class=classes
+      data-index="#{@index}"
+    )
+      +Template.dynamic(template=content)
+  else
+    .md-card.md-card__selector(
+      data-card=""
+      id=id
+      class=classes
+    )
+      +Template.dynamic(template=content)

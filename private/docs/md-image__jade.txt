@@ -1,0 +1,69 @@
+//- Image at intrinsic size.
++md_image(
+  alt="test image 1"
+  src="/traffic.jpg"
+)
+
+//- Manually scaled image.
++md_image(
+  alt="test image 2"
+  src="/traffic.jpg"
+  height="147"
+  width="150"
+)
+
+//- Image with 'contain' sizing.
++md_image(
+  alt="test image 2"
+  bg_url="/traffic.jpg"
+  height="100"
+  width="150"
+  sizing="contain"
+)
+
+//- Image with 'cover' sizing.
++md_image(
+  alt="test image 2"
+  bg_url="/traffic.jpg"
+  height="100"
+  width="150"
+  sizing="cover"
+)
+
+//- Image with placeholder background and fade in.
++md_image(
+  alt="test image 3"
+  src="http://deelay.me/10000/http://lorempixel.com/150/150"
+  height="150"
+  width="150"
+  bg_color="rgb(180,180,180)"
+  fade=""
+)
+
+//- Image with placeholder background and no fade in.
++md_image(
+  alt="test image 3"
+  src="http://deelay.me/10000/http://lorempixel.com/150/150"
+  height="150"
+  width="150"
+  bg_color="rgb(180,180,180)"
+)
+
+//- Image with placeholder image and fade in.
++md_image(
+  alt="test image 3"
+  src="http://deelay.me/10000/http://lorempixel.com/150/150"
+  height="150"
+  width="150"
+  placeholder=placeholderImage
+  fade=""
+)
+
+//- Image with placeholder image and no fade in.
++md_image(
+  alt="test image 3"
+  src="http://deelay.me/10000/http://lorempixel.com/150/150"
+  height="150"
+  width="150"
+  placeholder=placeholderImage
+)

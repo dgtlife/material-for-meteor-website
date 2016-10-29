@@ -1,0 +1,12 @@
+{
+  "name": "material-for-meteor",
+  "description": "The website for Material for Meteor",
+  "version": "0.3.5",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0"
+  }
+}

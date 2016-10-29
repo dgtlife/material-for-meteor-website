@@ -1,0 +1,4 @@
+<!-- This demo collapse is populated by the lorem_ipsum template. -->
+{{> md_collapse
+  content="lorem_ipsum"
+}}

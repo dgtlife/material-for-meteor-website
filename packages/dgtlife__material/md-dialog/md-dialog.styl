@@ -1,0 +1,126 @@
+// @file Defines the styles for the MD Dialog.
+// @author Derek Gransaull <derek@dgtlife.com>
+// @copyright DGTLife, LLC 2015
+//
+// Created on 11/6/2015
+
+@require '../md-common'
+@require '../md-shadow/md-shadow'
+
+////////////////////    VARIABLES FOR MD DIALOG STYLES    //////////////////////
+$md-dialog__bg-color = #FFFFFF
+
+/////////////////////////    STYLES FOR MD DIALOG    ///////////////////////////
+.md-dialog
+  background-color $md-dialog__bg-color
+  border-radius 0.125rem
+  box-sizing border-box
+  display none
+  outline none
+  position fixed
+  z-index -5
+  $md-shadow--16dp()
+.md-dialog[data-dialog-open]
+  display block
+  z-index 12
+.md-dialog__container
+  padding 1.5rem 0 0 0
+.md-dialog__title
+  font-size 1.25rem
+  font-weight 500
+  overflow-x hidden
+  padding 0 1.5rem 1.25rem
+  pointer-events none
+  text-align left
+  text-overflow ellipsis
+  white-space nowrap
+.md-dialog__content
+  padding 0 1.5rem 1.5rem
+  text-align left
+.md-dialog__content.content--scrollable
+  padding 0 1.5rem
+  position relative
+  text-align left
+.md-dialog__content-to-scroll
+  overflow-y scroll
+  text-align left
+.md-dialog__content-to-scroll::before,
+.md-dialog__content-to-scroll::after
+  background-color #e0e0e0
+  height 0.0625rem
+  left 0
+  right 0
+  position absolute
+.md-dialog__content-to-scroll:not([data-scroll-status="scrolled-down"])::before
+  content ''
+  top 0
+.md-dialog__content-to-scroll:not([data-scroll-status="scrolled-up"])::after
+  content ''
+  bottom 0
+.md-dialog__container .md-dialog__actions
+  $align-items-center()
+  $display-flex()
+  $flex-direction(row)
+  $justify-content-end()
+  padding 0.5rem 0.5rem 0.5rem 1.5rem
+  > .md-button
+    margin 0 0 0 0.5rem
+  > .md-button:first-of-type
+    margin-right 0
+///// Full screen dialog (mobile only)
+.md-dialog-fs
+  background-color $md-dialog__bg-color
+  $display-flex()
+  $flex-direction(column)
+  height 100%
+  left 0
+  position absolute
+  top 0
+  transition -webkit-transform ease-in-out 0.3s
+  transition transform ease-in-out 0.3s
+  width 100%
+  z-index 9
+  .md-toolbar__bar
+    .md-button.md-dialog-fs__close-button
+      padding 0 2rem 0 0
+  .md-button.md-dialog-fs__action
+    margin 0
+.md-dialog-fs:not([data-dialog-open])
+  -webkit-transform translateY(100%)
+  transform translateY(100%)
+.md-dialog-fs__title
+  font-size 1.25rem
+  font-weight 500
+.md-dialog-fs__container
+  $flex(1)
+  overflow-x hidden
+  overflow-y scroll
+  position relative
+
+/////  Animations
+// No animation
+.md-dialog[data-dialog-open][no-opening-animation]
+  opacity 1
+// Default open animation
+.md-dialog[data-dialog-open][data-opening][data-opening-animation=default]
+  -moz-animation open--default 0.35s $md-timing-function--linear-out-slow-in
+  -webkit-animation open--default 0.35s $md-timing-function--linear-out-slow-in
+  animation open--default 0.35s $md-timing-function--linear-out-slow-in
+
+@keyframes open--default
+  0%
+    transform: scale(0)
+  100%
+    transform scale(1)
+
+// Default close animation
+.md-dialog[data-dialog-open][data-closing][data-closing-animation=default]
+  -moz-animation close--default 0.35s $md-timing-function--fast-out-slow-in
+  -webkit-animation close--default 0.35s $md-timing-function--fast-out-slow-in
+  animation close--default 0.35s $md-timing-function--fast-out-slow-in
+
+@keyframes close--default
+  0%
+    transform: scale(1)
+  100%
+    transform scale(0)

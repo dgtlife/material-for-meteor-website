@@ -1,0 +1,24 @@
+<!-- The left drawer -->
+{{> md_drawer
+  position="left"
+  responsive_width="960"
+  has_toolbar=true
+  toolbar__classes="toolbar--demo-nav"
+  use_bar_templates=true
+  toolbar__top_content="left_drawer__toolbar__top_content"
+  has_menu=true
+  menu__id="mfm-catalog-menu"
+  menu__content="left_drawer__menu_content"
+}}
+
+<!-- The right drawer -->
+{{> md_drawer
+  position="right"
+  responsive_width="1440"
+  has_header=true
+  header__classes="toolbar--api-nav"
+  header__content="right_drawer__header_content"
+  has_menu=true
+  menu__id="mfm-api-menu"
+  menu__content="right_drawer__menu_content"
+}}

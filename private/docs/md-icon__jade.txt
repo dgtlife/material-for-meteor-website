@@ -1,0 +1,5 @@
+//- A basic icon
++md_icon(icon="flight")
+
+//- A badged icon
++md_icon(icon="email" badge_count="7")

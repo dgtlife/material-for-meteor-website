@@ -1,0 +1,69 @@
+template(name="md_item__demo")
+  .component-title MD Item
+  p.docs An MD Item is typically used as a list or menu item.
+  .demo-box
+    .demo-group
+      .demo--item
+        .element-title Basic item
+        .items-container
+          +md_item(
+            id="demo-item-1"
+            classes="demo-item"
+            text="MD Item 1"
+            ripple=true
+          )
+          +md_item(
+            id="demo-item-2"
+            classes="demo-item"
+            text="MD Item 2"
+            ripple=true
+          )
+          +md_item(
+            id="demo-item-3"
+            classes="demo-item"
+            text="MD Item 3"
+            ripple=true
+          )
+      .demo--item
+        .element-title Item with icon
+        .items-container--icon
+          +md_item(
+            id="demo-icon-item-1"
+            classes="demo-icon-item"
+            icon="person"
+            text="MD Icon Item 1"
+            ripple=true
+            offsetRipple=""
+          )
+          +md_item(
+            id="demo-icon-item-2"
+            classes="demo-icon-item"
+            icon="person-add"
+            text="MD Icon Item 2"
+            ripple=true
+            offsetRipple=""
+          )
+          +md_item(
+            id="demo-icon-item-3"
+            classes="demo-icon-item"
+            icon="account-circle"
+            text="MD Icon Item 3"
+            ripple=true
+            offsetRipple=""
+          )
+  p.docs The code used to generate some of the items is shown below.
+  +doc_box(
+    id="doc-box--md-item"
+    id__tabs="md-item__tabs"
+    tabs=tabs
+    name__spacebars="md-item__spacebars"
+    name__jade="md-item__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Item API"
+  )
+
+//- MD Item API Docs.
+template(name="md_item__api")
+  h2.api__title MD Item API
+  +coming_soon__api

@@ -1,0 +1,246 @@
+template(name="md_header_panel__demo")
+  .component-title MD Header Panel
+  p.docs
+    span The MD Header Panel demo involves the header panel on this site itself. The site loads in
+    code.inline waterfall-collapse
+    span mode on a desktop/tablet, and
+    code.inline standard
+    span mode on a phone. Other modes can be experienced by executing the commands listed below in the web inspector console of the browser.
+  +api_box(
+    id="md-header-panel-demo-commands"
+    classes="md-header-panel-demo-commands"
+    codeBoxClasses="with-one-box"
+    code__js=codeJS
+  )
+  p.docs
+    span The MD Header Panel on this site is generated using the following code.
+  +doc_box(
+    id="doc-box--md-header-panel"
+    id__tabs="md-header-panel__tabs"
+    tabs=tabs
+    name__spacebars="md-header-panel__spacebars"
+    name__jade="md-header-panel__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Header Panel API"
+  )
+
+//-  MD Header Panel API Docs
+template(name="md_header_panel__api")
+  h2.api__title MD Header Panel API
+  .api__description
+    p
+      span An MD Header Panel is a component that provides a containment structure for a header element, a content element, and related elements to enable the header to exhibit certain behaviors based on the scrolling status of the content.
+    p
+      span The elements within the structure are identified and operated upon by means of their respective (identifying) attributes.
+      span The header element is usually an MD Toolbar, but it can be any element with the
+      code.inline data-header
+      span attribute, and styles appropriate to the expected behavior.
+  .divider--api
+  .api__heading API Reference
+  .api__template
+    .template__label Template
+    .template__name md_header_panel
+  .api__section.section--parameters
+    .section__title Template parameters
+    table.parameters
+      thead
+        tr
+          th.param Parameter
+          th.type Type
+          th.desc Description
+      tbody
+        tr
+          td.param
+            code id
+          td.type string
+          td.desc The id of the header panel element (optional)
+        tr
+          td.param
+            code name
+          td.type string
+          td.desc The name of the header panel element (optional)
+        tr
+          td.param
+            code classes
+          td.type string
+          td.desc A space-separate list of classes for the header panel element (optional)
+        tr
+          td.param
+            code data-mode
+          td.type string
+          td.desc
+            p
+              span The mode of operation of the header panel assembly. The following values are supported.
+            .fake-table__container
+              .fake-table.hp-modes
+                .fake-row.row--mode
+                  .fake-cell.hp-mode__id
+                    code standard
+                  .fake-cell.hp-mode__description
+                    span The header is fixed. It appears to be permanently elevated above the content as the content is scrolled upward or downward, under it.
+                .fake-row.row--mode
+                  .fake-cell.hp-mode__id
+                    code seamed
+                  .fake-cell.hp-mode__description
+                    span The header is fixed. It appears to be permanently joined to the content at the same elevation, and at a visible seam. The content appears to flow into and out of the seam as it is scrolled upward or downward.
+                .fake-row.row--mode
+                  .fake-cell.hp-mode__id
+                    code scroll
+                  .fake-cell.hp-mode__description
+                    span The header is not fixed. It appears to be at the same elevation as the content, and to be permanently joined to the content. However, the header scrolls with the content as the latter is scrolled upward or downward.
+                .fake-row.row--mode
+                  .fake-cell.hp-mode__id
+                    code waterfall
+                  .fake-cell.hp-mode__description
+                    span The header is fixed. It appears 'seamed' with the content when the latter is fully scrolled down, but appears elevated when the content is scrolling upward, fully scrolled up, or scrolling downward.
+                .fake-row.row--mode
+                  .fake-cell.hp-mode__id
+                    code waterfall-collapse
+                  .fake-cell.hp-mode__description
+                    span The header is fixed, with an initial expanded height that is greater than the standard/collapsed height. It is expanded and appears 'seamed' with the content when the latter is fully scrolled down, but is collapsed and appears elevated when the content is scrolling upward, fully scrolled up, or scrolling downward.
+                .fake-row.row--mode
+                  .fake-cell.hp-mode__id
+                    code cover
+                  .fake-cell.hp-mode__description
+                    span The header is fixed. It is permanently one level below the (now) elevated and narrowed content, as the content is scrolled upward or downward, above it.
+            p
+              span If this attribute is omitted, the default value of
+              code.inline standard
+              span is assigned to the mode.
+        tr
+          td.param
+            code data-expand-on-scroll
+          td.type string
+          td.desc
+            span The default behavior of the collapsed header in the
+            code waterfall-collapse
+            span mode is to expand only when the content is fully scrolled down. This attribute causes the collapsed header to expand elevated as soon as the content is scrolled downward.
+        tr
+          td.param
+            code has_header
+          td.type boolean
+          td.desc
+            code.inline True
+            span , if the header panel has a header element at the top. The content and style of this header element is fully determinable by the package user.
+            span Omitting this parameter is equivalent to assigning it
+            code.inline false
+            span .
+        tr
+          td.param
+            code header__id
+          td.type string
+          td.desc The id of the header element (optional)
+        tr
+          td.param
+            code header__name
+          td.type string
+          td.desc The name of the header element (optional)
+        tr
+          td.param
+            code header__classes
+          td.type string
+          td.desc A space-separate list of classes for the header element (optional)
+        tr
+          td.param
+            code header__content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the header element
+        tr
+          td.param
+            code has_toolbar
+          td.type boolean
+          td.desc
+            code.inline True
+            span , if the header panel has an integrated MD Toolbar at the top (instead of a header element).
+            span Omitting this parameter is equivalent to assigning it
+            code.inline false
+            span .
+        tr
+          td.param
+            code toolbar__id
+          td.type string
+          td.desc The id of the toolbar element (optional)
+        tr
+          td.param
+            code toolbar__classes
+          td.type string
+          td.desc A space-separate list of classes for the toolbar element (optional)
+        tr
+          td.param
+            code use_bar_templates
+          td.type boolean
+          td.desc
+            code.inline True
+            span , if the integrated toolbar will be populated using templates, one for each bar (top|middle|bottom) that is used.
+            span Omitting this parameter is equivalent to assigning it
+            code.inline false
+            span .
+        tr
+          td.param
+            code toolbar__top_content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the top bar of the toolbar
+        tr
+          td.param
+            code toolbar__middle_content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the middle bar of the toolbar
+        tr
+          td.param
+            code toolbar__bottom_content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the bottom bar of the toolbar
+        tr
+          td.param
+            code content__id
+          td.type string
+          td.desc The id of the content element, i.e. data-content (optional)
+        tr
+          td.param
+            code content__classes
+          td.type string
+          td.desc A space-separate list of classes for the content element (optional)
+        tr
+          td.param
+            code using_cover_mode
+          td.type boolean
+          td.desc
+            code.inline True
+            span , if
+            code.inline cover
+            span mode is being used in the app. Omitting this parameter is equivalent to assigning it
+            code.inline false
+            span .
+        tr
+          td.param
+            code covering_content__id
+          td.type string
+          td.desc The id of the covering content element, i.e. data-covering-content (optional)
+        tr
+          td.param
+            code covering_content__classes
+          td.type string
+          td.desc A space-separate list of classes for the covering content element (optional)
+        tr
+          td.param
+            code content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the content element, which is the main content area of the header panel
+  .api__section.section--methods
+    .section__title Methods
+    .fake-table.methods
+      .fake-row.row--method
+        .fake-cell.method
+          code MD.initializeHeaderPanelSystem()
+        .fake-cell.desc
+          p
+            span If you ever need to change the header panel mode while the app is running, use
+            code.inline MD.dqS
+            span or
+            code.inline MD.dgEBI
+            span or some other element selection method to set the
+            code.inline data-mode
+            span attribute of the header panel element (
+            code.inline data-header-panel
+            span ) to the new mode, then call this function to initialize the new mode.

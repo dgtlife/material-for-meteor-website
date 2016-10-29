@@ -1,0 +1,46 @@
+template(name="md_card__demo")
+  .component-title MD Card
+  .demo-box
+    .demo-group.group--card
+      .demo--card
+        +md_card(id="demo--card-1" classes="demo" content="card_content_1")
+      .demo--card
+        +md_card(id="demo--card-2" classes="demo" content="card_content_2")
+  +doc_box(
+    id="doc-box--md-card"
+    id__tabs="md-card__tabs"
+    tabs=tabs
+    name__spacebars="md-card__spacebars"
+    name__jade="md-card__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Card API"
+  )
+
+template(name="card_content_1")
+  .md-card__content
+    h3 This is an MD Card
+    p You're in full control here.
+    p Put anything you want on the card.
+  .md-card__actions
+    +md_button(label="action 1")
+    +md_button(label="action 2")
+
+template(name="card_content_2")
+  .md-card__content
+    h3 Another MD Card
+    +md_image(
+      alt="test image 2"
+      bg_url="/traffic.jpg"
+      height="150"
+      width="280"
+      sizing="cover"
+    )
+    p Here is an MD Image on a card.
+  .md-card__actions
+    +md_button(label="action 3")
+
+//- MD Card API Docs.
+template(name="md_card__api")
+  h2.api__title MD Card API
+  +coming_soon__api

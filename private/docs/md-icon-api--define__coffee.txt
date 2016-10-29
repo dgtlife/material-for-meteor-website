@@ -1,0 +1,33 @@
+MD.defineIconAssets
+  iconsDefinedByG: [
+    file: Assets.getText 'custom-gs-1.svg'
+    include: [
+      'account-key'
+      'edit'
+      'help-2'
+    ]
+    hyphensOnly: true
+  ,
+    file: Assets.getText 'social-gs-2.svg'
+    include: [
+      'facebook'
+      'facebook-box'
+      'google-plus'
+      'google-plus-box'
+    ]
+    hyphensOnly: true
+  ]
+  iconsDefinedBySvg: [
+    file: Assets.getText 'custom-svgs.svg'
+    include: [
+      'one'
+      'two'
+      'three'
+      'four'
+      'five'
+    ]
+    stripPrefix: 'ic_'
+    stripSuffix: '_24px'
+    addPrefix: 'my-'
+    hyphensOnly: true
+  ]

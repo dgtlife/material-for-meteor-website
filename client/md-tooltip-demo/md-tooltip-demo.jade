@@ -1,0 +1,59 @@
+template(name="md_tooltip__demo")
+  .component-title MD Tooltip
+  p.docs
+    | Tooltips are associated with each of the four components below. Hover
+    | over an element to see the tooltip.
+  .demo-box
+    .demo-group.group--tooltip
+      .demo--tooltip
+        +md_button(
+          id="demo-button-with-tooltip"
+          label="with tooltip"
+        )
+      .demo--tooltip
+        +md_button(
+          id="demo-fab-with-tooltip"
+          classes=""
+          icon="add"
+          fab=""
+          ripple=true
+        )
+      .demo--tooltip
+        +md_button(
+          id="demo-icon-button-with-tooltip"
+          icon="lock-open"
+          icon_button=""
+          ripple=true
+        )
+      .demo--tooltip
+        +md_button(
+          id="demo-mini-fab-with-tooltip"
+          icon="lock"
+          fab="mini"
+          ripple=true
+        )
+    +demo_tooltips
+  p.docs The above tooltips are generated using the following code.
+  +doc_box(
+    id="doc-box--md-tooltip"
+    id__tabs="md-tooltip__tabs"
+    tabs=tabs
+    name__spacebars="md-tooltip__spacebars"
+    name__jade="md-tooltip__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Tooltip API"
+  )
+
+template(name="demo_tooltips")
+  +md_tooltip(target="demo-button-with-tooltip" text="MD Tooltip on the bottom (default)")
+  +md_tooltip(target="demo-fab-with-tooltip" position="top" text="MD Tooltip on the top")
+  +md_tooltip(target="demo-icon-button-with-tooltip" position="right" text="MD Tooltip on the right")
+  +md_tooltip(target="demo-mini-fab-with-tooltip" position="left" text="MD Tooltip on the left")
+
+//- MD Tooltip API Docs.
+template(name="md_tooltip__api")
+  h2.api__title MD Tooltip API
+  +coming_soon__api
+
+

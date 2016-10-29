@@ -1,0 +1,9 @@
+Template.md_image__demo.helpers({
+  ...
+
+  placeholderImage() {
+    return 'url(data:image/png;base64, /* image code not included */ )';
+  }
+
+  ...
+});

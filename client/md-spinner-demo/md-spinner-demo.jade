@@ -1,0 +1,38 @@
+template(name="md_spinner__demo")
+  .component-title MD Spinner
+  .demo-box
+    .demo-group
+      .demo--spinner
+        .element-title Google colors
+        +md_spinner
+      .demo--spinner
+        .element-title Single color
+        +md_spinner(
+          color="mono"
+          color1="rgb(88,88,88)"
+        )
+      .demo--spinner
+        .element-title Custom colors
+        +md_spinner(
+          color="multi"
+          color1="#673AB7"
+          color2="#009688"
+          color3="#FF9800"
+          color4="#00BCD4"
+        )
+  p.docs The above spinners are generated using the following code.
+  +doc_box(
+    id="doc-box--md-spinner"
+    id__tabs="md-spinner__tabs"
+    tabs=tabs
+    name__spacebars="md-spinner__spacebars"
+    name__jade="md-spinner__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Spinner API"
+  )
+
+//- MD Spinner API Docs.
+template(name="md_spinner__api")
+  h2.api__title MD Spinner API
+  +coming_soon__api

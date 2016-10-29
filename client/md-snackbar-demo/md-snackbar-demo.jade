@@ -1,0 +1,42 @@
+template(name="md_snackbar__demo")
+  .component-title MD Snackbar
+  p.docs The buttons below each display a snackbar of the type indicated by the title above the button.
+  .demo-box
+    .demo-group
+      .demo--snackbar
+        .element-title Single-line message only
+        +md_button(id="launch-snackbar--simple" label="simple")
+      .demo--snackbar
+        .element-title Single-line message and action
+        +md_button(id="launch-snackbar--action" label="action")
+      .demo--snackbar
+        .element-title Multiple single-line messages
+        +md_button(id="launch-snackbar--multiple" label="multiple")
+    .demo-group
+      .demo--snackbar
+        .element-title Multi-line message only
+        +md_button(id="launch-snackbar--simple-multi" label="simple")
+      .demo--snackbar
+        .element-title Multi-line message and action
+        +md_button(id="launch-snackbar--action-multi" label="action")
+      .demo--snackbar
+        .element-title Multiple multi-line messages
+        +md_button(id="launch-snackbar--multiple-multi" label="multiple")
+  p.docs The code that generated some of these buttons is shown below.
+  +doc_box(
+    id="doc-box--md-snackbar"
+    id__tabs="md-snackbar__tabs"
+    tabs=tabs
+    name__spacebars="md-snackbar__spacebars"
+    name__jade="md-snackbar__jade"
+    name__js="md-snackbar__js"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    code__js=code__js
+    api_screen="MD Snackbar API"
+  )
+
+//- MD Snackbar API Docs.
+template(name="md_snackbar__api")
+  h2.api__title MD Snackbar API
+  +coming_soon__api

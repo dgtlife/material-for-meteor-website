@@ -1,0 +1,26 @@
+//- Using content templates.
++md_card(id="demo--card-1" content="card_content_1")
++md_card(id="demo--card-2" content="card_content_2")
+
+template(name="card_content_1")
+  .md-card__content
+    h3 This is an MD Card
+    p You're in full control here.
+    p Put anything you want on the card.
+  .md-card__actions
+    +md_button(label="action 1")
+    +md_button(label="action 2")
+
+template(name="card_content_2")
+  .md-card__content
+    h3 Another MD Card
+    +md_image(
+      alt="test image 2"
+      bg_url="/traffic.jpg"
+      height="150"
+      width="280"
+      sizing="cover"
+    )
+    p You can put an MD Image on a card.
+  .md-card__actions
+    +md_button(label="action 3")

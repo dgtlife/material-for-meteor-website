@@ -1,0 +1,250 @@
+template(name="md_button__demo")
+  .component-title MD Button
+  .demo-box
+  p.docs
+    span The flat and raised rectangular buttons, the FABs, and the icon buttons are all generated using the same
+    code.inline md_button
+    span template.
+  +md_button__base
+  +md_button__with_icon
+  +md_button__no_ripple
+  +md_button__toggle
+  +md_button__icon_button
+  +md_button__fab
+
+template(name="md_button__base")
+  .group-title Rectangular buttons
+  .demo-box
+    .demo-group
+      .demo--button
+        +md_button(
+          id="demo-md-button"
+          label="button"
+        )
+      .demo--button
+        +md_button(
+          id="demo-md-button--raised"
+          label="button"
+          raised=""
+        )
+    .demo-group
+      .demo--button
+        +md_button(
+          id="demo--disabled"
+          label="disabled"
+          disabled=""
+        )
+      .demo--button
+        +md_button(
+          id="demo--disabled-raised"
+          label="disabled"
+          raised=""
+          disabled=""
+        )
+  +doc_box(
+    id="doc-box--md-button--base"
+    id__tabs="md-button--base__tabs"
+    tabs=tabs
+    name__spacebars="md-button--base__spacebars"
+    name__jade="md-button--base__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Button API"
+  )
+
+template(name="md_button__with_icon")
+  .group-title Rectangular buttons with icons
+  .demo-box
+    .demo-group
+      .demo--button
+        +md_button(
+          classes=""
+          label="with icon"
+          with_icon=""
+          icon="account-key"
+        )
+      .demo--button
+        +md_button(
+          label="with icon"
+          raised=""
+          with_icon=""
+          icon="confirmation-number"
+        )
+  +doc_box(
+    id="doc-box--md-button--with-icon"
+    id__tabs="md-button--with-icon__tabs"
+    tabs=tabs
+    name__spacebars="md-button--with-icon__spacebars"
+    name__jade="md-button--with-icon__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Button API"
+  )
+
+template(name="md_button__no_ripple")
+  .group-title Rectangular buttons without ripple
+  .demo-box
+    .demo-group
+      .demo--button
+        +md_button(
+          label="no ripple"
+          no_ripple=true
+        )
+      .demo--button
+        +md_button(
+          label="no ripple"
+          raised=""
+          no_ripple=true
+        )
+    .demo-group
+      .demo--button
+        +md_button(
+          label="ripple disabled"
+          disabled=""
+        )
+      .demo--button
+        +md_button(
+          label="ripple disabled"
+          raised=""
+          disabled=""
+        )
+  +doc_box(
+    id="doc-box--md-button"
+    id__tabs="md-button--no-ripple__tabs"
+    tabs=tabs
+    name__spacebars="md-button--no-ripple__spacebars"
+    name__jade="md-button--no-ripple__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Button API"
+  )
+
+template(name="md_button__toggle")
+  .group-title Rectangular buttons that toggle
+  .demo-box
+    .demo-group
+      .demo--button
+        +md_button(
+          id="button--toggle"
+          label="toggles"
+          toggle=""
+        )
+      .demo--button
+        +md_button(
+          id="button--toggle-raised"
+          label="toggles"
+          raised=""
+          toggle=true
+        )
+  +doc_box(
+    id="doc-box--md-button"
+    id__tabs="md-button--toggle__tabs"
+    tabs=tabs
+    name__spacebars="md-button--toggle__spacebars"
+    name__jade="md-button--toggle__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Button API"
+  )
+
+template(name="md_button__icon_button")
+  .group-title Icon buttons
+  .demo-box
+    .demo-group
+      .demo--button
+        +md_button(
+          icon_button=""
+          icon="more-vert"
+        )
+      .demo--button
+        +md_button(
+          icon_button=""
+          icon="lock-open"
+        )
+      .demo--button
+        +md_button(
+          icon_button=""
+          icon="photo-camera"
+        )
+      .demo--button
+        +md_button(
+          icon_button=""
+          icon="edit"
+        )
+      .demo--button
+        +md_button(
+          icon_button=""
+          icon="settings"
+        )
+      .demo--button
+        +md_button(
+          icon_button=""
+          icon="add-shopping-cart"
+        )
+  +doc_box(
+    id="doc-box--md-button"
+    id__tabs="md-button--icon-button__tabs"
+    tabs=tabs
+    name__spacebars="md-button--icon-button__spacebars"
+    name__jade="md-button--icon-button__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Button API"
+  )
+
+template(name="md_button__fab")
+  .group-title The FAB
+  .demo-box
+    .demo-group.group--fab
+      .demo--button
+        +md_button(
+          id="demo-fab--standard"
+          name="demo-fab-standard"
+          classes=""
+          icon="lock"
+          fab=""
+        )
+      .demo--button
+        +md_button(
+          id="demo-fab--mini"
+          name="demo-fab-mini"
+          classes=""
+          icon="lock"
+          fab="mini"
+        )
+    .demo-group.group--fab
+      .demo--button
+        +md_button(
+          id="demo-fab-standard--disabled"
+          name="demo-fab-standard--disabled"
+          classes=""
+          icon="lock"
+          fab=""
+          disabled=""
+        )
+      .demo--button
+        +md_button(
+          id="demo-fab--mini--disabled"
+          name="demo-fab-mini--disabled"
+          classes=""
+          icon="lock"
+          fab="mini"
+          disabled=""
+        )
+  +doc_box(
+    id="doc-box--md-button"
+    id__tabs="md-button--fab__tabs"
+    tabs=tabs
+    name__spacebars="md-button--fab__spacebars"
+    name__jade="md-button--fab__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Button API"
+  )
+
+//- MD Button API Docs.
+template(name="md_button__api")
+  h2.api__title MD Button API
+  .api__description
+    p
+      span Component in package with docs coming soon.

@@ -1,0 +1,9 @@
+<!-- A basic icon -->
+{{> md_icon icon="person"}}
+
+<!-- An icon with a class and a name attribute -->
+{{> md_icon
+  icon="group"
+  classes="my-group"
+  name="my-group-icon"
+}}

@@ -1,0 +1,150 @@
+body(class="app")
+  //- MAIN TEMPLATE -- App container
+  #___container.___container
+    +md_drawer(
+      position="left"
+      responsive_width="960"
+      has_toolbar=true
+      toolbar__classes="toolbar--demo-nav"
+      use_bar_templates=true
+      toolbar__top_content="left_drawer__toolbar__top_content"
+      has_menu=true
+      menu__id="mfm-catalog-menu"
+      menu__content="left_drawer__menu_content"
+    )
+    +md_drawer(
+      position="right"
+      responsive_width="1440"
+      has_header=true
+      header__classes="toolbar--api-nav"
+      header__content="right_drawer__header_content"
+      has_menu=true
+      menu__id="mfm-api-menu"
+      menu__content="right_drawer__menu_content"
+    )
+    unless on_phone
+      +md_header_panel(
+        classes="__container"
+        mode="waterfall-collapse"
+        has_toolbar=true
+        toolbar__id="__appbar"
+        toolbar__classes="__appbar tall"
+        use_bar_templates=true
+        toolbar__top_content="__appbar_top"
+        toolbar__middle_content="__appbar_middle"
+        toolbar__bottom_content="__appbar_bottom"
+        content__classes="__content"
+        using_cover_mode=true
+        covering_content__classes="__covering-content"
+        content="main_content"
+      )
+    if on_phone
+      +md_header_panel(
+        classes="__container"
+        has_toolbar=true
+        toolbar__id="__appbar"
+        toolbar__classes="__appbar"
+        use_bar_templates=true
+        toolbar__top_content="__appbar_top"
+        content__classes="__content"
+        using_cover_mode=true
+        covering_content__classes="__covering-content"
+        content="main_content"
+      )
+    #__indicators.__indicators
+      +md_icon(
+        icon=connection_status__icon_id
+        classes=connection_status__indication
+        title="Connection status"
+      )
+    +md_snackbar
+    +demo_dialogs
+
+//- //////////  SUBORDINATE TEMPLATES  //////////
+//- Left drawer toolbar.
+template(name="left_drawer__toolbar__top_content")
+  .title Catalog Menu
+
+template(name="left_drawer__menu_content")
+  #mfm-catalog-menu.mfm-catalog-menu
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-header-panel-demo" text="MD Header Panel" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-toolbar-demo" text="MD Toolbar" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-drawer-demo" text="MD Drawer" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-dialog-demo" text="MD Dialog" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-snackbar-demo" text="MD Snackbar" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-card-demo" text="MD Card" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-tabs-demo" text="MD Tabs" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-text-input-demo" text="MD Text Input" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-icon-demo" text="MD Icon" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-button-demo" text="MD Button" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-radio-demo" text="MD Radio" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-checkbox-demo" text="MD Checkbox" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-chip-demo" text="MD Chip" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-collapse-demo" text="MD Collapse" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-item-demo" text="MD Item" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-menu-demo" text="MD Menu" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-popup-menu-demo" text="MD Popup Menu" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-dropdown-menu-demo" text="MD Dropdown Menu" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-image-demo" text="MD Image" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-tooltip-demo" text="MD Tooltip" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-spinner-demo" text="MD Spinner" ripple=true)
+    +md_item(menu_item="" menu="mfm-catalog-menu" classes="mfm-catalog__menu-item" id="menu-item--md-shadow-demo" text="MD Shadow" ripple=true)
+
+//- Header panel toolbars
+template(name="__appbar_top")
+  +md_button(name="menu" icon="menu" icon_button="" toolbar_menu_button="" drawer_toggle="left")
+  .title(name="go-home") Material for Meteor
+  .flex
+  +md_button(icon="code" icon_button="" drawer_toggle="right" title="API menu")
+  +md_popup_menu(
+    position="bottom-left"
+    opening_animation="popup-bottom-left--default"
+    icon="more-vert"
+    menu__id="appbar-more"
+  )
+  div(data-items-for="appbar-more")
+    +md_item(menu_item="" menu="appbar-more" icon="github-circle" id="more-menu--get-package" text="Get package")
+    +md_item(menu_item="" menu="appbar-more" icon="visibility" id="more-menu--show-jade" text="Show Jade")
+    +md_item(menu_item="" menu="appbar-more" icon="visibility" id="more-menu--show-spacebars" text="Show Spacebars")
+
+template(name="__appbar_middle")
+  .title A Blaze implementation of Google's Material Design.
+
+template(name="__appbar_bottom")
+  .title.status (work in progress)
+  .flex
+  +md_button(icon="search" icon_button="")
+
+//- Right drawer toolbar.
+template(name="right_drawer__header_content")
+  .title API Menu
+
+template(name="right_drawer__menu_content")
+  .mfm-api-menu__container
+    #mfm-api-menu.mfm-api-menu
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-header-panel-api" text="MD Header Panel" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-toolbar-api" text="MD Toolbar" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-drawer-api" text="MD Drawer" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-dialog-api" text="MD Dialog" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-snackbar-api" text="MD Snackbar" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-card-api" text="MD Card" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-tabs-api" text="MD Tabs" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-text-input-api" text="MD Text Input" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-icon-api" text="MD Icon" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-button-api" text="MD Button" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-radio-api" text="MD Radio" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-checkbox-api" text="MD Checkbox" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-chip-api" text="MD Chip" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-collapse-api" text="MD Collapse" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-item-api" text="MD Item" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-menu-api" text="MD Menu" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-popup-menu-api" text="MD Popup Menu" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-dropdown-menu-api" text="MD Dropdown Menu" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-image-api" text="MD Image" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-tooltip-api" text="MD Tooltip" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-spinner-api" text="MD Spinner" ripple=true)
+      +md_item(menu_item="" menu="mfm-api-menu" classes="mfm-api__menu-item" id="menu-item--md-shadow-api" text="MD Shadow" ripple=true)
+
+//- Main content area.
+template(name="main_content")
+  +screen_content

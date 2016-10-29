@@ -1,0 +1,14 @@
+<!-- A flat button that toggles -->
+{{> md_button
+  id="button--toggle"
+  label="toggles"
+  toggle=""
+}}
+
+<!-- A raised button that toggles -->
+{{> md_button
+  id="button--toggle-raised"
+  label="toggles"
+  raised=""
+  toggle=true
+}}

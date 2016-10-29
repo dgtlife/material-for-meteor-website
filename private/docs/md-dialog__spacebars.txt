@@ -1,0 +1,90 @@
+<!-- Demo Dialogs to be launched by the buttons in the Dialog Demo. These
+     dialogs are placed at the bottom of the page.-->
+
+<!-- A Default dialog. -->
+{{> md_dialog id="demo-dialog--default" content="default_dialog__content"}}
+
+<!-- Content for the Default dialog -->
+<template name="default_dialog__content">
+  <div class="md-dialog__title">Default dialog</div>
+  <div class="md-dialog__content">
+    <p>This is a default dialog, i.e. only an id and content. The default dialog
+       is 'auto-sized' based on the maximum allowed width. It can be closed by
+       clicking anywhere outside the dialog.
+    </p>
+  </div>
+</template>
+
+<!-- A 'Set Width' dialog with opening and closing animations. -->
+{{> md_dialog
+  id="demo-dialog--set-width"
+  width="280
+  opening_animation="default"
+  closing_animation="default"
+}}
+<div data-content-for="demo-dialog--set-width">
+  <div class="md-dialog__title">Another default dialog</div>
+  <div class="md-dialog__content">
+    <p>This is a simple dialog, i.e. no action buttons, with a set width. It
+       can be closed by clicking anywhere outside the dialog.
+    </p>
+  </div>
+</div>
+
+<!-- An Action dialog -->
+{{> md_dialog
+  id="demo-dialog--action"
+  width="280"
+  backdrop_opacity="0.5"
+  content="action_dialog__content"
+}}
+
+<!-- Content for the Action dialog -->
+<template name="action_dialog__content">
+  <div class="md-dialog__title">Action dialog</div>
+  <div class="md-dialog__content">
+    <p>This is an action dialog. This demo action dialog has a set width. It
+       can be closed by clicking anywhere outside the dialog, or by clicking an
+       action button.
+    </p>
+  </div>
+  <div class="md-dialog__actions">
+    {{> md_button classes="dialog__button--cancel" label="cancel"}}
+    {{> md_button classes="dialog__button--ok" label="ok"}}
+  </div>
+</template>
+
+<!-- A Modal dialog -->
+{{> md_dialog id="demo-dialog--modal" width="280" modal=""}}
+<div data-content-for="demo-dialog--modal">
+  <div class="md-dialog__title">Modal dialog</div>
+  <div class="md-dialog__content">
+    <p>This is a modal dialog. It can only be closed by clicking on an action
+       button. It is displayed on a darker backdrop to emphasize focus. This
+       demo modal dialog has a set width.
+    </p>
+  </div>
+  <div class="md-dialog__actions">
+    {{> md_button classes="dialog__button--cancel" label="cancel"}}
+    {{> md_button classes="dialog__button--ok" label="ok"}}
+  </div>
+</div>
+
+<!-- A Scrollable dialog -->
+{{> md_dialog id="demo-dialog--scrollable" width="280" height="400" scrollable=""}}
+<div data-content-for="demo-dialog--scrollable">
+  <div class="md-dialog__title">Scrollable dialog</div>
+  <div class="md-dialog__content content--scrollable">
+    <div class="md-dialog__content-to-scroll">
+      <p>This dialog has a scrollable content area. It typically has a set width
+         and height.
+      </p>
+      {{> lorem_ipsum}}
+      {{> lorem_ipsum}}
+    </div>
+  </div>
+  <div class="md-dialog__actions">
+    {{> md_button classes="dialog__button--decline" label="decline"}}
+    {{> md_button classes="dialog__button--accept" label="accept"}}
+  </div>
+</div>

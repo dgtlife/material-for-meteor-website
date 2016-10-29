@@ -1,0 +1,17 @@
+MD.selectIcons [
+  set: 'base'
+  include: 'all'
+,
+  set: 'communication'
+  include: [
+    'email'
+    'mail'
+    'message'
+    'vpn-key'
+  ]
+,
+  set: 'image'
+  include: [
+    'photo-camera'
+  ]
+]

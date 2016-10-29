@@ -1,0 +1,34 @@
+Template.md_radio__demo.helpers({
+  ...
+
+  quantityButtons() {
+    return [
+      {
+        id: 'mdRb-1',
+        group: 'quantity',
+        value: 'one',
+        label: 'One'
+      },
+      {
+        id: 'mdRb-2',
+        group: 'quantity',
+        value: 'two',
+        label: 'Two',
+        disabled: ''
+      },
+      {
+        id: 'mdRb-3',
+        group: 'quantity',
+        value: 'three',
+        label: 'Three'
+      },
+      {
+        id: 'mdRb-4',
+        group: 'quantity',
+        value: 'four',
+        label: 'Four'
+      }
+    ];
+
+  ...
+});

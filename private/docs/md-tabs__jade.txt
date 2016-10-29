@@ -1,0 +1,26 @@
+//- A convenience template to isolate the component from the rest of the demo
+    code and to illustrate the role of the 'tabs' property.
+template(name="tabs_demo")
+  //- The tab bar.
+  +md_tabs(
+    id="demo-tabs"
+    num_tabs="4"
+    selected="0"
+    slide=""
+    tab_bar__classes="tab-bar--demo"
+    tabs=demo_tabs
+  )
+  //- The tab panes
+  .demo--tabs__tab-panes
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-1")
+      h3 This is Tab 1
+      +lorem_ipsum
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-2")
+      h3 This is Tab 2
+      +lorem_ipsum
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-3")
+      h3 This is Tab 3
+      +lorem_ipsum
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-4")
+      h3 This is Tab 4
+      +lorem_ipsum

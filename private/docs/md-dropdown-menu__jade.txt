@@ -1,0 +1,20 @@
+//- A dropdown menu with bottom alignment.
++md_dropdown_menu(
+  id="demo-dropdown-menu--bottom"
+  label="Dropdown One"
+  opening_animation="dropdown-down--default"
+  menu__id="demo-menu--dropdown-1"
+  menu__items=items__dropdown_menu_1
+  helper_text="Helper text for this dropdown menu"
+)
+
+//- A dropdown menu with middle alignment.
++md_dropdown_menu(
+  id="demo-dropdown-menu--middle"
+  label="Dropdown Two"
+  position="dropdown-middle"
+  opening_animation="dropdown-middle--default"
+  menu__id="demo-menu--dropdown-2"
+  menu__items=items__dropdown_menu_2
+  helper_text="Helper text for this dropdown menu"
+)

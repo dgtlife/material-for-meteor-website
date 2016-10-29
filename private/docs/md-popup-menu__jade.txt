@@ -1,0 +1,80 @@
+//- A popup menu that opens to the top right of the trigger icon. This demo menu
+    is populated using a content template.
++md_popup_menu(
+  position="top-right"
+  opening_animation="popup-top-right--default"
+  icon="more-vert"
+  menu__id="demo-popup--top-right"
+  menu__content="popupTopRightContent"
+)
+
+template(name="popupTopRightContent")
+  +md_item(
+    menu_item=""
+    menu="demo-popup--top-right"
+    classes="demo-menu-item"
+    text="MD Menu Item Four"
+  )
+  +md_item(
+    menu_item=""
+    menu="demo-popup--top-right"
+    classes="demo-menu-item"
+    text="MD Menu Item Five"
+  )
+  +md_item(
+    menu_item=""
+    menu="demo-popup--top-right"
+    classes="demo-menu-item"
+    text="MD Menu Item Six"
+  )
+
+//- A popup menu that opens to the top left of the trigger icon. This demo menu
+    is also populated using a content template.
++md_popup_menu(
+  position="top-left"
+  opening_animation="popup-top-left--default"
+  icon="more-vert"
+  menu__id="demo-popup--top-left"
+  menu__content="popupTopLeftContent"
+)
+
+//- A popup menu that opens to the bottom right of the trigger icon. This demo
+    menu is populated using an 'import' from a temporary container DIV.
++md_popup_menu(
+  position="bottom-right"
+  opening_animation="popup-bottom-right--default"
+  icon="more-vert"
+  menu__id="demo-popup-menu-4"
+)
+div(data-items-for="demo-popup-menu-4")
+  +md_item(
+    menu_item=""
+    menu="demo-popup-menu-4"
+    classes="demo-menu-item"
+    text="Directions for walking"
+    icon="directions-walk"
+  )
+  +md_item(
+    menu_item=""
+    menu="demo-popup-menu-4"
+    classes="demo-menu-item"
+    text="Directions by bus"
+    icon="directions-bus"
+  )
+  +md_item(
+    menu_item=""
+    menu="demo-popup-menu-4"
+    classes="demo-menu-item"
+    text="Directions by subway"
+    icon="directions-subway"
+  )
+
+//- A popup menu that opens to the bottom left of the trigger icon. This demo
+    menu is populated using a template helper.
++md_popup_menu(
+  position="bottom-left"
+  opening_animation="popup-bottom-left--default"
+  icon="more-vert"
+  menu__id="demo-popup-menu-3"
+  menu__items=items__popup_menu__with_helper
+)

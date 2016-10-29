@@ -1,0 +1,92 @@
+// @file Defines the styles for the MD Radio Button and MD Radio Group.
+// @author Derek Gransaull <derek@dgtlife.com>
+// @copyright DGTLife, LLC 2015
+//
+// Created on 10/13/2015
+
+@require '../md-common'
+
+/////////////////    VARIABLES FOR MD RADIO BUTTON STYLES    ///////////////////
+$md-button--radio__color--unchecked = rgba(0,0,0,0.54)
+$md-button--radio__color--checked = #009688
+$md-button--radio__color--disabled = rgba(0,0,0,0.26)
+
+//////////////////////    STYLES FOR MD RADIO BUTTON    ////////////////////////
+.md-radio-group
+  outline 0
+.label--radio-group
+  font-size 0.75rem
+  line-height normal
+  padding 0.5rem 0 0
+.md-radio-button
+  display inline-block
+  padding 0.75rem
+  position relative
+  $user-select-none()
+  &:focus
+    outline 0
+.md-radio-button__container
+  $align-items-center()
+  $display-flex()
+  $flex-direction(row)
+.md-radio-button__button
+  cursor pointer
+  height 1rem
+  position relative
+  width 1rem
+input.md-radio-button__button-input
+  $appearance-none()
+  border none
+  position absolute
+  width 0
+  height 0
+  margin 0
+  padding 0
+  opacity 0
+  $user-select-none()
+.md-radio-button__button-outer
+  border-color $md-button--radio__color--unchecked
+  border-radius: 50%
+  border solid 0.125rem
+  box-sizing content-box
+  height 0.75rem
+  left 0
+  position absolute
+  top 0
+  transition border-color 0.28s
+  width 0.75rem
+.md-radio-button__button-inner
+  background-color $md-button--radio__color--checked
+  border-radius 50%
+  box-sizing content-box
+  height 0.5rem
+  left 0.25rem
+  position absolute
+  top 0.25rem
+  -webkit-transform scale(0)
+  transform scale(0)
+  transition -webkit-transform ease 0.28s
+  transition transform ease 0.28s
+  width 0.5rem
+.md-radio-button__label
+  font-size 1rem
+  font-weight normal
+  line-height 1
+  padding  0 0 0 0.5rem
+  pointer-events none
+  position relative
+  white-space nowrap
+.md-radio-button[data-checked]
+  .md-radio-button__button-outer
+    border-color $md-button--radio__color--checked
+  .md-radio-button__button-inner
+    -webkit-transform scale(1)
+    transform scale(1)
+.md-radio-button[data-disabled]
+  .md-radio-button__button-outer
+    border-color $md-button--radio__color--disabled
+  .md-radio-button__button-inner,
+  .md-ripple__wave
+    background-color $md-button--radio__color--disabled
+  .md-radio-button__label
+    color $md-button--radio__color--disabled

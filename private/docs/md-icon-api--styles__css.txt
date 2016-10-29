@@ -1,0 +1,17 @@
+/* Make the group icon blue (at the default 24px size) */
+.md-icon.my-group {
+  color: blue;
+}
+
+/* Make the group icon red and 48px in size */
+.md-icon.my-group {
+  color: red;
+  height: 48px;
+  width: 48px;
+}
+
+/* Make the size of ALL icons 56px */
+.md-icon {
+  height: 56px;
+  width: 56px;
+}

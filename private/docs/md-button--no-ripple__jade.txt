@@ -1,0 +1,21 @@
+//- Use the 'no_ripple' parameter to turn it off
++md_button(
+  label="no ripple"
+  no_ripple=true
+)
++md_button(
+  label="no ripple"
+  raised=""
+  no_ripple=true
+)
+
+//- Disabled buttons do not ripple
++md_button(
+  label="ripple disabled"
+  disabled=""
+)
++md_button(
+  label="ripple disabled"
+  raised=""
+  disabled=""
+)

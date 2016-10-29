@@ -1,0 +1,50 @@
+template(name="md_toolbar__demo")
+  .component-title MD Toolbar
+  .demo-box
+    .demo-group.group--toolbar
+      .demo--toolbar.toolbar--standard
+        +md_toolbar(id="demo-toolbar--standard" with_shadow=true)
+        div(data-content-for-toolbar="demo-toolbar--standard")
+          +md_button(name="menu-1" icon="menu" icon_button="" toolbar_menu_button="")
+          .title Standard toolbar
+          .flex
+          +md_button(icon="more-vert" icon_button="")
+      .demo--toolbar.toolbar--medium
+        +md_toolbar(id="demo-toolbar--medium" classes="medium-tall")
+        div(data-content-for-toolbar="demo-toolbar--medium" data-bar="top")
+          +md_button(name="menu-2" icon="menu" icon_button="" toolbar_menu_button="")
+          .title Medium tall toolbar
+          .flex
+          +md_button(icon="more-vert" icon_button="")
+        div(data-content-for-toolbar="demo-toolbar--medium" data-bar="middle")
+          .title something in the middle bar
+      .demo--toolbar.toolbar--tall
+        +md_toolbar(id="demo-toolbar--tall" classes="tall" content="tallToolbarContent")
+  p.docs
+    span The above demo toolbars are generated using the following code.
+  +doc_box(
+    id="doc-box--md-toolbar"
+    id__tabs="md-toolbar__tabs"
+    tabs=tabs
+    name__spacebars="md-toolbar__spacebars"
+    name__jade="md-toolbar__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Toolbar API"
+  )
+
+template(name="tallToolbarContent")
+  .md-toolbar__bar.top(data-top-bar="")
+    +md_button(name="menu-3" icon="menu" icon_button="" toolbar_menu_button="")
+    .title Tall toolbar
+    .flex
+    +md_button(icon="more-vert" icon_button="")
+  .md-toolbar__bar.middle(data-middle-bar="")
+    .title something in the middle bar
+  .md-toolbar__bar.bottom(data-bottom-bar="")
+    .title something in the bottom bar
+
+//- MD Toolbar API Docs.
+template(name="md_toolbar__api")
+  h2.api__title MD Toolbar API
+  +coming_soon__api

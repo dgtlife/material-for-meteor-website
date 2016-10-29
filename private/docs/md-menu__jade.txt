@@ -1,0 +1,11 @@
+//- Menu items with text-only (populated by a helper).
++md_menu(id="demo-menu-helper" classes="md-shadow--2dp" menu_items=items__static_menu)
+.md-helper-text Populated by a helper
+
+//- Menu items that include icons (populated by 'import')
++md_menu(id="demo-menu-append" classes="md-shadow--2dp")
+.md-helper-text Populated by .appendChild()
+div(data-items-for="demo-menu-append")
+  +md_item(menu_item="" menu="demo-menu-append" classes="demo-icon-item" icon="lock" text="MD Item with icon 1" ripple=true)
+  +md_item(menu_item="" menu="demo-menu-append" classes="demo-icon-item" icon="account-key" text="MD Item with icon 2" ripple=true)
+  +md_item(menu_item="" menu="demo-menu-append" classes="demo-icon-item" icon="lock-open" text="MD Item with icon 3" ripple=true)

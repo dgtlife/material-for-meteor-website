@@ -1,0 +1,10 @@
+//- Launch a simple snackbar.
+MD.postSnackbar({ message: 'This is a simple MD Snackbar' });
+
+//- Launch an action snackbar.
+MD.postSnackbar({
+  message: 'This is an action MD Snackbar',
+  button__name: 'button--action',
+  button__label: 'action'
+});
+

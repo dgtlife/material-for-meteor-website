@@ -1,0 +1,32 @@
+template(name="md_checkbox__demo")
+  .component-title MD Checkbox
+  .demo-box
+    .demo-group
+      .demo--checkbox
+        .element-title The default (unckecked) checkbox.
+        +md_checkbox(label="Apples")
+      .demo--checkbox
+        .element-title A (pre-)checked checkbox.
+        +md_checkbox(label="Oranges" checked=true)
+      .demo--checkbox
+        .element-title A disabled unchecked checkbox.
+        +md_checkbox(label="Grapes" disabled=true)
+      .demo--checkbox
+        .element-title A disabled (pre-)checked checkbox.
+        +md_checkbox(label="Pears" checked="" disabled="")
+  p.docs The above checkboxes are generated using the following code.
+  +doc_box(
+    id="doc-box--md-checkbox"
+    id__tabs="md-checkbox__tabs"
+    tabs=tabs
+    name__spacebars="md-checkbox__spacebars"
+    name__jade="md-checkbox__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Checkbox API"
+  )
+
+
+template(name="md_checkbox__api")
+  h2.api__title MD Checkbox API
+  +coming_soon__api

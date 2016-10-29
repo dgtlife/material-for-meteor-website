@@ -1,0 +1,14 @@
+<!-- Flat MD Button with an icon -->
+{{> md_button
+  label="with icon"
+  with_icon=""
+  icon="account-key"
+}}
+
+<!-- Raised MD Button with an icon -->
+{{> md_button
+  label="with icon"
+  raised=""
+  with_icon=""
+  icon="vpn-key"
+}}

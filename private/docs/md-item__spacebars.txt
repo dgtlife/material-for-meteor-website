@@ -1,0 +1,31 @@
+<!-- Items with text only. -->
+{{> md_item
+  id="demo-item-1"
+  classes="demo-item"
+  text="MD Item 1"
+  ripple=true
+}}
+{{> md_item
+  id="demo-item-2"
+  classes="demo-item"
+  text="MD Item 2"
+  ripple=true
+}}
+
+<!-- Items with an icon and text. -->
+{{> md_item
+  id="demo-icon-item-1"
+  classes="demo-icon-item"
+  icon="person"
+  text="MD Icon Item 1"
+  ripple=true
+  offsetRipple=""
+}}
+{{> md_item
+  id="demo-icon-item-2"
+  classes="demo-icon-item"
+  icon="person-add"
+  text="MD Icon Item 2"
+  ripple=true
+  offsetRipple=""
+}}

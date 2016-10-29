@@ -1,0 +1,41 @@
+//- Header Panel declaration.
++md_header_panel(
+  classes="__container"
+  mode="waterfall-collapse"
+  has_toolbar=true
+  toolbar__id="__appbar"
+  toolbar__classes="__appbar tall"
+  use_bar_templates=true
+  toolbar__top_content="__appbar_top"
+  toolbar__middle_content="__appbar_middle"
+  toolbar__bottom_content="__appbar_bottom"
+  content__classes="__content"
+  using_cover_mode=true
+  covering_content__classes="__covering-content"
+  content="main_content"
+)
+
+...
+
+//- Header panel toolbars.
+template(name="__appbar_top")
+  +md_button(name="menu" icon="menu" icon_button="" toolbar_menu_button="" drawer_toggle="left")
+  .title(name="go-home") Material for Meteor
+  .flex
+  +md_button(icon="code" icon_button="" drawer_toggle="right" title="API menu")
+  +md_popup_menu(
+    position="bottom-left"
+    opening_animation="popup-bottom-left--default"
+    icon="more-vert"
+    menu__id="appbar-more"
+  )
+  div(data-items-for="appbar-more")
+    +md_item(menu_item="" menu="appbar-more" icon="github-circle" id="more-menu--get-package" text="Get package")
+
+template(name="__appbar_middle")
+  .title A Blaze implementation of Google's Material Design.
+
+template(name="__appbar_bottom")
+  .title.status (work in progress)
+  .flex
+  +md_button(icon="search" icon_button="")

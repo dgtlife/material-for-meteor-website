@@ -1,0 +1,100 @@
+template(name="md_dialog__demo")
+  .component-title MD Dialog
+  p.docs
+    | The buttons below each launch a dialog of the type indicated by the label
+    | on the button.
+  .demo-box
+    .demo-group.group--dialog
+      .demo--dialog
+        +md_button(id="launch-dialog--default" label="default")
+      .demo--dialog
+        +md_button(id="launch-dialog--set-width" label="set width")
+      .demo--dialog
+        +md_button(id="launch-dialog--action" label="action")
+      .demo--dialog
+        +md_button(id="launch-dialog--modal" label="modal")
+      .demo--dialog
+        +md_button(id="launch-dialog--scrollable" label="scrollable")
+  p.docs
+    span The dialogs are generated using the code below, and are each launched by an
+    code.inline MD.openDialog(id)
+    span call.
+  +doc_box(
+    id="doc-box--md-dialog"
+    id__tabs="md-dialog__tabs"
+    tabs=tabs
+    name__spacebars="md-dialog__spacebars"
+    name__jade="md-dialog__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Dialog API"
+  )
+
+//-Demo Dialogs to be launched by the buttons in the Dialog Demo. These dialogs
+   are placed at the bottom of the page.
+template(name="demo_dialogs")
+  //- A Default dialog.
+  +md_dialog(id="demo-dialog--default" content="default_dialog__content")
+
+  //- A 'Set Width' dialog with opening and closing animations.
+  +md_dialog(
+    id="demo-dialog--set-width"
+    width="280"
+    opening_animation="default"
+    closing_animation="default"
+  )
+  div(data-content-for="demo-dialog--set-width")
+    .md-dialog__title A Set Width dialog
+    .md-dialog__content
+      p This is a simple dialog, i.e. no action buttons, with a set width. It can be closed by clicking anywhere outside the dialog.
+
+  //- An Action dialog.
+  +md_dialog(
+    id="demo-dialog--action"
+    width="280"
+    backdrop_opacity="0.5"
+    content="action_dialog__content"
+  )
+
+  //- A Modal dialog.
+  +md_dialog(id="demo-dialog--modal" width="280" modal="")
+  div(data-content-for="demo-dialog--modal")
+    .md-dialog__title Modal dialog
+    .md-dialog__content
+      p This is a modal dialog. It can only be closed by clicking on an action button. It is displayed on a darker backdrop to emphasize focus. This demo modal dialog has a preset width.
+    .md-dialog__actions
+      +md_button(classes="dialog__button--cancel" label="cancel")
+      +md_button(classes="dialog__button--ok" label="ok")
+
+  //- A Scrollable dialog.
+  +md_dialog(id="demo-dialog--scrollable" width="280" height="400" scrollable="")
+  div(data-content-for="demo-dialog--scrollable")
+    .md-dialog__title Scrollable dialog
+    .md-dialog__content.content--scrollable
+      .md-dialog__content-to-scroll
+        p This dialog has a scrollable content area. It typically has a preset width and height.
+        +lorem_ipsum
+        +lorem_ipsum
+    .md-dialog__actions
+      +md_button(classes="dialog__button--decline" label="decline")
+      +md_button(classes="dialog__button--accept" label="accept")
+
+//- Content for the Default dialog.
+template(name="default_dialog__content")
+  .md-dialog__title Default dialog
+  .md-dialog__content
+    p This is a default dialog, i.e. only an id and content. The default dialog is 'auto-sized' based on the maximum allowed width. It can be closed by clicking anywhere outside the dialog.
+
+//- Content for the Action dialog.
+template(name="action_dialog__content")
+  .md-dialog__title Action dialog
+  .md-dialog__content
+    p This is an action dialog. This demo action dialog has a set width. It can be closed by clicking anywhere outside the dialog, or by clicking an action button.
+  .md-dialog__actions
+    +md_button(classes="dialog__button--cancel" label="cancel")
+    +md_button(classes="dialog__button--ok" label="ok")
+
+//- MD Dialog API Docs.
+template(name="md_dialog__api")
+  h2.api__title MD Dialog API
+  +coming_soon__api

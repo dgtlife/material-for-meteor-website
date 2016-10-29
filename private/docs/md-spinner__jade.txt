@@ -1,0 +1,17 @@
+//- Default MD Spinner (Google colors)
++md_spinner
+
+//- Mono-colored (hex or rgb) MD Spinner
++md_spinner(
+  color="mono"
+  color1="rgb(88,88,88)"
+)
+
+//- Multi-colored (hex or rgb) MD Spinner
++md_spinner(
+  color="multi"
+  color1="#673AB7"
+  color2="#009688"
+  color3="#FF9800"
+  color4="#00BCD4"
+)

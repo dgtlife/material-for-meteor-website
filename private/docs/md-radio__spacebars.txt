@@ -1,0 +1,42 @@
+<!-- Automatically populated by the helper 'quantityButtons' -->
+{{> md_radio_group
+  id="quantity-group"
+  group="quantity"
+  label="Quantity"
+  selected="one"
+  buttons=quantityButtons
+}}
+
+<!-- Automatically populated using .appendChild() -->
+{{> md_radio_group
+  id="fruit-group"
+  group="fruit"
+  label="Fruit"
+  selected="oranges"
+}}
+<div data-buttons-for="fruit"></div>
+  {{> md_radio_button
+    id="mdrb-apples"
+    group="fruit"
+    value="apples"
+    label="Apples"
+    disabled="true"
+  }}
+  {{> md_radio_button
+    id="mdrb-oranges"
+    group="fruit"
+    value="oranges"
+    label="Oranges"
+  }}
+  {{> md_radio_button
+    id="mdrb-grapes"
+    group="fruit"
+    value="grapes"
+    label="Grapes"
+  }}
+  {{> md_radio_button
+    id="mdrb-pears"
+    group="fruit"
+    value="pears"
+    label="Pears"
+  }}

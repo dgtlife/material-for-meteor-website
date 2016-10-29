@@ -1,0 +1,75 @@
+@require '../../global-styles'
+
+// Docs
+.doc-box,
+.api-box
+  margin 0
+  padding 1rem 0
+  //width 100%
+.api-box__code,
+.doc-box__code
+  border 0.0625rem solid $color--mfm__primary--2
+  $display-flex()
+  $flex-direction(column)
+//.api-box__code
+//  padding 0 0 1rem
+.doc-box__code .md-tabs__tab-bar
+  background-color $color--mfm__primary--2
+.doc-box__action
+  background-color #FFFFFF
+  text-align right
+  .md-button:first-of-type
+    margin-right 0
+.code-box__heading
+  font-size 0.875rem
+  margin 0.5rem 0
+.code-box__code
+  overflow-x scroll
+
+// Responsive
+@media only screen and (min-width: 840px)
+  .api-box__code .code-box
+    width calc(50% - 0.5rem)
+  .api-box__code.with-one-box .code-box,
+  .api-box__code .code-box.code__css
+    width 100%
+  .doc-box__action
+    margin 0
+    padding 0.5rem 1.5rem
+
+@media only screen and (max-width: 839px)
+  .code-box
+    width 100%
+
+@media only screen and (min-width: 600px) and (max-width: 839px)
+  .doc-box__action
+    margin 0
+    padding 0.5rem 1.5rem
+
+@media only screen and (max-width: 599px)
+  .doc-box__action
+    margin 0 -1rem
+    padding 0.5rem 1rem
+
+/////  Prism overrides
+code[class*="language-"],
+pre[class*="language-"]
+  -webkit-user-select text
+  font-family 'Roboto Mono', Menlo, Consolas, "Liberation Mono", Courier, monospace
+  font-size 0.75rem
+  text-shadow none
+pre[class*="language-"]
+  margin 0
+pre[class*="language-spacebars"]
+  background-color #E0F2F1
+pre[class*="language-jade"]
+  background-color #FFFDE7
+pre[class*="language-javascript"]
+  background-color #E3F2FD
+.line-numbers .line-numbers-rows
+  border-right 1px solid #C8C8C8
+div.prism-show-language > div.prism-show-language-label[data-language]
+  color #515151
+  background-color transparent
+  opacity 0.6
+  padding 0.25rem

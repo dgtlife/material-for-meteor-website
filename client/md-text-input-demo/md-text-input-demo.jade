@@ -1,0 +1,126 @@
+template(name="md_text_input__demo")
+  .component-title MD Text Input
+  p.docs The MD Text Field and the MD Text Area are the two components that offer direct entry of text. The MD Text Field is quite versatile and various configurations to illustrate that are displayed below, along with the MD Text Area.
+  .demo-box
+    .demo-group.group--input
+      .demo--input
+        .element-title A text field with a floating label (default)
+        +md_text_field(
+          id="demo-text-field--floating-label"
+          label="Text field label"
+          type="text"
+          helper_text="Helper text for this text field"
+        )
+      .demo--input
+        .element-title A text field with a non-floating label
+        +md_text_field(
+          id="demo-text-field--basic"
+          label="Text field label"
+          no_label_float=""
+          type="text"
+          helper_text="Helper text for this text field"
+        )
+    .spacer-80(style="display: inline-block; height: 20px; width: 100%;")
+    .divider.divider--dotted
+    .demo-group.group--input
+      .demo--input
+        .element-title A text field with a floating label and a preset value
+        +md_text_field(
+          id="demo-text-field--floating-preset"
+          label="Text field label"
+          type="text"
+          value="Existing value"
+          helper_text="Helper text for this text field"
+        )
+      .demo--input
+        .element-title A text field with a non-floating label and a preset value
+        +md_text_field(
+          id="demo-text-field--basic"
+          label="Text field label"
+          no_label_float=""
+          type="text"
+          value="Existing value"
+          helper_text="Helper text for this text field"
+        )
+    .spacer-80(style="display: inline-block; height: 20px; width: 100%;")
+    .divider.divider--dotted
+    .demo-group.group--input
+      .demo--input
+        .element-title A disabled and empty text field
+        +md_text_field(
+          id="demo-text-field-floating-disabled"
+          label="Text field label"
+          type="text"
+          helper_text="Helper text for this text field"
+          disabled="true"
+        )
+      .demo--input
+        .element-title A disabled text field with a preset value
+        +md_text_field(
+          id="demo-text-field--floating-disabled-preset"
+          label="Text field label"
+          type="text"
+          value="Existing value"
+          helper_text="Helper text for this text field"
+          disabled="true"
+        )
+    .spacer-80(style="display: inline-block; height: 20px; width: 100%;")
+    .divider.divider--dotted
+    .demo-group.group--input
+      .demo--input
+        .element-title A text field with a suffix
+        +md_text_field(
+          id="demo-text-field--with-suffix"
+          label="username"
+          label_classes="demo-username-label"
+          no_label_float=""
+          type="text"
+          input_classes="demo-username-input"
+          suffix="@dgtlife.com"
+          helper_text="Helper text for this text field"
+        )
+      .demo--input
+        .element-title A number field with a prefix and a suffix
+        +md_text_field(
+          id="demo-text-field--with-prefix-and-suffix"
+          label="Some number"
+          type="number"
+          prefix="$"
+          suffix="US"
+          helper_text="Helper text for this text field"
+        )
+    .divider.divider--dotted
+    .demo-group.group--input.group--textarea
+      .demo--input
+        .element-title A multi-line text area
+        +md_text_area(
+          id="demo-text-area"
+          label="Textarea label"
+          helper_text="Helper text for this text area"
+        )
+      .demo--input
+        .element-title A multi-line text area with existing value
+        +md_text_area(
+          id="demo-text-area--preset"
+          label="Textarea label"
+          value="The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The Lorem Ipsum is simply dummy text of the printing and typesetting industry. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog."
+          helper_text="Helper text for this text area"
+        )
+  p.docs The code that generates each of the above text input controls is provided below.
+  +doc_box(
+    id="doc-box--md-text-input"
+    id__tabs="md-text-input__tabs"
+    tabs=tabs
+    name__spacebars="md-text-input__spacebars"
+    name__jade="md-text-input__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Text Input API"
+  )
+
+//- MD Text Input API Docs.
+template(name="md_text_input__api")
+  h2.api__title MD Text Input API
+  .api__description
+    p
+      span Component in package with docs coming soon.

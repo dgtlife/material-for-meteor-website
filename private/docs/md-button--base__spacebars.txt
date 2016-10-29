@@ -1,0 +1,18 @@
+<!-- Flat MD Button (default) -->
+{{> md_button label="button"}}
+
+<!-- Raised MD Button -->
+{{> md_button label="raised" raised=""}}
+
+<!-- Disabled Flat MD Button -->
+{{> md_button
+  label="disabled"
+  disabled=""
+}}
+
+<!-- Disabled Raised MD Button -->
+{{> md_button
+  label="disabled"
+  raised=""
+  disabled=""
+}}

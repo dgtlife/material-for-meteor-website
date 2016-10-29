@@ -1,0 +1,53 @@
+template(name="md_tabs__demo")
+  .component-title MD Tabs
+  p
+    | Even though, each component demo uses an instance of MD Tabs to present
+    | its code, here is a clean generic example of four demo tabs, and tab panes.
+  .demo-box
+    .demo-group
+      .demo--tabs
+        +tabs_demo
+  p.docs The above demo tabs are generated using the following code.
+  +doc_box(
+    id="doc-box--md-tabs"
+    id__tabs="md-tabs__tabs"
+    tabs=tabs
+    name__spacebars="md-tabs__spacebars"
+    name__jade="md-tabs__jade"
+    name__js="md-tabs__js"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    code__js=code__js
+    api_screen="MD Tabs API"
+  )
+
+//- A convenience template to isolate the component from the rest of the demo
+    code.
+template(name="tabs_demo")
+  +md_tabs(
+    id="demo-tabs"
+    num_tabs="4"
+    selected="0"
+    slide=""
+    tab_bar__classes="tab-bar--demo"
+    tabs=demo_tabs
+  )
+  .demo--tabs__tab-panes
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-1")
+      h3 This is Tab 1
+      +lorem_ipsum
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-2")
+      h3 This is Tab 2
+      +lorem_ipsum
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-3")
+      h3 This is Tab 3
+      +lorem_ipsum
+    .md-tab-pane(data-tab-pane="" data-tab-pane-name="demo-tab-pane-4")
+      h3 This is Tab 4
+      +lorem_ipsum
+
+//- MD Tabs API Docs.
+template(name="md_tabs__api")
+  h2.api__title MD Tabs API
+  +coming_soon__api
+

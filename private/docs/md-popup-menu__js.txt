@@ -1,0 +1,26 @@
+// Helper that populates a menu.
+Template.md_popup_menu__demo.helpers({
+  ...
+
+  items__popup_menu__with_helper() {
+    return [
+      {
+        menu: 'demo-popup-menu-3',
+        id: 'demo-menu-item-1p-using-helper',
+        text: 'MD Menu Item 1 using helper'
+      },
+      {
+        menu: 'demo-popup-menu-3',
+        id: 'demo-menu-item-2p-using-helper',
+        text: 'MD Menu Item 2 using helper'
+      },
+      {
+        menu: 'demo-popup-menu-3',
+        id: 'demo-menu-item-3p-using-helper',
+        text: 'MD Menu Item 3 using helper'
+      }
+    ];
+  },
+
+  ...
+});

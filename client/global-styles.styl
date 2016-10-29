@@ -1,0 +1,503 @@
+// Variables
+$color--mfm__primary--1 = #009688
+$color--mfm__primary--2 = #80CBC4
+$color--mfm__primary--3 = #00796B
+$color--mfm__accent--1 = #9575CD
+$color--mfm__accent--2 = #B39DDB
+$color--mfm__accent--3 = #7E57C2
+$color--primary-text = rgba(0, 0, 0, 0.87)
+$color--secondary-text = rgba(0, 0, 0, 0.54)
+$color--helper-text = rgba(0, 0, 0, 0.38)
+$color--drawer__border = rgba(0, 0, 0, 0.12)
+$color--drawer__menu-bg = #F5F5F5
+$color--attention = #FFEE58
+
+/// MD typography scale
+$display2-size = 2.8125rem            // 45sp
+$display2-weight = 400
+$display1-size = 2.125rem             // 34sp
+$display1-weight = 400
+$headline-size = 1.5rem               // 24sp
+$headline-weight = 400
+$title-size = 1.25rem                 // 20sp
+$title-weight = 500
+$subhead-size = 1rem                  // 16sp
+$subhead-weight = 400
+$body2-size = 0.875rem                // 14sp
+$body2-weight = 500
+$body1-size = 0.875rem                // 14sp
+$body1-weight = 400
+$caption-size = 0.75rem               // 12sp
+$caption-weight = 400
+
+/////  MIXINS FOR VENDOR PREFIXED PROPERTIES /////
+$fill()
+  bottom 0
+  left 0
+  position absolute
+  right 0
+  top 0
+$align-items-start()
+  -ms-flex-align start
+  -webkit-align-items flex-start
+  align-items flex-start
+$align-items-center()
+  -ms-flex-align center
+  -webkit-align-items center
+  align-items center
+$appearance-none()
+  -ms-appearance none
+  -moz-appearance none
+  -webkit-appearance none
+  appearance none
+$display-flex()
+  display -ms-flexbox
+  display -webkit-flex
+  display flex
+$display-inline-flex()
+  display -ms-inline-flexbox
+  display -webkit-inline-flex
+  display inline-flex
+$flex-direction(direction)
+  -ms-flex-direction direction
+  -webkit-flex-direction direction
+  flex-direction direction
+$flex-wrap(value)
+  -ms-flex-wrap value
+  -webkit-flex-wrap value
+  flex-wrap value
+$justify-content-start()
+  -ms-flex-pack start
+  -webkit-justify-content flex-start
+  justify-content flex-start
+$justify-content-center()
+  -ms-flex-pack center
+  -webkit-justify-content center
+  justify-content center
+$justify-content-end()
+  -ms-flex-pack end
+  -webkit-justify-content flex-end
+  justify-content flex-end
+$justify-content-around()
+  -ms-flex-pack around
+  -webkit-justify-content space-around
+  justify-content space-around
+$justify-content-between()
+  -ms-flex-pack justify
+  -webkit-justify-content space-between
+  justify-content space-between
+$user-select-none()
+  -moz-user-select none
+  -ms-user-select none
+  -webkit-user-select none
+  user-select none
+
+// Font
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500)
+
+// HTML elements
+html
+  font-size 100%
+  height 100%
+
+.app,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  color $color--primary-text
+  font-family "Roboto", "Noto", "Helvetica Neue", Helvetica, "Segoe", Arial, sans-serif !important
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p
+  font-weight 400
+
+a
+  text-decoration none
+
+.app
+  height 100%
+  margin 0
+  min-width 20rem
+  overflow hidden
+  width 100%
+.___container
+  background-color #FAFAFA
+  height 100%
+  margin 0
+  overflow hidden
+  padding 0
+  position relative
+// The __appbar toolbar (not the demo toolbars)
+[name="go-home"]
+  cursor pointer
+.md-toolbar.__appbar
+  z-index 2
+  .md-button[data-icon-button]
+    color #FFFFFF
+.__appbar .md-toolbar__bar.middle .title
+  color #C8C8C8
+.status
+  color $color--attention
+// Drawers
+.md-drawer__header
+  $justify-content-center()
+  padding-left 1rem
+.md-toolbar.toolbar--demo-nav,
+.md-drawer__header.toolbar--api-nav
+  color $color--primary-text
+.md-toolbar.toolbar--demo-nav,
+.md-drawer__header.toolbar--api-nav
+  background-color $color--mfm__primary--1
+[data-drawer-menu]
+  background-color $color--drawer__menu-bg
+  height 100%
+  overflow scroll
+.__content
+  background-color #FFFFFF
+  max-width 1440px
+/// DEMO
+.home-intro
+  padding 1rem 0
+.demo-box
+  background-color #FFFFFF
+.demo-group
+  margin 0 auto
+  width 100%
+.demo-group
+  $align-items-center()
+  $display-flex()
+  $flex-direction(row)
+  $justify-content-around()
+.demo-group.group--toolbar
+  $flex-direction(column)
+p.docs
+  margin 1rem 0
+.component-title
+  background-color $color--mfm__primary--2
+  color $color--secondary-text
+  font-size 1.17rem
+  font-weight 500
+.group-title
+  color $color--secondary-text
+  font-size 1rem
+  font-weight 400
+  padding 1.33rem 0
+.element-title
+  color $color--secondary-text
+  font-size 0.83rem
+  font-weight 400
+  margin 0.5rem 0 1rem
+//.md-header-panel-demo-commands
+//  margin 0
+//  padding 0
+//  .with-one-box
+//    padding 0
+.demo--toolbar
+  background-color rgba(0,0,0,0.12)
+  border 1px solid rgba(0,0,0,0.12)
+  margin 1.5rem 0
+  position relative
+  width 100%
+.demo--toolbar .md-toolbar
+  background-color #2196F3
+  color $color--primary-text
+  position absolute
+.demo--toolbar.toolbar--standard
+  height 10rem
+  .md-toolbar__shadow
+    opacity 1
+    z-index 1
+.demo--toolbar.toolbar--medium
+  height 14rem
+.demo--toolbar.toolbar--tall
+  height 18rem
+.demo--tabs
+  border 0.0625rem solid $color--mfm__primary--1
+.demo--tabs__tab-panes .md-tab-pane
+  padding 1rem
+.demo--icon
+  text-align center
+  .md-icon
+    margin auto
+.md-icon
+  color #757575
+.demo--shadow
+  text-align center
+.div--shadow
+  border-radius: 0.125rem
+  height 3.5rem
+  margin: 2rem auto
+  position relative
+.demo--button,
+.demo--tooltip,
+.demo--snackbar,
+.demo--spinner
+  margin 1rem 0
+  text-align center
+.demo--snackbar .md-button
+  margin 0 auto
+.items-container,
+.items-container--icon
+  border 1px solid #d8d8d8
+  border-radius: 0.125rem
+  padding 0
+.demo--menu
+  padding-bottom 0.125rem
+.demo--popup
+  width 4.75rem
+.demo-username-label,
+.demo-username-input
+  text-align right
+.demo--input,
+.demo--image
+  padding-bottom 1rem
+.demo--image,
+.demo--image .md-helper-text
+  text-align center
+.md-image[data-sizing=contain]
+  background-color rgb(200,200,200)
+.md-image__placeholder.faded-out
+  transition opacity 5s linear
+  opacity 0
+.md-dialog__content-to-scroll
+  max-height 17.5rem
+/// DOCS
+code
+  font-family 'Roboto Mono', Menlo, Consolas, "Liberation Mono", Courier, monospace
+  text-shadow none
+  white-space pre
+  word-spacing normal
+  word-break normal
+  word-wrap normal
+  line-height normal
+.api__description
+  padding 0.0625rem 1rem
+.api__description,
+.api__template
+  background-color #FFFFFF
+  border 1px solid rgba(0,0,0,0.12)
+code.inline
+  color #673AB7
+.api__heading
+  padding 1rem 0
+.api__template
+  $align-items-center()
+  $display-flex()
+  $flex-direction(row)
+  height 3rem
+  $justify-content-start()
+  padding 0 1rem
+.template__label
+  padding-right 1rem
+.template__name
+  color #673AB7
+.api__section
+  background-color #FFFFFF
+  border-bottom 1px solid rgba(0,0,0,0.12)
+  border-left 1px solid rgba(0,0,0,0.12)
+  border-right 1px solid rgba(0,0,0,0.12)
+  margin-top 1rem
+.api__section.section--structure
+  margin-top 0
+.api__section code.inline
+  font-size 0.875rem
+.section__title
+  border-top 1px solid rgba(0,0,0,0.12)
+  font-size 1rem
+  padding 1rem
+.section__description
+  padding 0 1rem
+table.parameters,
+table.methods
+  border-collapse collapse
+  font-size 0.875rem
+  width 100%
+table.parameters tr,
+table.methods tr
+  height 3rem
+table.parameters tr th,
+table.parameters tr td,
+table.methods tr th,
+table.methods tr td
+  border-top 1px solid rgba(0,0,0,0.12)
+  padding 0.75rem 1rem
+table.parameters th.param,
+table.parameters th.type,
+table.methods th.method
+  text-align left
+table.methods td p
+  margin 0.75rem 0
+table.methods td p:first-of-type
+  margin-top 0
+td.param,
+td.method
+  font-weight 500
+td.method
+  vertical-align top
+  white-space nowrap
+.fake-table__container
+  padding 1rem 0
+.fake-table code
+  font-size 0.875rem
+.fake-row
+  $display-flex()
+  $justify-content-start()
+.fake-cell
+  padding 0.75rem 1rem
+.fake-cell p:first-of-type
+  margin-top 0
+.fake-cell.hp-mode__id
+  min-width 9.5rem
+// clearing
+.clearfix:before,
+.clearfix:after
+  display table
+  content " "
+.clearfix:after
+  clear: both
+
+.md-icon.inline-with-text
+  color #673AB7
+  display inline-flex
+  height 19px
+  transform translateY(5px)
+  width 19px
+.divider
+  background-color rgba(0, 0, 0, 0.12)
+  height 0.0625rem
+  width 100%
+.divider--dotted
+  background-color transparent
+  border-bottom 1px dotted rgba(0, 0, 0, 0.12)
+.divider--api
+  background-color transparent
+  height 1rem
+  width 100%
+.__indicators
+  bottom 0.25rem
+  position fixed
+  z-index 20
+.status--connection
+  height 1rem
+  width 1rem
+.status--connection.connected
+  color #4CAF50
+.status--connection.connecting
+  color #FF9800
+.status--connection.waiting
+  color #FFEB3B
+.status--connection.failed
+  color #F44336
+.status--connection.offline
+  color #383838
+
+/////  RESPONSIVE  /////
+@media only screen and (min-width: 600px)
+  .__appbar .md-toolbar__bar.top .title
+    font-size $headline-size
+  .__appbar .md-toolbar__bar.middle .title
+    font-size $title-size
+  .__appbar .md-toolbar__bar.bottom .title
+    font-size $subhead-size
+  .__content
+    margin auto
+    padding 0.5rem 1.5rem 1.5rem
+  .component-title
+    margin 0 -1.5rem
+    padding 1.17rem 1.5rem
+  .demo-box
+    margin 0
+    padding 1rem 1.5rem
+  .demo-group.group--textarea
+    $align-items-start()
+  .div--shadow
+    width 6.5rem
+  .demo--input
+    width 15rem
+  .demo-username-label,
+  .demo-username-input
+    width calc(15rem - 6rem)
+  .demo--image.fixed-size
+    width 15.5rem
+  .divider
+    margin 0 -1.5rem
+    padding 0 1.5rem
+  .__indicators
+    right 1.5rem
+  .fake-row
+    border-top 1px solid rgba(0,0,0,0.12)
+    $flex-direction(row)
+  .fake-cell.method
+    min-width 270px
+  .fake-table.hp-modes .fake-row:last-of-type
+    border-bottom 1px solid rgba(0,0,0,0.12)
+
+@media only screen and (max-width: 839px)
+  .demo--radio .md-radio-button
+    display block
+
+@media only screen and (max-width: 719px)
+  .fake-row.row--mode
+    $flex-direction(column)
+    .fake-cell.hp-mode__description
+      border-top 1px solid rgba(0,0,0,0.12)
+
+// Small tablet
+@media only screen and (max-width: 599px)
+  .__appbar .md-toolbar__bar.middle .title
+    font-size $title-size
+  .__appbar .md-toolbar__bar.middle .title,
+  .__appbar .md-toolbar__bar.bottom .title
+    font-size $subhead-size
+  .__content
+    padding 0.5rem 1rem 1.5rem
+  .component-title
+    margin 0 -1rem
+    padding 1.17rem 1rem
+  .demo-box
+    margin 0 -1rem
+    padding 1rem
+  .demo-group.group--menu,
+  .demo-group.group--input,
+  .demo-group.vertical-when-narrow
+    $flex-direction(column)
+  .demo-group.group--dialog
+    $flex-wrap(wrap)
+  .demo--input
+    width 100%
+  .demo-username-label,
+  .demo-username-input
+    width calc(100% - 6rem)
+  .hide-on-narrow
+    display none
+  .divider
+    margin 0 -1rem
+    padding 0 1rem
+  .__indicators
+    right 1rem
+  .hide-on-mobile
+    display none
+  table
+    overflow-x auto
+    display block
+  .fake-row.row--method
+    $flex-direction(column)
+    .fake-cell
+      border-top 1px solid rgba(0,0,0,0.12)
+
+@media only screen and (min-width: 480px) and (max-width: 599px)
+  .div--shadow
+    width 4.5rem
+
+@media only screen and (max-width: 479px)
+  .div--shadow
+    width 2.25rem

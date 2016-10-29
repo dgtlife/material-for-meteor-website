@@ -1,0 +1,91 @@
+//- A text field with a floating label (default).
++md_text_field(
+  id="demo-text-field--floating-label"
+  label="Text field label"
+  type="text"
+  helper_text="Helper text for this text field"
+)
+
+//- A text field with a non-floating label.
++md_text_field(
+  id="demo-text-field--basic"
+  label="Text field label"
+  no_label_float=""
+  type="text"
+  helper_text="Helper text for this text field"
+)
+
+//- A text field with a floating label and a preset value.
++md_text_field(
+  id="demo-text-field--floating-preset"
+  label="Text field label"
+  type="text"
+  value="Existing value"
+  helper_text="Helper text for this text field"
+)
+
+//- A text field with a non-floating label and a preset value.
++md_text_field(
+  id="demo-text-field--basic"
+  label="Text field label"
+  no_label_float=""
+  type="text"
+  value="Existing value"
+  helper_text="Helper text for this text field"
+)
+
+//- A disabled and empty text field.
++md_text_field(
+  id="demo-text-field-floating-disabled"
+  label="Text field label"
+  type="text"
+  helper_text="Helper text for this text field"
+  disabled="true"
+)
+
+//- A disabled text field with a preset value.
++md_text_field(
+  id="demo-text-field--floating-disabled-preset"
+  label="Text field label"
+  type="text"
+  value="Existing value"
+  helper_text="Helper text for this text field"
+  disabled="true"
+)
+
+//- A text field with a suffix.
++md_text_field(
+  id="demo-text-field--with-suffix"
+  label="username"
+  label_classes="demo-username-label"
+  no_label_float=""
+  type="text"
+  input_classes="demo-username-input"
+  suffix="@dgtlife.com"
+  helper_text="Helper text for this text field"
+)
+
+//- A number field with a prefix and a suffix.
++md_text_field(
+  id="demo-text-field--with-prefix-and-suffix"
+  label="Some number"
+  type="number"
+  prefix="$"
+  suffix="US"
+  helper_text="Helper text for this text field"
+)
+
+//- A multi-line text area.
++md_text_area(
+  id="demo-text-area"
+  label="Textarea label"
+  helper_text="Helper text for this text area"
+)
+
+//- A multi-line text area with existing value.
++md_text_area(
+  id="demo-text-area--preset"
+  label="Textarea label"
+  value="The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog. The Lorem Ipsum is simply dummy text of the printing and typesetting industry. The quick brown fox jumped over the lazy dog. The quick brown fox jumped over the lazy dog."
+  helper_text="Helper text for this text area"
+)

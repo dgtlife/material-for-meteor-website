@@ -1,0 +1,99 @@
+template(name="md_shadow__demo")
+  .component-title MD Shadow
+  .demo-box
+    .demo-group
+      .demo--shadow
+        .element-title
+          span 1dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--1dp
+      .demo--shadow
+        .element-title
+          span 2dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--2dp
+      .demo--shadow
+        .element-title
+          span 3dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--3dp
+      .demo--shadow
+        .element-title
+          span 4dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--4dp
+    .demo-group
+      .demo--shadow
+        .element-title
+          span 6dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--6dp
+      .demo--shadow
+        .element-title
+          span 8dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--8dp
+      .demo--shadow
+        .element-title
+          span 12dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--12dp
+      .demo--shadow.last
+        .element-title
+          span 16dp
+          span.hide-on-narrow Shadow
+        .div--shadow.md-shadow--16dp
+  p.docs The code below illustrates how the shadow is applied to a DIV.
+  +doc_box(
+    id="doc-box--md-shadow"
+    id__tabs="md-shadow__tabs"
+    tabs=tabs
+    name__spacebars="md-shadow__spacebars"
+    name__jade="md-shadow__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Shadow API"
+  )
+
+
+template(name="md_shadow__api")
+  h2.api__title MD Shadow API
+  .api__description
+    p
+      span An MD Shadow is an elevation effect produced by a CSS class on its element. It compares to Polymer paper-material in effect only, and not in implementation.
+  .api__heading API Reference
+  .api__template
+    .template__label Template
+    .template__name none (class only)
+  .api__section
+    .section__title MD Shadow classes
+    table.parameters
+      thead
+        tr
+          th.param Class
+          th.desc Description
+      tbody
+        tr
+          td.param .md-shadow--1dp
+          td.desc produces an elevation effect of 1dp
+        tr
+          td.param .md-shadow--2dp
+          td.desc produces an elevation effect of 2dp
+        tr
+          td.param .md-shadow--3dp
+          td.desc produces an elevation effect of 3dp
+        tr
+          td.param .md-shadow--4dp
+          td.desc produces an elevation effect of 4dp
+        tr
+          td.param .md-shadow--6dp
+          td.desc produces an elevation effect of 6dp
+        tr
+          td.param .md-shadow--8dp
+          td.desc produces an elevation effect of 8dp
+        tr
+          td.param .md-shadow--12dp
+          td.desc produces an elevation effect of 12dp
+        tr
+          td.param .md-shadow--16dp
+          td.desc produces an elevation effect of 16dp

@@ -1,0 +1,63 @@
+<!-- A standard toolbar with a menu button, title, and a 'more' button
+     populated by content import -->
+{{> md_toolbar id="demo-toolbar--standard" with_shadow=true}}
+<div data-content-for-toolbar="demo-toolbar--standard">
+  {{> md_button
+    name="menu-1"
+    icon="menu"
+    icon_button=""
+    toolbar_menu_button=""
+  }}
+  <div class="title">Standard toolbar</div>
+  <div class="flex"></div>
+  {{> md_button icon="more-vert" icon_button=""}}
+</div>
+
+<!-- A medium-tall toolbar with a menu button, 2 titles, and a 'more' button
+     populated by content import -->
+{{> md_toolbar id="demo-toolbar--medium" classes="medium-tall"}}
+<div data-content-for-toolbar="demo-toolbar--medium" data-bar="top">
+  {{> md_button
+    name="menu-2"
+    icon="menu"
+    icon_button=""
+    toolbar_menu_button=""
+  }}
+  <div class="title">Medium tall toolbar</div>
+  <div class="flex"></div>
+  {{> md_button icon="more-vert" icon_button=""}}
+</div>
+<div data-content-for-toolbar="demo-toolbar--medium" data-bar="middle">
+  <div class="title">something in the middle bar</div>
+</div>
+
+<!-- A tall toolbar with a menu button, 3 titles, and a 'more' button
+     populated using a content template -->
+{{> md_toolbar
+  id="demo-toolbar--tall"
+  classes="tall"
+  content="tallToolbarContent"
+}}
+
+...
+
+<!-- Content template for tall toolbar -->
+<template name="tallToolbarContent">
+  <div class="md-toolbar__bar top" data-top-bar="">
+    {{> md_button
+      name="menu-3"
+      icon="menu"
+      icon_button=""
+      toolbar_menu_button=""
+    }}
+    <div class="title">Tall toolbar</div>
+    <div class="flex"></div>
+    {{> md_button icon="more-vert" icon_button=""}}
+  </div>
+  <div class="md-toolbar__bar middle" data-middle-bar="">
+    <div class="title">something in the middle bar</div>
+  </div>
+  <div class="md-toolbar__bar bottom" data-bottom-bar="">
+    <div class="title">something in the bottom bar</div>
+  </div>
+</template>

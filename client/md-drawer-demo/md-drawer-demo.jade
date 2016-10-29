@@ -1,0 +1,218 @@
+template(name="md_drawer__demo")
+  .component-title MD Drawer
+  p.docs
+    | The MD Drawer demo involves the drawers on this site itself. The left
+    | drawer is used as a menu for the component demos, while the right drawer
+    | is used as a menu for the API pages. The responsive width for the left
+    | drawer is 960px, while the responsive width for the right drawer is 1440px.
+  p.docs
+    | With the screen width under 960px, use the
+    +md_icon(icon="menu" classes="inline-with-text")
+    | button as a toggle for the left drawer. At and above 960px, the left
+    | drawer will be docked with the header panel. Similarly, below 1440px,
+    | use the
+    +md_icon(icon="code" classes="inline-with-text")
+    | button as a toggle for the right drawer. At and above 1440px, the right
+    | drawer will be docked with the header panel.
+  p.docs
+    | On iOS devices in full-screen mode, and on Android devices, a swipe can be
+    | used to open and close the drawers. For example, a right edge pan opens
+    | the left drawer, and a left pan on the open left drawer closes it.
+  p.docs The drawers on this site are generated using the following code.
+  +doc_box(
+    id="doc-box--md-drawer"
+    id__tabs="md-drawer__tabs"
+    tabs=tabs
+    name__spacebars="md-drawer__spacebars"
+    name__jade="md-drawer__jade"
+    code__spacebars=code__spacebars
+    code__jade=code__jade
+    api_screen="MD Drawer API"
+  )
+
+//-////////////////////////  MD DRAWER API DOCS  ///////////////////////////////
+template(name="md_drawer__api")
+  h2.api__title MD Drawer API
+  .api__description
+    p
+      | An MD Drawer is a component that provides a drawer panel that is
+      | initially hidden off-screen, but can slide horizontally on to the screen
+      | to reveal its content. An MD Drawer must be used along with an MD Header
+      | Panel with which it can dock and undock based on the screen width.
+    p
+      | A drawer can be toggled open/closed using an icon button with the
+      | attribute
+      code.inline data-drawer-toggle
+      | . For example, the toggle button for the left drawer must have the
+      | attribute
+      code.inline data-drawer-toggle="left"
+      | . Once this attribute is assigned, no additional code is required from
+      | the package user to operate the drawer. Each such toggle button will
+      | also be automatically hidden when its respective drawer is docked.
+    p
+      | Alternatively the drawer can be manually opened and closed by the
+      | package user using the API methods described below.
+
+  .divider--api
+  .api__heading API Reference
+  .api__template
+    .template__label Template
+    .template__name md_drawer
+  .api__section.section--parameters
+    .section__title Template parameters
+    table.parameters
+      thead
+        tr
+          th.param Parameter
+          th.type Type
+          th.desc Description
+      tbody
+        tr
+          td.param
+            code position
+          td.type string
+          td.desc The position of the drawer (left|right)
+        tr
+          td.param
+            code id
+          td.type string
+          td.desc The id of the drawer element (optional)
+        tr
+          td.param
+            code name
+          td.type string
+          td.desc The name of the drawer element (optional)
+        tr
+          td.param
+            code classes
+          td.type string
+          td.desc A space-separate list of classes for the drawer element (optional)
+        tr
+          td.param
+            code width
+          td.type string
+          td.desc The width of the drawer, in pixels (optional). The default value is 192.
+        tr
+          td.param
+            code responsive_width
+          td.type string
+          td.desc The width of the screen, in pixels, at, and above which, the drawer will be docked with the header panel. The default value is 960 for both drawers.
+        tr
+          td.param
+            code has_header
+          td.type boolean
+          td.desc
+            code.inline True
+            span , if the drawer has a header element in the header area. The content and style of this header element is fully determinable by the package user.
+        tr
+          td.param
+            code header__id
+          td.type string
+          td.desc The id of the header element (optional)
+        tr
+          td.param
+            code header__name
+          td.type string
+          td.desc The name of the header element (optional)
+        tr
+          td.param
+            code header__classes
+          td.type string
+          td.desc A space-separate list of classes for the header element (optional)
+        tr
+          td.param
+            code header__content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the header element
+        tr
+          td.param
+            code has_toolbar
+          td.type boolean
+          td.desc
+            code.inline True
+            span , if the drawer has an integrated MD Toolbar in its header area (instead of a header element)
+        tr
+          td.param
+            code toolbar__id
+          td.type string
+          td.desc The id of the toolbar element (optional)
+        tr
+          td.param
+            code toolbar__classes
+          td.type string
+          td.desc A space-separate list of classes for the toolbar element (optional)
+        tr
+          td.param
+            code toolbar__top_content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the top bar of the toolbar
+        tr
+          td.param
+            code toolbar__middle_content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the middle bar of the toolbar
+        tr
+          td.param
+            code toolbar__bottom_content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the bottom bar of the toolbar
+        tr
+          td.param
+            code has_menu
+          td.type boolean
+          td.desc
+            code.inline True
+            span , if the drawer has a menu as its main content
+        tr
+          td.param
+            code menu__id
+          td.type string
+          td.desc The id of the menu element (optional)
+        tr
+          td.param
+            code menu__name
+          td.type string
+          td.desc The name of the menu element (optional)
+        tr
+          td.param
+            code menu__content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the menu
+        tr
+          td.param
+            code drawer__content
+          td.type string
+          td.desc The name of a Meteor template that provides the content for the drawer. This could be content for the main content area, or for the entire drawer, depending on whether there is also a header or toolbar above it.
+  .api__section.section--methods
+    .section__title Methods
+    .fake-table.methods
+      .fake-row.row--method
+        .fake-cell.method
+          code MD.openDrawer(drawerSpec)
+        .fake-cell.desc
+          p
+            span Opens a drawer specified by the
+            code.inline drawerSpec
+            span parameter. The
+            code.inline drawerSpec
+            span parameter is either the position (left|right) or the drawer element itself
+      .fake-row.row--method
+        .fake-cell.method
+          code MD.closeDrawer(drawerSpec)
+        .fake-cell.desc
+          p
+            span Closes a drawer specified by the
+            code.inline drawerSpec
+            span parameter. The
+            code.inline drawerSpec
+            span parameter is either the position (left|right) or the drawer element itself
+      .fake-row.row--method
+        .fake-cell.method
+          code MD.toggleDrawer(position)
+        .fake-cell.desc
+          p
+            span Toggles a drawer specified by the
+            code.inline position
+            span parameter (left|right).
+
+  .divider--api

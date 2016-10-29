@@ -1,0 +1,72 @@
+// Code box for demo blocks.
+template(name="doc_box")
+  .doc-box(id=id)
+    .doc-box__code
+      if code__javascript
+        +md_tabs(
+          id=id__tabs
+          num_tabs="3"
+          selected="0"
+          slide=""
+          tab_bar__classes="tab-bar--doc-box"
+          tabs=tabs
+        )
+      else
+        +md_tabs(
+          id=id__tabs
+          num_tabs="2"
+          selected="0"
+          slide=""
+          tab_bar__classes="tab-bar--doc-box"
+          tabs=tabs
+        )
+      .doc-box__tab-panes
+        .md-tab-pane(data-tab-pane="" data-tab-pane-name=name__spacebars)
+          .code-box.code__spacebars
+            .code-box__code
+              pre.line-numbers
+                code.language-spacebars=code__spacebars
+        .md-tab-pane(data-tab-pane="" data-tab-pane-name=name__jade)
+          .code-box.code__jade
+            .code-box__code
+              pre.line-numbers
+                code.language-jade=code__jade
+        if code__js
+          .md-tab-pane(data-tab-pane="" data-tab-pane-name=name__js)
+            .code-box.code__javascript
+              .code-box__code
+                pre.line-numbers
+                  code.language-javascript=code__js
+
+    .doc-box__action
+      +md_button(name="api-button" label="api" _data=api_screen)
+
+// Code box for API blocks.
+template(name="api_box")
+  .api-box(id=id class=classes)
+    .api-box__code(class=codeBoxClasses)
+      if code__spacebars
+        .code-box.code__spacebars
+          .code-box__code
+            pre.line-numbers
+              code.language-spacebars=code__spacebars
+      if code__js
+        .code-box.code__javascript
+          .code-box__code
+            pre.line-numbers
+              code.language-javascript=code__js
+      if code__jade
+        .code-box.code__jade
+          .code-box__code
+            pre.line-numbers
+              code.language-jade=code__jade
+      if code__coffee
+        .code-box.code__coffee
+          .code-box__code
+            pre.line-numbers
+              code.language-coffeescript=code__coffee
+      if code__css
+        .code-box.code__css
+          .code-box__code
+            pre.line-numbers
+              code.language-css=code__css

@@ -1,0 +1,28 @@
+Template.md_menu__demo.helpers({
+  ...
+
+  items__static_menu() {
+    return [
+      {
+        menu: 'demo-menu-helper',
+        id: 'demo-menu-item-1',
+        text: 'MD Menu Item 1'
+        ripple: true
+      },
+      {
+        menu: 'demo-menu-helper',
+        id: 'demo-menu-item-2',
+        text: 'MD Menu Item 2'
+        ripple: true
+      },
+      {
+        menu: 'demo-menu-helper',
+        id: 'demo-menu-item-3',
+        text: 'MD Menu Item 3'
+        ripple: true
+      }
+    ];
+  },
+
+  ...
+});

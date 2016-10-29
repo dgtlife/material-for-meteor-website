@@ -1,0 +1,11 @@
+<!-- The default (unckecked) checkbox. -->
+{{> md_checkbox label="Apples"}}
+
+<!-- A (pre-)checked checkbox. -->
+{{> md_checkbox label="Oranges" checked=true}}
+
+<!-- A disabled unchecked checkbox. -->
+{{> md_checkbox label="Grapes" disabled=true}}
+
+<!-- A disabled (pre-)checked checkbox. -->
+{{> md_checkbox label="Pears" checked="" disabled=""}}

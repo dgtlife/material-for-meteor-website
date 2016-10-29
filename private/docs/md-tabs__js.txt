@@ -1,0 +1,28 @@
+// The demo_tabs helper populates the tabs in the tab bar.
+Template.tabs_demo.helpers({
+  demo_tabs() {
+    "use strict";
+    return [
+      {
+        name: "demo-tab-pane-1",
+        label: "Tab 1",
+        ripple: true
+      },
+      {
+        name: "demo-tab-pane-2",
+        label: "Tab 2",
+        ripple: true
+      },
+      {
+        name: "demo-tab-pane-3",
+        label: "Tab 3",
+        ripple: true
+      },
+      {
+        name: "demo-tab-pane-4",
+        label: "Tab 4",
+        ripple: true
+      }
+    ];
+  }
+});

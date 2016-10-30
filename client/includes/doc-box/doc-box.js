@@ -5,6 +5,10 @@
  *
  * Created on 10/19/2016
  */
+
+import { Template } from 'meteor/templating';
+import { Mlib } from '/imports/lib/mlib.js';
+
 Template.doc_box.onRendered(function () {
   const docBox = this.firstNode;
 

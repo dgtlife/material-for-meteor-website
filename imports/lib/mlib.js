@@ -9,9 +9,7 @@
 import { Nav } from 'meteor/dgtlife:app-navigator';
 import { MD } from 'meteor/dgtlife:material';
 
-Mlib = {};
-_.extend(Mlib, {
-
+export const Mlib = {
   /**
    * Navigate to a selected component demo section.
    * @param {string} id - the id of the demo section
@@ -36,6 +34,10 @@ _.extend(Mlib, {
     }
   },
 
+  /**
+   * Set the width of a code box based on the width of the window.
+   * @param {object} codeBox - the code box element
+   */
   setBoxWidth(codeBox) {
     "use strict";
     const windowWidth = window.innerWidth;
@@ -51,5 +53,5 @@ _.extend(Mlib, {
       codeBox.style.width = 1440 + 'px';
     }
   }
-});
+};
 

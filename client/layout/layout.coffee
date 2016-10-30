@@ -5,6 +5,10 @@
 
   Created on 11/2/2015
 ###
+
+{ Template } = require 'meteor/templating'
+{ Mlib } = require '/imports/lib/mlib.js'
+
 # Connection Status indicator helpers.
 Template.registerHelper 'connection_status__icon_id', ->
   if Meteor.status().status is 'connected'

@@ -6,7 +6,8 @@
  * Created on 11/27/2015
  */
 
-import { Meteor } from 'meteor/meteor'
+import { Meteor } from 'meteor/meteor';
+import { check } from 'meteor/check';
 
 class Code {
   constructor() {

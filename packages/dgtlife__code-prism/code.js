@@ -1,11 +1,12 @@
 /**
- * @file Defines the Code class, and instantiates it.
+ * @file Defines the Code class, and creates an instance.
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2015
  *
  * Created on 11/27/2015
  */
 
+import { Mongo } from 'meteor/mongo'
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 

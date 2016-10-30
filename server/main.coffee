@@ -6,6 +6,7 @@
   Created on 1/20/2015
 ###
 
+{ MD } = require 'meteor/dgtlife:material'
 { C } = require 'meteor/dgtlife:code-prism'
 
 console.log ' '                                                                            # DEBUG

@@ -5,6 +5,8 @@
  * Created on 11/1/2015
  */
 
+import { Nav } from 'meteor/dgtlife:app-navigator';
+
 // Register the Home screen.
 Nav.registerScreen('Home', {
   contentHelperMap: [{

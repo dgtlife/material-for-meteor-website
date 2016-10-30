@@ -1,4 +1,6 @@
-import { C } from 'meteor/dgtlife:code-prism'
+import { Nav } from 'meteor/dgtlife:app-navigator';
+import { C } from 'meteor/dgtlife:code-prism';
+import { MD } from 'meteor/dgtlife:material';
 
 // Configure Nav.
 Nav.config = {
@@ -40,4 +42,3 @@ MD.options = {
     '__indicators'
   ]
 };
-

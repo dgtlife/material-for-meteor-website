@@ -6,30 +6,33 @@
  * Created on 12/20/2015
  */
 
-Mlib = {};
+import { Nav } from 'meteor/dgtlife:app-navigator';
+import { MD } from 'meteor/dgtlife:material';
 
+Mlib = {};
 _.extend(Mlib, {
 
   /**
-   * ToDo: Improve the timing associated with the else branch.
    * Navigate to a selected component demo section.
    * @param {string} id - the id of the demo section
    */
   navToDemo(id) {
     "use strict";
-    function _scrollToDemo() {
-      const demo = MD.dgEBI(id);
-      const content = MD.dqS('[data-content]');
+    const content = MD.dqS('[data-content]');
+
+    // Scrolls a demo element to the top of the content element.
+    function _scrollToDemo(demo) {
       content.scrollTop = demo.offsetTop - demo.parentNode.offsetTop + 8;
     }
 
+    // Handle on-Home and off-Home cases.
     if (Nav.reactive.get('currentScreen') === 'Home') {
-      _scrollToDemo();
+      _scrollToDemo(MD.dgEBI(id));
     } else {
       Nav.toScreen('Home');
-      Meteor.setTimeout(function () {
-        _scrollToDemo();
-      }, 650);
+
+      // Wait for the demo element to render before scrolling up.
+      MD.waitForElement(content, '#' + id,  _scrollToDemo, 0);
     }
   },
 

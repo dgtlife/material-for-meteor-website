@@ -1,0 +1,13 @@
+{
+  "name": "mfm-automation-tasks",
+  "version": "0.1.0",
+  "description": "An app that automates various repetitive dev and test tasks",
+  "author": "Derek Gransaull <derek@dgtlife.com>",
+  "license": "CC-BY-NC-1.0",
+  "repository": "",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-rsync": "^2.0.1"
+  }
+}

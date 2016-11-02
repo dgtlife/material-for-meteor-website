@@ -23,13 +23,15 @@ module.exports = function(grunt) {
       projectFiles: {
         options: {
           src: '../',
-          dest: '/Volumes/DGTLabs/run/material-for-meteor'
+          dest: '/home/devops/DevLab/run/material-for-meteor',
+          host: 'devops@hydra'
         }
       },
       packagesFile: {
         options: {
           src: '../.meteor/packages',
-          dest: '/Volumes/DGTLabs/run/material-for-meteor/.meteor/packages'
+          dest: '/home/devops/DevLab/run/material-for-meteor/.meteor/packages',
+          host: 'devops@hydra'
         }
       }
     },

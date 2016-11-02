@@ -1,2 +1,2 @@
 # Material for Meteor
-This app is the development environment for the dgtlife:material package within the code base for the Material for Meteor website.
+This app is the development environment as well as the showcase and docs website for the ```dgtlife:material``` package.

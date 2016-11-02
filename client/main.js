@@ -1,3 +1,4 @@
+// The entry point for the client.
 import { Nav } from 'meteor/dgtlife:app-navigator';
 import { C } from 'meteor/dgtlife:code-prism';
 import { MD } from 'meteor/dgtlife:material';

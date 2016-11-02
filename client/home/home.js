@@ -1,5 +1,5 @@
 /**
- * @file Helpers, event handlers, and the on-render callback for the layout template
+ * @file Helpers, event handlers, and the on-render callback for the home template
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2015
  * Created on 11/1/2015

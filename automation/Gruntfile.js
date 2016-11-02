@@ -12,39 +12,52 @@ module.exports = function(grunt) {
       options: {
         args: ['--quiet'],
         exclude: [
-          ".DS_Store",
-          ".git*",
-          ".idea",
-          ".meteor",
-          "automation",
-          "tests"],
+          '.DS_Store',
+          '.git*',
+          '.idea',
+          '.meteor',
+          'automation',
+          'tests'],
         recursive: true
       },
       projectFiles: {
         options: {
-          src: "../",
-          dest: "/home/devops/DGTLabs/run/material-for-meteor/"
+          src: '../',
+          dest: '/Volumes/DGTLabs/run/material-for-meteor'
         }
       },
       packagesFile: {
         options: {
-          src: "../.meteor/packages",
-          dest: "/home/devops/DGTLabs/run/material-for-meteor/.meteor/packages"
+          src: '../.meteor/packages',
+          dest: '/Volumes/DGTLabs/run/material-for-meteor/.meteor/packages'
         }
       }
     },
 
-    // Watch the project files and trigger an rsync when there are changes.
+    // Watch project files and trigger rsync:projectFiles on changes.
     watch: {
       allFiles: {
         files: [
-          '../*.jade',
-          '../*.html',
-          '../*.js',
-          '../*.coffee'
+          '**/*.jade',
+          '**/*.html',
+          '**/*.js',
+          '**/*.coffee',
+          '**/*.styl',
+          '**/*.css',
+          '**/*.svg',
+          '**/*.json',
+          '**/*.txt',
+          '**/*.md',
+          '!**/.DS_Store',
+          '!../.git/**',
+          '!../.idea/**',
+          '!../.meteor/**',
+          '!../automation/**',
+          '!**/node_modules/**'
         ],
         tasks: 'rsync:projectFiles',
         options: {
+          cwd: '/Users/Derek//DGTLife/WebDev/material-for-meteor',
           event: 'all'
         }
       }

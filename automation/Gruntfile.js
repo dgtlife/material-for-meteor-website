@@ -59,7 +59,7 @@ module.exports = function(grunt) {
         ],
         tasks: 'rsync:projectFiles',
         options: {
-          cwd: '../../material-for-meteor',
+          cwd: '../',
           event: 'all'
         }
       }

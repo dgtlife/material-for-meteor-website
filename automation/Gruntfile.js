@@ -7,7 +7,7 @@
 
 module.exports = function(grunt) {
   grunt.initConfig({
-    // Sync the files in this app with those in the corresponding run directory.
+    // Sync the files in this app with those in the relevant 'run' directory.
     rsync: {
       options: {
         args: ['--quiet'],

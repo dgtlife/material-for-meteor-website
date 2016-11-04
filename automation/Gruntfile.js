@@ -5,7 +5,7 @@
  * Created on 10/31/16
  */
 
-module.exports = function(grunt) {
+module.exports = function initGrunt(grunt) {
   grunt.initConfig({
     // Sync the files in this app with those in the relevant 'run' directory.
     rsync: {
@@ -15,22 +15,15 @@ module.exports = function(grunt) {
           '.DS_Store',
           '.git*',
           '.idea',
-          '.meteor',
           'automation',
-          'tests'],
+          'tests'
+        ],
         recursive: true
       },
       projectFiles: {
         options: {
           src: '../',
           dest: '/home/devops/DevLab/run/material-for-meteor',
-          host: 'devops@hydra'
-        }
-      },
-      packagesFile: {
-        options: {
-          src: '../.meteor/packages',
-          dest: '/home/devops/DevLab/run/material-for-meteor/.meteor/packages',
           host: 'devops@hydra'
         }
       }
@@ -50,11 +43,11 @@ module.exports = function(grunt) {
           '**/*.json',
           '**/*.txt',
           '**/*.md',
+          '.meteor/packages',
           '!**/.DS_Store',
-          '!../.git/**',
-          '!../.idea/**',
-          '!../.meteor/**',
-          '!../automation/**',
+          '!**/.git/**',
+          '!.idea/**',
+          '!automation/**',
           '!**/node_modules/**'
         ],
         tasks: 'rsync:projectFiles',
@@ -73,7 +66,5 @@ module.exports = function(grunt) {
   // Define the tasks.
   grunt.registerTask('default', 'rsync:projectFiles');
   grunt.registerTask('project', 'rsync:projectFiles');
-  grunt.registerTask('packages', 'rsync:packagesFile');
   grunt.registerTask('watchAll', 'watch:allFiles');
-
 };

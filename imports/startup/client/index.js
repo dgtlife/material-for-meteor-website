@@ -4,6 +4,7 @@
  * @copyright DGTLife, LLC 2016
  * Created on 1/20/2016
  */
+/* global Prism:true */
 
 import { Nav } from 'meteor/dgtlife:app-navigator';
 import C from 'meteor/dgtlife:code-prism';
@@ -11,11 +12,14 @@ import { MD } from 'meteor/dgtlife:material';
 
 console.log('################### THIS IS THE START OF A NEW RUN ####################');
 
+// Check that the Code metadata subscription is ready.
+function isCodeReady() {
+  return C && C.metadata && C.metadata.ready();
+}
+
 // Configure Nav.
 Nav.config = {
-  contentHelpers: [
-    'screen_content'
-  ],
+  contentHelpers: ['screen_content'],
 
   afterScreens() {
     // Scroll to the top
@@ -24,28 +28,18 @@ Nav.config = {
     }
 
     // Highlight code.
-    Meteor.setTimeout(function () {
+    Meteor.defer(() => {
       Prism.highlightAll();
     }, 0);
   },
 
   conditionsToWaitFor: {
-    okToLoad: [
-      function () {
-        return C && C.metadata && C.metadata.ready();
-      }
-    ],
-    okToReload: [
-      function () {
-        return C && C.metadata && C.metadata.ready();
-      }
-    ]
+    okToLoad: [isCodeReady],
+    okToReload: [isCodeReady]
   }
 };
 
 // Configure MD.
 MD.options = {
-  elementsToMove: [
-    '__indicators'
-  ]
+  elementsToMove: ['__indicators']
 };

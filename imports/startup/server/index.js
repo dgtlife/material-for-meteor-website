@@ -60,7 +60,7 @@ MD.selectIcons([
       'view-list',
       'visibility-off',
       'visibility',
-      'warning',
+      'warning'
     ]
   },
   {

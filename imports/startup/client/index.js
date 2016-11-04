@@ -6,7 +6,7 @@
  */
 
 import { Nav } from 'meteor/dgtlife:app-navigator';
-import { C } from 'meteor/dgtlife:code-prism';
+import C from 'meteor/dgtlife:code-prism';
 import { MD } from 'meteor/dgtlife:material';
 
 console.log('################### THIS IS THE START OF A NEW RUN ####################');

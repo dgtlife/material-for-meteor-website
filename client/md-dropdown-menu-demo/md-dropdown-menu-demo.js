@@ -1,4 +1,4 @@
-import { C } from 'meteor/dgtlife:code-prism'
+import C from 'meteor/dgtlife:code-prism'
 
 // Helpers for the MD Dropdown Menu demo block.
 Template.md_dropdown_menu__demo.helpers({

@@ -1,4 +1,4 @@
-import { C } from 'meteor/dgtlife:code-prism'
+import C from 'meteor/dgtlife:code-prism'
 
 // Helpers for the MD Collapse demo block.
 Template.md_collapse__demo.helpers({

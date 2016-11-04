@@ -23,7 +23,19 @@
     "settings": {
       "import/resolver": "meteor"
     },
-    "rules": {}
+    "env": {
+      "meteor": true,
+      "node": true,
+      "browser": true
+    },
+    "rules": {
+      "comma-dangle": ["error", "never"],
+      "no-console": 0,
+      "import/no-unresolved": [
+        2, { "ignore": ["^meteor/"] }
+      ],
+      "import/no-extraneous-dependencies": "off"
+    }
   },
   "dependencies": {
     "meteor-node-stubs": "~0.2.0"

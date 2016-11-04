@@ -1,4 +1,4 @@
-import { C } from 'meteor/dgtlife:code-prism'
+import C from 'meteor/dgtlife:code-prism'
 
 // Helpers for the demo docs.
 Template.md_chip__demo.helpers({

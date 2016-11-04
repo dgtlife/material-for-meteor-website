@@ -1,4 +1,4 @@
-{ C } = require 'meteor/dgtlife:code-prism'
+C = require('meteor/dgtlife:code-prism').default
 
 # Helpers for the demo docs.
 Template.md_toolbar__demo.helpers

@@ -9,6 +9,7 @@
 import { Mongo } from 'meteor/mongo'
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
+import { _ } from 'meteor/underscore';
 
 class Code {
   constructor() {
@@ -25,22 +26,20 @@ class Code {
    * @returns {*}
    */
   getText(filename) {
-    "use strict";
     if (this.metadata.ready()) {
       return this.db.findOne({ fileName: filename }).fileText;
-    } else {
-      return undefined;
     }
+
+    return undefined;
   }
 
   /**
    * Load the code files. For each file insert a metadata object into the 'code'
    * collection.
-   * @param {array} fileList - an array of objects defining the files that
+   * @param {Array} fileList - an array of objects defining the files that
    *                           contain the code
    */
   loadCode(fileList) {
-    "use strict";
     if (Meteor.isServer) {
       // Initialize the database, i.e. delete everything from a previous run.
       this.db.remove({});
@@ -62,18 +61,16 @@ class Code {
       });
 
       // Publish this 'code' collection.
-      Meteor.publish('code', () => {
-        "use strict";
-        return this.db.find();
-      });
+      Meteor.publish('code', () => this.db.find());
     }
   }
 }
 
-// Export as C.
-export const C = new Code();
+// Export an instance C as default.
+const C = new Code();
+export default C;
 
-// Subscribe to the 'code' collection.
+// On the client, subscribe to the 'code' collection.
 if (Meteor.isClient) {
   C.metadata = Meteor.subscribe('code');
 }

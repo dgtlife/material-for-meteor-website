@@ -1,4 +1,4 @@
-import { C } from 'meteor/dgtlife:code-prism'
+import C from 'meteor/dgtlife:code-prism'
 
 // Helpers for the MD Checkbox demo block.
 Template.md_checkbox__demo.helpers({

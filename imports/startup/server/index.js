@@ -5,10 +5,11 @@
  * Created on 1/20/2016
  */
 
-console.log('################### THIS IS THE START OF A NEW RUN ####################');
-
 import { MD } from 'meteor/dgtlife:material';
-import { C } from 'meteor/dgtlife:code-prism';
+import C from 'meteor/dgtlife:code-prism';
+
+// Banner
+console.log('################### THIS IS THE START OF A NEW RUN ####################');
 
 // Icons selected from the included icon sets.
 MD.selectIcons([

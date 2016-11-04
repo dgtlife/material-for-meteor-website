@@ -27,7 +27,7 @@ stylus
 
 dgtlife:material
 dgtlife:app-navigator
-dgtlife:app-platform
+dgtlife:platform
 dgtlife:code-prism
 
 ########################################################################

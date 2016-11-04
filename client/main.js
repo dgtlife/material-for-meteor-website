@@ -4,4 +4,4 @@
  * @copyright DGTLife, LLC 2016
  * Created on 11/2/16
  */
-import '/imports/startup/client';
+import '../imports/startup/client';

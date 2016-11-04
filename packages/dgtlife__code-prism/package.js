@@ -11,7 +11,7 @@ Package.describe({
   name: 'dgtlife:code-prism'
 });
 
-Package.onUse(function (api) {
+Package.onUse((api) => {
   api.use('ecmascript', ['client', 'server']);
   api.use('underscore', ['client', 'server']);
   api.use('check', ['client', 'server']);

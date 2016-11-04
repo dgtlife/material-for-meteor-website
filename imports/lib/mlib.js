@@ -9,18 +9,17 @@
 import { Nav } from 'meteor/dgtlife:app-navigator';
 import { MD } from 'meteor/dgtlife:material';
 
-export const Mlib = {
+const Mlib = {
   /**
    * Navigate to a selected component demo section.
    * @param {string} id - the id of the demo section
    */
   navToDemo(id) {
-    "use strict";
     const content = MD.dqS('[data-content]');
 
     // Scrolls a demo element to the top of the content element.
     function _scrollToDemo(demo) {
-      content.scrollTop = demo.offsetTop - demo.parentNode.offsetTop + 8;
+      content.scrollTop = (demo.offsetTop - demo.parentNode.offsetTop) + 8;
     }
 
     // Handle on-Home and off-Home cases.
@@ -30,7 +29,8 @@ export const Mlib = {
       Nav.toScreen('Home');
 
       // Wait for the demo element to render before scrolling up.
-      MD.waitForElement(content, '#' + id,  _scrollToDemo, 0);
+      const demoSelector = `#${id}`;
+      MD.waitForElement(content, demoSelector, _scrollToDemo, 0);
     }
   },
 
@@ -39,19 +39,24 @@ export const Mlib = {
    * @param {object} codeBox - the code box element
    */
   setBoxWidth(codeBox) {
-    "use strict";
+    const box = codeBox;
     const windowWidth = window.innerWidth;
+    let boxWidth;
     if (windowWidth < 600) {
-      codeBox.style.width = (windowWidth - 32) + 'px';
+      boxWidth = windowWidth - 32;
     } else if ((windowWidth >= 600) && (windowWidth < 960)) {
-      codeBox.style.width = (windowWidth - 48) + 'px';
+      boxWidth = windowWidth - 48;
     } else if ((windowWidth >= 960) && (windowWidth < 1440)) {
-      codeBox.style.width = (windowWidth - 192 - 48) + 'px';
+      boxWidth = windowWidth - 192 - 48;
     } else if ((windowWidth >= 1440) && (windowWidth < 1824)) {
-      codeBox.style.width = (windowWidth - 192 - 192 - 48) + 'px';
+      boxWidth = windowWidth - 192 - 192 - 48;
     } else {
-      codeBox.style.width = 1440 + 'px';
+      boxWidth = 1440;
     }
+
+    box.style.width = `${boxWidth}px`;
   }
 };
+
+export default Mlib;
 

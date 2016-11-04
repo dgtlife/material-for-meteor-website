@@ -7,7 +7,7 @@
 ###
 
 { Template } = require 'meteor/templating'
-{ Mlib } = require '/imports/lib/mlib.js'
+Mlib = require('/imports/lib/mlib.js').default
 
 # Connection Status indicator helpers.
 Template.registerHelper 'connection_status__icon_id', ->

@@ -7,7 +7,7 @@
  */
 
 import { Template } from 'meteor/templating';
-import { Mlib } from '/imports/lib/mlib.js';
+import Mlib from '../../../imports/lib/mlib';
 
 Template.doc_box.onRendered(function () {
   const docBox = this.firstNode;

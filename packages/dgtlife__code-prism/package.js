@@ -7,7 +7,7 @@
  */
 Package.describe({
   summary: 'Render code as text into a Blaze template helper and color with Prism',
-  version: '0.6.1',
+  version: '0.7.0',
   name: 'dgtlife:code-prism'
 });
 

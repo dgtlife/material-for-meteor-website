@@ -5,9 +5,8 @@
  *
  * Created on 12/20/2015
  */
-
-import { Nav } from 'meteor/dgtlife:app-navigator';
 import { MD } from 'meteor/dgtlife:material';
+import Nav from 'meteor/dgtlife:navigate';
 
 const Mlib = {
   /**

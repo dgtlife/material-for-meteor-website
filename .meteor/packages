@@ -26,7 +26,7 @@ dalgard:jade
 stylus
 
 dgtlife:material
-dgtlife:app-navigator
+dgtlife:navigate
 dgtlife:platform
 dgtlife:code-prism
 

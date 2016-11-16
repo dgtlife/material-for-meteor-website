@@ -35,9 +35,6 @@ class Navigate {
        */
       ignoreTrailingSlash: true,
 
-      // Enable/disable case sensitivity.
-      ignoreCase: false,
-
       /*
        * Enable/disable support for using the Back/Forward buttons of the
        * browser.
@@ -56,7 +53,10 @@ class Navigate {
        */
       inAppModeOnAndroid: null,
 
-      // The first screen that loads in an authenticated session in app mode.
+      // The first screen that loads in a non-authenticated session in App Mode.
+      appModePublicHome: 'Home',
+
+      // The first screen that loads in an authenticated session in App Mode.
       appModeUserHome: 'Home',
 
       // A function that runs before each and every screen is rendered.
@@ -81,14 +81,17 @@ class Navigate {
     // The array of screen objects.
     this.screens = [];
 
-    // An array of objects containing the name-pathPattern pairs, optionally
-    // associated with screens, and used to match a path to a screen when URLs are
-    // supported. Initialize it.
+    /*
+     * An array of objects containing the name-pathPattern pairs, optionally
+     * associated with screens, and used to match a path to a screen when URLs
+     * are supported.
+     */
     this.pathLookup = [];
 
-    // The navigation stack (nav stack) keeps track of the screen transition
-    // history for mobile devices when browser history is not being used, i.e. in
-    // app mode or in a Cordova-based native app. Initialize it.
+    /*
+     * The navigation stack (nav stack) keeps track of the screen transition
+     * history for App Mode, i.e. when browser history is not being.
+     */
     this.navStack = [];
 
     // A reactive dictionary.
@@ -184,7 +187,7 @@ class Navigate {
     }
 
     // If the screen is not already registered, then register it.
-    if (!this.screens[name]) {
+    if (!this._getScreen(name)) {
       // Initialize a screen object.
       let screen = {
         name: name
@@ -196,9 +199,8 @@ class Navigate {
       // Assign the other screen properties provided in the options.
       screen = _.extend(screen, options);
 
-      // Add this screen object to the 'screens' array. ToDo: refactor
-      this.screens[name] = screen;
-      this.screens.push(this.screens[name]);
+      // Add this screen object to the 'screens' array.
+      this.screens.push(screen);
 
       // Add the path pattern object to the path lookup array.
       if (options.path || options.pathMask) {
@@ -220,6 +222,15 @@ class Navigate {
   }
 
   /**
+   * Get the screen object when given the name of the screen.
+   * @param {string} name - the name of the screen
+   * @private
+   */
+  _getScreen(name) {
+    return _.findWhere(this.screens, { name: name });
+  }
+
+  /**
    * Register a 'data-navlink' attribute to enable HTML 'pseudo-links' to a
    * screen from any element with that attribute. This is meant for app mode but
    * works in all modes.
@@ -229,7 +240,7 @@ class Navigate {
     const eventMap = {};
     const eventKey =
             `click [data-navlink=
-            to-${this.screens[name].name.replace(/\s+/g, '-').toLowerCase()}]`;
+            to-${name.replace(/\s+/g, '-').toLowerCase()}]`;
     eventMap[eventKey] = (event) => {
       event.preventDefault();
       this.toScreen(name);
@@ -261,7 +272,6 @@ class Navigate {
     check(userConfig.contentHelpers, Match.Optional([String]));
     check(userConfig.supportUrls, Match.Optional(Boolean));
     check(userConfig.ignoreTrailingSlash, Match.Optional(Boolean));
-    check(userConfig.ignoreCase, Match.Optional(Boolean));
     check(userConfig.useBrowserBackAndForward, Match.Optional(Boolean));
     check(userConfig.inAppModeOnIos, Match.Optional(Boolean));
     check(userConfig.inAppModeOnAndroid, Match.Optional(Boolean));
@@ -297,9 +307,10 @@ class Navigate {
         useBrowserBackAndForward: false
       });
 
-      // Run in app mode and (eventually) load the app-mode start screen.
-      // ToDo: Add a config property/function for app mode start screens - public, user
-      this._startAppMode();
+      // Run in App Mode and (eventually) load the App Mode start screen.
+      const publicHome = this.config.appModePublicHome;
+      const userHome = this.config.appModeUserHome;
+      this._startAppMode(publicHome, userHome);
     } else {
       /*
        * We're in browser mode (on any device), so respond to Back and Forward
@@ -344,26 +355,29 @@ class Navigate {
 
   /**
    * Start app mode, i.e. without support for an entered URL or reload of a
-   * specific screen. Instead, go to the public Home or user "Home" on load.
+   * specific screen. Instead, go to the public "Home" screen or user "Home"
+   * screen on load.
+   * @param {string} publicHome - the screen that public users start at
+   * @param {string} userHome - the screen that authenticated users start at
    * @private
    */
-  _startAppMode() {
+  _startAppMode(publicHome, userHome) {
     if (this.navStack.length === 0) {
       if (Meteor.userId && Meteor.userId()) {
         // If the user object is not ready, we'll wait for it.
         this.waitForCondition(Meteor.user, () => {
           this.waitForCondition('okToLoad', () => {
-            this.toScreen(this.config.appModeUserHome);
+            this.toScreen(userHome);
           }, true, null);
         }, true, null);
       } else {
         this.waitForCondition('okToLoad', () => {
-          this.toHome();
+          this.toScreen(publicHome);
         }, true, null);
       }
     } else {
       // It's an app reload, so go to the screen at the top of the navStack?
-      // ToDo: Consider some mechanism to store/retrieve state for mobile case
+      // ToDo: Investigate a mechanism to store/retrieve state for mobile case
       this.toScreen(
         this.navStack[this.navStack.length - 1], { updateNavStack: false });
     }
@@ -458,7 +472,7 @@ class Navigate {
    * @private
    */
   _checkForPathParameters(registeredPath, path) {
-    const screen = this.screens[registeredPath.name];
+    const screen = _.findWhere(this.screens, { name: registeredPath.name });
 
     // Use the 'exec' method on the RegExp to check for parameters.
     const execResult = registeredPath.pathPattern.exec(path);
@@ -625,7 +639,7 @@ class Navigate {
     check(name, Utils.nonEmptyString);
 
     // Get the screen object.
-    const screen = this.screens[name];
+    const screen = _.findWhere(this.screens, { name: name });
 
     // Avoid errors when this function is called with no options.
     const _options = options || {};

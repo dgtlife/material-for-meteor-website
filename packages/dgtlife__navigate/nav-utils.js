@@ -10,7 +10,7 @@ import { check, Match } from 'meteor/check';
 
 /**
  * @namespace Utils
- * @summary The namespace for all Navigate utility functions and variables
+ * @summary The namespace for all Navigate utility functions
  */
 const Utils = {
   // Match pattern for a non-empty string

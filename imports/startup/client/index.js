@@ -6,9 +6,12 @@
  */
 /* global Prism:true */
 
-import { Nav } from 'meteor/dgtlife:app-navigator';
 import C from 'meteor/dgtlife:code-prism';
+import Nav from 'meteor/dgtlife:navigate';
 import { MD } from 'meteor/dgtlife:material';
+import { Meteor } from 'meteor/meteor';
+import './register-screens';
+import '../../ui/layout/layout.coffee';
 
 console.log('################### THIS IS THE START OF A NEW RUN ####################');
 
@@ -18,7 +21,7 @@ function isCodeReady() {
 }
 
 // Configure Nav.
-Nav.config = {
+Nav.run({
   contentHelpers: ['screen_content'],
 
   afterScreens() {
@@ -37,7 +40,7 @@ Nav.config = {
     okToLoad: [isCodeReady],
     okToReload: [isCodeReady]
   }
-};
+});
 
 // Configure MD.
 MD.options = {

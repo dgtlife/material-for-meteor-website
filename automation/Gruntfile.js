@@ -7,7 +7,7 @@
 
 module.exports = function initGrunt(grunt) {
   grunt.initConfig({
-    // Sync the files in this app with those in the relevant 'run' directory.
+    // Sync the files in the app with those in the 'run' directory on hydra.
     rsync: {
       options: {
         args: ['--quiet'],
@@ -48,7 +48,8 @@ module.exports = function initGrunt(grunt) {
           '!**/.git/**',
           '!.idea/**',
           '!automation/**',
-          '!**/node_modules/**'
+          '!**/node_modules/**',
+          '!npm-debug.log'
         ],
         tasks: 'rsync:projectFiles',
         options: {

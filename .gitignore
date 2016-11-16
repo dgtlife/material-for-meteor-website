@@ -3,3 +3,4 @@
 .idea/
 node_modules/
 automation/
+npm-debug.log

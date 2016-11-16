@@ -6,7 +6,7 @@
  * Created on 11/27/2015
  */
 
-import { Mongo } from 'meteor/mongo'
+import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { _ } from 'meteor/underscore';
@@ -14,7 +14,7 @@ import { _ } from 'meteor/underscore';
 class Code {
   constructor() {
     // Create a database to store the code snippets.
-    this.db = new Mongo.Collection('md_icons');
+    this.db = new Mongo.Collection('code');
 
     // A subscription handle for the collection.
     this.metadata = {};

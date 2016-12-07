@@ -9,7 +9,8 @@ import { Template } from 'meteor/templating';
 import {
   registerTooltip,
   showTooltip,
-  hideTooltip } from '../../api/md-tooltip-api.js';
+  hideTooltip
+} from '../../api/md-tooltip-api.js';
 import './md-tooltip.jade';
 
 // On-render callback for MD Popup Menu

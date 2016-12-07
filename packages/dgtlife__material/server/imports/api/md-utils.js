@@ -11,7 +11,8 @@ import {
   stripSuffix,
   underscoreToHyphen,
   addPrefix,
-  addSuffix } from '../../../imports/api/md-utils.js';
+  addSuffix
+} from '../../../imports/api/md-utils.js';
 
 
 /**

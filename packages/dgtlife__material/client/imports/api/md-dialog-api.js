@@ -14,7 +14,8 @@ import {
   scrollMonitor,
   runScroller,
   insertBackdrop,
-  removeBackdrop } from './md-utils.js';
+  removeBackdrop
+} from './md-utils.js';
 
 /**
  * Import the content for the identified dialog.

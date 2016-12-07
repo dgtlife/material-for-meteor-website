@@ -9,7 +9,8 @@ import { Meteor } from 'meteor/meteor';
 import {
   Icons,
   defineIconAssets,
-  selectIcons } from './api/md-icon-api';
+  selectIcons
+} from './api/md-icon-api';
 
 // Initialize the database that will hold all the extracted icon metadata.
 Icons.remove({});

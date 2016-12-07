@@ -9,16 +9,19 @@ import { Meteor } from 'meteor/meteor';
 import { _ } from 'meteor/underscore';
 import {
   dqS,
-  eqS } from './md-utils.js';
+  eqS
+} from './md-utils.js';
 import {
   setStyleOfUnderlineFocused,
   setStyleOfUnderlineUnfocused,
-  setStyleOfUnderlineErrored } from './md-underline-api.coffee';
+  setStyleOfUnderlineErrored
+} from './md-underline-api.coffee';
 import {
   setStyleOfLabelFocused,
   setStyleOfLabelUnfocused,
   setStyleOfLabelErrored,
-  setStyleOfLabelValid } from './md-label-api.coffee';
+  setStyleOfLabelValid
+} from './md-label-api.coffee';
 
 /**
  * Set the label and underline of a text input field to the focused position

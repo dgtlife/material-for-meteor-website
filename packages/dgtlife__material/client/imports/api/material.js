@@ -20,30 +20,36 @@ import {
   isDialogClosed,
   closeDialogFs,
   openDialogFs,
-  isDialogFsOpen } from './md-dialog-api.js';
+  isDialogFsOpen
+} from './md-dialog-api.js';
 import {
   dockDrawer,
   undockDrawer,
   closeDrawer,
   openDrawer,
-  toggleDrawer } from './md-drawer-api.js';
+  toggleDrawer
+} from './md-drawer-api.js';
 import {
   setValueOfDropdownMenu,
   getValueOfDropdownMenu,
-  clearValueOfDropdownMenu } from './md-dropdown-menu-api.coffee';
+  clearValueOfDropdownMenu
+} from './md-dropdown-menu-api.coffee';
 import {
   resetHeaderPanelSystem,
-  initializeHeaderPanelSystem } from './md-header-panel-api.js';
+  initializeHeaderPanelSystem
+} from './md-header-panel-api.js';
 import {
   setValueOfMenu,
   getValueOfMenu,
-  clearValueOfMenu } from './md-menu-api.js';
+  clearValueOfMenu
+} from './md-menu-api.js';
 import {
   enableRadioButton,
   disableRadioButton,
   setValueOfRadioGroup,
   getValueOfRadioGroup,
-  clearValueOfRadioGroup } from './md-radio-api.js';
+  clearValueOfRadioGroup
+} from './md-radio-api.js';
 import { postSnackbar } from './md-snackbar-api.js';
 import { setTabGroupSelection, getTabGroupSelection } from './md-tabs-api.js';
 import {
@@ -54,7 +60,8 @@ import {
   enableTextField,
   getValueOfTextArea,
   setValueOfTextArea,
-  clearValueOfTextArea } from './md-text-input-api.js';
+  clearValueOfTextArea
+} from './md-text-input-api.js';
 import { detectTabs } from './md-toolbar-api.js';
 import {
   dgEBI,
@@ -65,7 +72,8 @@ import {
   waitForElement,
   clearSelectedElements,
   handleClickOnSelectableElement,
-  getSelectedElements } from './md-utils.js';
+  getSelectedElements
+} from './md-utils.js';
 
 // Define the Material class.
 class Material {

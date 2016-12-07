@@ -10,7 +10,8 @@ import { Template } from 'meteor/templating';
 import {
   importRadioButtons,
   initializeValueOfRadioGroup,
-  handleClickOnRadioButton } from '../../api/md-radio-api.js';
+  handleClickOnRadioButton
+} from '../../api/md-radio-api.js';
 import './md-radio.jade';
 
 // On-render callback for MD Radio Group.

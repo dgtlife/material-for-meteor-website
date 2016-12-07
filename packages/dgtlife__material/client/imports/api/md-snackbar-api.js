@@ -13,7 +13,8 @@ import MD from '../md.js';
 import {
   dgEBI,
   dqS,
-  eqS } from './md-utils.js';
+  eqS
+} from './md-utils.js';
 
 // The snackbar queue.
 const snackbars = [];

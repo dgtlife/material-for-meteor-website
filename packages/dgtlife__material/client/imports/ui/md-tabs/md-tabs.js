@@ -8,7 +8,8 @@
 import { Template } from 'meteor/templating';
 import {
   initializeTabs,
-  handleClickOnTab } from '../../api/md-tabs-api.js';
+  handleClickOnTab
+} from '../../api/md-tabs-api.js';
 import './md-tabs.jade';
 
 // On render callback for MD Tabs.

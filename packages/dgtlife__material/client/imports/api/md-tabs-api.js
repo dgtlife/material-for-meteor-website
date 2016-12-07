@@ -11,7 +11,8 @@ import {
   eqS,
   eqSA,
   getElement,
-  waitForElement } from './md-utils.js';
+  waitForElement
+} from './md-utils.js';
 
 /**
  * Set the selected tab in a tab group. Show/hide the relevant tab panes. Wait

@@ -2,10 +2,10 @@
 +md_tooltip(target="demo-button-with-tooltip-1" text="MD Tooltip on the bottom (default)")
 
 //- Tooltip to the top.
-+md_tooltip(target="demo-fab-with-tooltip" position="top" text="MD Tooltip on the top")
++md_tooltip(target="demo-fab-with-tooltip" position="right" text="MD Tooltip on the right")
 
 //- Tooltip to the right.
-+md_tooltip(target="demo-icon-button-with-tooltip" position="right" text="MD Tooltip on the right")
++md_tooltip(target="demo-icon-button-with-tooltip" position="top" text="MD Tooltip on the top")
 
 //- Tooltip to the left.
 +md_tooltip(target="demo-mini-fab-with-tooltip" position="left" text="MD Tooltip on the left")

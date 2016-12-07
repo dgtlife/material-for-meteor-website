@@ -8,7 +8,7 @@ template(name="md_dialog__demo")
       .demo--dialog
         +md_button(id="launch-dialog--default" label="default")
       .demo--dialog
-        +md_button(id="launch-dialog--set-width" label="set width")
+        +md_button(id="launch-dialog--set-width" label="animated set width")
       .demo--dialog
         +md_button(id="launch-dialog--action" label="action")
       .demo--dialog
@@ -46,7 +46,7 @@ template(name="demo_dialogs")
   div(data-content-for="demo-dialog--set-width")
     .md-dialog__title A Set Width dialog
     .md-dialog__content
-      p This is a simple dialog, i.e. no action buttons, with a set width. It can be closed by clicking anywhere outside the dialog.
+      p This is a simple dialog, i.e. no action buttons, with a set width, and an opening and closing animation. It can be closed by clicking anywhere outside the dialog.
 
   //- An Action dialog.
   +md_dialog(

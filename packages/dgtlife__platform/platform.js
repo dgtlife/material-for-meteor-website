@@ -12,11 +12,9 @@
  * various platform-matching tests.
  * @param {string} uaString - a user agent string
  */
-function parseAgentString(uaString) {
+const parseAgentString = (uaString) => {
   // Checks the uaString against a RegEx pattern.
-  function matches(pattern) {
-    return (pattern).test(uaString);
-  }
+  const matches = pattern => (pattern).test(uaString);
 
   // The server case.
   if (!uaString) {
@@ -24,7 +22,6 @@ function parseAgentString(uaString) {
   }
 
   return {
-
     // Chrome on a Desktop.
     isChromeOnDesktop: matches(
       /(?!Android)Macintosh.*AppleWebKit.*(Chrome\/[.0-9]* (?!Mobile))/),
@@ -64,9 +61,8 @@ function parseAgentString(uaString) {
     // Opera on a Desktop
     isOperaOnDesktop: matches(
       /(Opera\/[.0-9]*).*(Presto\/[.0-9]*)/)
-
   };
-}
+};
 
 // Get the platform's user agent string.
 const userAgentString =

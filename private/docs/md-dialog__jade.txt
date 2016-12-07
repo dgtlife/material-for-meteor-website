@@ -24,8 +24,9 @@ div(data-content-for="demo-dialog--set-width")
   .md-dialog__title A Set Width dialog
   .md-dialog__content
     p
-      | This is a simple dialog, i.e. no action buttons, with a set width. It
-      | can be closed by clicking anywhere outside the dialog.
+      | This is a simple dialog, i.e. no action buttons, with a set width, and
+      | an opening and closing animation. It can be closed by clicking anywhere
+      | outside the dialog.
 
 //- An Action dialog.
 +md_dialog(

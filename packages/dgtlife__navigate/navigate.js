@@ -7,10 +7,11 @@
  */
 /* eslint new-cap: ["error", { "capIsNewExceptionPattern": "^Match\.." }] */
 import { Meteor } from 'meteor/meteor';
+import { _ } from 'meteor/underscore';
 import { ReactiveDict } from 'meteor/reactive-dict';
 import { Template } from 'meteor/templating';
 import { check, Match } from 'meteor/check';
-import Utils from './nav-utils';
+import Utils from './nav-utils.js';
 
 class Navigate {
   constructor() {

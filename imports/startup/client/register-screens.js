@@ -5,8 +5,9 @@
  * Created on 11/6/2016
  */
 import Nav from 'meteor/dgtlife:navigate';
-import '../../ui/home/home';
-import '../../ui/includes/not-found/not-found';
+import { navToDemo } from '../../api/mlib.js';
+import '../../ui/home/home.js';
+import '../../ui/includes/not-found/not-found.js';
 
 // Home screen.
 Nav.registerScreen('Home', {
@@ -16,7 +17,8 @@ Nav.registerScreen('Home', {
   }],
   title: 'Material for Meteor',
   path: '/',
-  pathPattern: /^\/$/
+  pathPattern: /^\/$/,
+  after: navToDemo
 });
 
 // MD Header Panel API screen.

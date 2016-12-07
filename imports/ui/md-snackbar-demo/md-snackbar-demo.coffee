@@ -1,6 +1,6 @@
 { Template } = require 'meteor/templating'
 C = require('meteor/dgtlife:code-prism').default
-{ MD } = require 'meteor/dgtlife:material'
+MD = require('meteor/dgtlife:material').default
 { Meteor } = require 'meteor/meteor'
 require './md-snackbar-demo.jade'
 
@@ -47,12 +47,12 @@ Template.md_snackbar__demo.events
     MD.postSnackbar
       message: 'This is the first simple MD Snackbar'
 
-    Meteor.defer ->
+    Meteor.setTimeout ->
       MD.postSnackbar
         message: 'This is the second simple MD Snackbar'
     , 1000
 
-    Meteor.defer ->
+    Meteor.setTimeout ->
       MD.postSnackbar
         message: 'This is the third simple MD Snackbar'
     , 2000
@@ -77,12 +77,12 @@ Template.md_snackbar__demo.events
     MD.postSnackbar
       message: 'This is the first simple MD Snackbar that is long enough to wrap on mobile'
 
-    Meteor.defer ->
+    Meteor.setTimeout ->
       MD.postSnackbar
         message: 'This is the second simple MD Snackbar that is long enough to wrap on mobile'
     , 1000
 
-    Meteor.defer ->
+    Meteor.setTimeout ->
       MD.postSnackbar
         message: 'This is the third simple MD Snackbar that is long enough to wrap on mobile'
     , 2000

@@ -7,6 +7,7 @@
  */
 /* eslint new-cap: ["error", { "capIsNewExceptionPattern": "^Match\.." }] */
 import { check, Match } from 'meteor/check';
+import { _ } from 'meteor/underscore';
 
 /**
  * @namespace Utils

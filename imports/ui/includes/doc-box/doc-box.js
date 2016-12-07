@@ -7,7 +7,7 @@
  */
 
 import { Template } from 'meteor/templating';
-import Mlib from '../../../lib/mlib';
+import { setBoxWidth } from '../../../api/mlib.js';
 import './doc-box.jade';
 import './doc-box.styl';
 
@@ -15,11 +15,11 @@ Template.doc_box.onRendered(function onRenderedDocBox() {
   const docBox = this.firstNode;
 
   // Set the doc box width, initially ...
-  Mlib.setBoxWidth(docBox);
+  setBoxWidth(docBox);
 
   // ... and on resize.
   window.addEventListener('resize', () => {
-    Mlib.setBoxWidth(docBox);
+    setBoxWidth(docBox);
   });
 });
 
@@ -27,10 +27,10 @@ Template.api_box.onRendered(function onRenderedApiBox() {
   const apiBox = this.firstNode;
 
   // Set the api box width, initially ...
-  Mlib.setBoxWidth(apiBox);
+  setBoxWidth(apiBox);
 
   // ... and on resize.
   window.addEventListener('resize', () => {
-    Mlib.setBoxWidth(apiBox);
+    setBoxWidth(apiBox);
   });
 });

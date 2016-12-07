@@ -25,8 +25,9 @@
 <div data-content-for="demo-dialog--set-width">
   <div class="md-dialog__title">Another default dialog</div>
   <div class="md-dialog__content">
-    <p>This is a simple dialog, i.e. no action buttons, with a set width. It
-       can be closed by clicking anywhere outside the dialog.
+    <p>This is a simple dialog, i.e. no action buttons, with a set width, and
+       an opening and closing animation. It can be closed by clicking anywhere
+       outside the dialog.
     </p>
   </div>
 </div>

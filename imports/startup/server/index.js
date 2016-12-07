@@ -5,7 +5,7 @@
  * Created on 1/20/2016
  */
 
-import { MD } from 'meteor/dgtlife:material';
+import MD from 'meteor/dgtlife:material';
 import C from 'meteor/dgtlife:code-prism';
 
 // Banner
@@ -25,11 +25,8 @@ MD.selectIcons([
       'account-circle',
       'add',
       'add-shopping-cart',
-      'arrow-drop-down',
       'arrow-forward',
       'check',
-      'check-box',
-      'check-box-outline-blank',
       'check-circle',
       'close',
       'cloud',
@@ -40,7 +37,6 @@ MD.selectIcons([
       'create',
       'delete',
       'expand-less',
-      'expand-more',
       'event',
       'help',
       'home',
@@ -76,7 +72,6 @@ MD.selectIcons([
     set: 'extras',
     include: [
       'account-key',
-      'close-circle',
       'edit'
     ]
   },

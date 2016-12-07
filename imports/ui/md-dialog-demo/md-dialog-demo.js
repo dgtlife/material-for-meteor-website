@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import C from 'meteor/dgtlife:code-prism';
-import { MD } from 'meteor/dgtlife:material';
+import MD from 'meteor/dgtlife:material';
 import { Meteor } from 'meteor/meteor';
 import './md-dialog-demo.jade';
 
@@ -59,7 +59,7 @@ Template.demo_dialogs.events({
     const dialog = event.currentTarget.parentElement.parentElement.parentElement;
 
     // Wait 50ms for ripple to start.
-    Meteor.defer(() => {
+    Meteor.setTimeout(() => {
       // Close the dialog.
       MD.closeDialog(dialog);
     }, 50);
@@ -69,7 +69,7 @@ Template.demo_dialogs.events({
     const dialog = event.currentTarget.parentElement.parentElement.parentElement;
 
     // Wait 50ms for ripple to start.
-    Meteor.defer(() => {
+    Meteor.setTimeout(() => {
       // Close the dialog.
       MD.closeDialog(dialog);
     }, 50);

@@ -5,15 +5,16 @@
  * Created on 1/20/2016
  */
 /* global Prism:true */
-
 import C from 'meteor/dgtlife:code-prism';
 import Nav from 'meteor/dgtlife:navigate';
-import { MD } from 'meteor/dgtlife:material';
+import MD from 'meteor/dgtlife:material';
 import { Meteor } from 'meteor/meteor';
-import './register-screens';
+import './register-screens.js';
 import '../../ui/layout/layout.coffee';
 
-console.log('################### THIS IS THE START OF A NEW RUN ####################');
+console.log(
+  '################### THIS IS THE START OF A NEW RUN ####################'
+);
 
 // Check that the Code metadata subscription is ready.
 function isCodeReady() {
@@ -33,7 +34,7 @@ Nav.run({
     // Highlight code.
     Meteor.defer(() => {
       Prism.highlightAll();
-    }, 0);
+    });
   },
 
   conditionsToWaitFor: {

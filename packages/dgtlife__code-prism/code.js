@@ -1,5 +1,5 @@
 /**
- * @file Defines the Code class, and creates an instance.
+ * @file Defines the Code class, and exports an instance.
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2015
  *
@@ -23,7 +23,6 @@ class Code {
   /**
    * Get the code text from the specified file.
    * @param {string} filename - the name of the file
-   * @returns {*}
    */
   getText(filename) {
     if (this.metadata.ready()) {
@@ -36,7 +35,7 @@ class Code {
   /**
    * Load the code files. For each file insert a metadata object into the 'code'
    * collection.
-   * @param {Array} fileList - an array of objects defining the files that
+   * @param {array} fileList - an array of objects defining the files that
    *                           contain the code
    */
   loadCode(fileList) {

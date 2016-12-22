@@ -8,6 +8,9 @@
 import { _ } from 'meteor/underscore';
 import { Meteor } from 'meteor/meteor';
 
+// An object to hold arrays of selected element.
+const selected = {};
+
 /**
  * An alias for the lengthy document.getElementById().
  * @param {string} id - the id of the target element

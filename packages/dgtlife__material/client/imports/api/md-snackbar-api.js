@@ -117,8 +117,8 @@ export const displayCurrentSnackbar = (_id) => {
    * Check whether any other elements need to move along with the snackbar on a
    * narrow screen.
    */
-  if ((window.innerWidth < 600) && (MD.config.elementsToMove.length > 0)) {
-    const elementsToMove = MD.config.elementsToMove;
+  const elementsToMove = MD.getConfig().elementsToMove;
+  if ((window.innerWidth < 600) && (elementsToMove.length > 0)) {
     _.each(elementsToMove, (elementId) => {
       const element = dgEBI(elementId);
 

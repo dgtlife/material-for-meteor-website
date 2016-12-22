@@ -21,7 +21,7 @@ function isCodeReady() {
   return C && C.metadata && C.metadata.ready();
 }
 
-// Configure Nav.
+// Run Nav.
 Nav.run({
   contentHelpers: ['screen_content'],
 
@@ -43,7 +43,7 @@ Nav.run({
   }
 });
 
-// Configure MD.
-MD.options = {
+// Run MD.
+MD.run({
   elementsToMove: ['__indicators']
-};
+});

@@ -5,14 +5,14 @@
  * Created on 1/20/2016
  */
 
-import MD from 'meteor/dgtlife:material';
+import { selectIcons, defineIconAssets } from 'meteor/dgtlife:material';
 import { loadCode } from 'meteor/dgtlife:code-prism';
 
 // Banner
 console.log('################### THIS IS THE START OF A NEW RUN ####################');
 
 // Icons selected from the included icon sets.
-MD.selectIcons([
+selectIcons([
   {
     set: 'av',
     include: [
@@ -112,7 +112,7 @@ MD.selectIcons([
 ]);
 
 // Icons from a custom iconset.
-MD.defineIconAssets(
+defineIconAssets(
   {
     iconsDefinedByG: [
       {

@@ -10,12 +10,12 @@ import {
   Icons,
   defineIconAssets,
   selectIcons
-} from './api/md-icon-api';
+} from './imports/api/md-icon-api.js';
 
 // Initialize the database that will hold all the extracted icon metadata.
 Icons.remove({});
 
-// Declare the icons needed by the MD package itself.
+// Select the icons needed by components in this package.
 selectIcons([
   {
     set: 'base',
@@ -40,10 +40,8 @@ Meteor.startup(() => {
   console.log(`MD Icon: metadata for ${Icons.find().count()} icons is ready.`);
 });
 
-// Define and export MD on the server.
-const MD = {
-  defineIconAssets: defineIconAssets,
-  selectIcons: selectIcons
+// Export these functions to the server.
+export {
+  defineIconAssets,
+  selectIcons
 };
-
-export default MD;

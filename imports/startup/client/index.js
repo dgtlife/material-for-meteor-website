@@ -7,10 +7,10 @@
 /* global Prism:true */
 import { metadata as codeMetadata } from 'meteor/dgtlife:code-prism';
 import { run as runNav } from 'meteor/dgtlife:navigate';
-import MD from 'meteor/dgtlife:material';
+import { dqS, run as runMD } from 'meteor/dgtlife:material';
 import { Meteor } from 'meteor/meteor';
 import './register-screens.js';
-import '../../ui/layout/layout.coffee';
+import '../../ui/layout/layout.js';
 
 console.log(
   '################### THIS IS THE START OF A NEW RUN ####################'
@@ -25,14 +25,12 @@ runNav({
 
   afterScreens() {
     // Scroll to the top
-    if (MD.dqS('[data-content]')) {
-      MD.dqS('[data-content]').scrollTop = 0;
+    if (dqS('[data-content]')) {
+      dqS('[data-content]').scrollTop = 0;
     }
 
     // Highlight code.
-    Meteor.defer(() => {
-      Prism.highlightAll();
-    });
+    Meteor.defer(() => Prism.highlightAll());
   },
 
   conditionsToWaitFor: {
@@ -42,6 +40,6 @@ runNav({
 });
 
 // Run MD.
-MD.run({
+runMD({
   elementsToMove: ['__indicators']
 });

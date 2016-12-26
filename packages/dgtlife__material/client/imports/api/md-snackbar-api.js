@@ -9,7 +9,7 @@ import { Meteor } from 'meteor/meteor';
 import { Random } from 'meteor/random';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { _ } from 'meteor/underscore';
-import MD from '../md.js';
+import { getConfig } from './md-run.js';
 import {
   dgEBI,
   dqS,
@@ -117,7 +117,7 @@ export const displayCurrentSnackbar = (_id) => {
    * Check whether any other elements need to move along with the snackbar on a
    * narrow screen.
    */
-  const elementsToMove = MD.getConfig().elementsToMove;
+  const elementsToMove = getConfig().elementsToMove;
   if ((window.innerWidth < 600) && (elementsToMove.length > 0)) {
     _.each(elementsToMove, (elementId) => {
       const element = dgEBI(elementId);

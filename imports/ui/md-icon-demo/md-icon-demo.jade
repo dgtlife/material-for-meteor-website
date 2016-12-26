@@ -105,7 +105,7 @@ template(name="md_icon__api")
     .fake-table.methods
       .fake-row.row--method
         .fake-cell.method
-          code MD.selectIcons(iconConfigs)
+          code selectIcons(iconConfigs)
         .fake-cell.desc
           p
             | A server-side function that defines which of the included icons to
@@ -129,7 +129,7 @@ template(name="md_icon__api")
           p The structure of iconConfigs is described in General Use.
       .fake-row.row--method
         .fake-cell.method
-          code MD.defineIconAssets(assetConfig)
+          code defineIconAssets(assetConfig)
         .fake-cell.desc
           p
             | A server-side function that defines an asset file with SVG icons
@@ -172,7 +172,7 @@ template(name="md_icon__api")
     .section__description
       p
         | To select icons from the included sets call the
-        code.inline MD.selectIcons()
+        code.inline selectIcons()
         | function as in the example below.
       p In this example, the user directs the package to select:
         ul
@@ -202,7 +202,7 @@ template(name="md_icon__api")
         | To define and select custom icons from one or more
         code.inline .svg
         | files, call the
-        code.inline MD.defineIconAssets()
+        code.inline defineIconAssets()
         | function.
       p In the example that follows, the user directs the package to extract:
         ul

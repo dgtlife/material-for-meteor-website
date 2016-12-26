@@ -6,7 +6,7 @@
  * Created on 12/20/2015
  */
 import { Meteor } from 'meteor/meteor';
-import MD from 'meteor/dgtlife:material';
+import { dqS, dgEBI, waitForElement } from 'meteor/dgtlife:material';
 import { toScreen, currentScreen } from 'meteor/dgtlife:navigate';
 
 /**
@@ -25,17 +25,17 @@ const scrollToTop = (child, parent) => {
  * @param {string} [id] - the id of the demo section
  */
 export const navToDemo = (id) => {
-  const content = MD.dqS('[data-content]');
+  const content = dqS('[data-content]');
 
   // Handles on-Home and off-Home cases of menu item click.
   const handleMenuItemClick = (did) => {
     if (currentScreen.get() === 'Home') {
-      scrollToTop(MD.dgEBI(did), content);
+      scrollToTop(dgEBI(did), content);
     } else {
       toScreen('Home');
 
       // Wait for the demo element to render before scrolling up.
-      MD.waitForElement(content, `#${did}`, scrollToTop, 0, content);
+      waitForElement(content, `#${did}`, scrollToTop, 0, content);
     }
   };
 
@@ -45,11 +45,11 @@ export const navToDemo = (id) => {
     handleMenuItemClick(demoId);
   } else {
     const selectedValue =
-            MD.dgEBI('mfm-catalog-menu').getAttribute('data-selected');
+            dgEBI('mfm-catalog-menu').getAttribute('data-selected');
     if (selectedValue) {
       demoId = `${selectedValue.toLowerCase().replace(/ /g, '-')}--demo`;
       Meteor.setTimeout(() => {
-        scrollToTop(MD.dgEBI(demoId), content);
+        scrollToTop(dgEBI(demoId), content);
       }, 10);
     }
   }

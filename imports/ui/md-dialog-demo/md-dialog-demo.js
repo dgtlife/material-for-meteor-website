@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating';
 import { getText } from 'meteor/dgtlife:code-prism';
-import MD from 'meteor/dgtlife:material';
+import { openDialog, closeDialog } from 'meteor/dgtlife:material';
 import { Meteor } from 'meteor/meteor';
 import './md-dialog-demo.jade';
 
@@ -33,23 +33,23 @@ Template.md_dialog__demo.helpers({
 // Launch dialog from button clicks.
 Template.md_dialog__demo.events({
   'click #launch-dialog--default'() {
-    MD.openDialog('#demo-dialog--default');
+    openDialog('#demo-dialog--default');
   },
 
   'click #launch-dialog--set-width'() {
-    MD.openDialog('#demo-dialog--set-width');
+    openDialog('#demo-dialog--set-width');
   },
 
   'click #launch-dialog--action'() {
-    MD.openDialog('#demo-dialog--action');
+    openDialog('#demo-dialog--action');
   },
 
   'click #launch-dialog--modal'() {
-    MD.openDialog('#demo-dialog--modal');
+    openDialog('#demo-dialog--modal');
   },
 
   'click #launch-dialog--scrollable'() {
-    MD.openDialog('#demo-dialog--scrollable');
+    openDialog('#demo-dialog--scrollable');
   }
 });
 
@@ -61,7 +61,7 @@ Template.demo_dialogs.events({
     // Wait 50ms for ripple to start.
     Meteor.setTimeout(() => {
       // Close the dialog.
-      MD.closeDialog(dialog);
+      closeDialog(dialog);
     }, 50);
   },
 
@@ -71,7 +71,7 @@ Template.demo_dialogs.events({
     // Wait 50ms for ripple to start.
     Meteor.setTimeout(() => {
       // Close the dialog.
-      MD.closeDialog(dialog);
+      closeDialog(dialog);
     }, 50);
   }
 });

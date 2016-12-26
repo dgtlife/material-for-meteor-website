@@ -26,7 +26,7 @@ Package.onUse((api) => {
   api.use('check', ['client', 'server']);
   api.use('random', ['client', 'server']);
 
-  api.mainModule('server/main.js', 'server');
+  api.mainModule('server/md.js', 'server');
 
   api.addAssets('server/imports/assets/md-icon-av.svg', 'server');
   api.addAssets('server/imports/assets/md-icon-base.svg', 'server');
@@ -40,7 +40,7 @@ Package.onUse((api) => {
   api.addAssets('server/imports/assets/md-icon-social.svg', 'server');
   api.addAssets('server/imports/assets/md-icon-extras.svg', 'server');
 
-  api.mainModule('client/main.js', 'client');
+  api.mainModule('client/md.js', 'client');
 });
 
 Package.onTest((api) => {

@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import C from 'meteor/dgtlife:code-prism';
+import { getText } from 'meteor/dgtlife:code-prism';
 import './md-chip-demo.jade';
 
 // Helpers for the demo docs.
@@ -20,10 +20,10 @@ Template.md_chip__demo.helpers({
   },
 
   code__spacebars() {
-    return C.getText('md-chip__spacebars.txt');
+    return getText('md-chip__spacebars.txt');
   },
 
   code__jade() {
-    return C.getText('md-chip__jade.txt');
+    return getText('md-chip__jade.txt');
   }
 });

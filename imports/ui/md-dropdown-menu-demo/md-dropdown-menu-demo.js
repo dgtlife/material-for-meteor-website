@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import C from 'meteor/dgtlife:code-prism';
+import { getText } from 'meteor/dgtlife:code-prism';
 import './md-dropdown-menu-demo.jade';
 
 // Helpers for the MD Dropdown Menu demo block.
@@ -83,14 +83,14 @@ Template.md_dropdown_menu__demo.helpers({
   },
 
   code__spacebars() {
-    return C.getText('md-dropdown-menu__spacebars.txt');
+    return getText('md-dropdown-menu__spacebars.txt');
   },
 
   code__jade() {
-    return C.getText('md-dropdown-menu__jade.txt');
+    return getText('md-dropdown-menu__jade.txt');
   },
 
   code__js() {
-    return C.getText('md-dropdown-menu__js.txt');
+    return getText('md-dropdown-menu__js.txt');
   }
 });

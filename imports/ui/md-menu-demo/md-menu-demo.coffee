@@ -1,5 +1,5 @@
 { Template } = require 'meteor/templating'
-C = require('meteor/dgtlife:code-prism').default
+getText = require('meteor/dgtlife:code-prism').getText
 require './md-menu-demo.jade'
 
 Template.md_menu__demo.helpers
@@ -35,8 +35,8 @@ Template.md_menu__demo.helpers
       ripple: true
     ]
   code__spacebars: ->
-    C.getText 'md-menu__spacebars.txt'
+    getText 'md-menu__spacebars.txt'
   code__jade: ->
-    C.getText 'md-menu__jade.txt'
+    getText 'md-menu__jade.txt'
   code__js: ->
-    C.getText 'md-menu__js.txt'
+    getText 'md-menu__js.txt'

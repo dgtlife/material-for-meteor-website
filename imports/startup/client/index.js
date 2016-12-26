@@ -5,7 +5,7 @@
  * Created on 1/20/2016
  */
 /* global Prism:true */
-import C from 'meteor/dgtlife:code-prism';
+import { metadata as codeMetadata } from 'meteor/dgtlife:code-prism';
 import { run as runNav } from 'meteor/dgtlife:navigate';
 import MD from 'meteor/dgtlife:material';
 import { Meteor } from 'meteor/meteor';
@@ -17,9 +17,7 @@ console.log(
 );
 
 // Check that the Code metadata subscription is ready.
-function isCodeReady() {
-  return C && C.metadata && C.metadata.ready();
-}
+const isCodeReady = () => codeMetadata && codeMetadata.ready();
 
 // Run Nav.
 runNav({

@@ -1,5 +1,5 @@
 { Template } = require 'meteor/templating'
-C = require('meteor/dgtlife:code-prism').default
+getText = require('meteor/dgtlife:code-prism').getText
 require './md-toolbar-demo.jade'
 
 Template.md_toolbar__demo.helpers
@@ -14,6 +14,6 @@ Template.md_toolbar__demo.helpers
       ripple: true
     ]
   code__spacebars: ->
-    C.getText 'md-toolbar__spacebars.txt'
+    getText 'md-toolbar__spacebars.txt'
   code__jade: ->
-    C.getText 'md-toolbar__jade.txt'
+    getText 'md-toolbar__jade.txt'

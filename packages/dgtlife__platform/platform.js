@@ -6,6 +6,7 @@
  * Created on 7/2/14
  */
 /* eslint max-len: ["error", { "ignoreComments": true }] */
+import { Meteor } from 'meteor/meteor';
 
 /**
  * Returns an object, the properties of which, are the boolean results of
@@ -75,15 +76,15 @@ export default Platform;
 // Create some global template helpers.
 if (Meteor.isClient) {
   Template.registerHelper('on_phone', () =>
-  Platform.isChromeOnAndroidPhone ||
+  (Platform.isChromeOnAndroidPhone ||
   Platform.isChromeOnIphone ||
-  Platform.isSafariOnIphone);
+  Platform.isSafariOnIphone));
 
   Template.registerHelper('on_desktop', () =>
-  Platform.isChromeOnDesktop ||
+  (Platform.isChromeOnDesktop ||
   Platform.isSafariOnDesktop ||
   Platform.isFirefoxOnDesktop ||
-  Platform.isOperaOnDesktop);
+  Platform.isOperaOnDesktop));
 }
 
 /*

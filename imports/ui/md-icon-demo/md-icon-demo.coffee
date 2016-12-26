@@ -1,5 +1,5 @@
 { Template } = require 'meteor/templating'
-C = require('meteor/dgtlife:code-prism').default
+getText = require('meteor/dgtlife:code-prism').getText
 require './md-icon-demo.jade'
 
 Template.md_icon__demo.helpers
@@ -14,9 +14,9 @@ Template.md_icon__demo.helpers
       ripple: true
     ]
   code__spacebars: ->
-    C.getText 'md-icon__spacebars.txt'
+    getText 'md-icon__spacebars.txt'
   code__jade: ->
-    C.getText 'md-icon__jade.txt'
+    getText 'md-icon__jade.txt'
 
 Template.md_icon__api.helpers
   tabs__select: ->
@@ -50,16 +50,16 @@ Template.md_icon__api.helpers
       ripple: true
     ]
   code__select__js: ->
-    C.getText 'md-icon-api--select__js.txt'
+    getText 'md-icon-api--select__js.txt'
   code__select__cs: ->
-    C.getText 'md-icon-api--select__coffee.txt'
+    getText 'md-icon-api--select__coffee.txt'
   code__define__js: ->
-    C.getText 'md-icon-api--define__js.txt'
+    getText 'md-icon-api--define__js.txt'
   code__define__cs: ->
-    C.getText 'md-icon-api--define__coffee.txt'
+    getText 'md-icon-api--define__coffee.txt'
   code__rendering__spacebars: ->
-    C.getText 'md-icon-api--rendering__spacebars.txt'
+    getText 'md-icon-api--rendering__spacebars.txt'
   code__rendering__jade: ->
-    C.getText 'md-icon-api--rendering__jade.txt'
+    getText 'md-icon-api--rendering__jade.txt'
   codeCss__styles: ->
-    C.getText 'md-icon-api--styles__css.txt'
+    getText 'md-icon-api--styles__css.txt'

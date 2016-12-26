@@ -6,7 +6,7 @@
  */
 
 import MD from 'meteor/dgtlife:material';
-import C from 'meteor/dgtlife:code-prism';
+import { loadCode } from 'meteor/dgtlife:code-prism';
 
 // Banner
 console.log('################### THIS IS THE START OF A NEW RUN ####################');
@@ -133,7 +133,7 @@ MD.defineIconAssets(
 );
 
 // Code files.
-C.loadCode(
+loadCode(
   [
     {
       fileName: 'md-button--base__jade.txt',

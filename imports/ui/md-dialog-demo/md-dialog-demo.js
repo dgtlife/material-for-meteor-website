@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import C from 'meteor/dgtlife:code-prism';
+import { getText } from 'meteor/dgtlife:code-prism';
 import MD from 'meteor/dgtlife:material';
 import { Meteor } from 'meteor/meteor';
 import './md-dialog-demo.jade';
@@ -22,11 +22,11 @@ Template.md_dialog__demo.helpers({
   },
 
   code__spacebars() {
-    return C.getText('md-dialog__spacebars.txt');
+    return getText('md-dialog__spacebars.txt');
   },
 
   code__jade() {
-    return C.getText('md-dialog__jade.txt');
+    return getText('md-dialog__jade.txt');
   }
 });
 

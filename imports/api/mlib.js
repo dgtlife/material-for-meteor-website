@@ -29,7 +29,7 @@ export const navToDemo = (id) => {
 
   // Handles on-Home and off-Home cases of menu item click.
   const handleMenuItemClick = (did) => {
-    if (currentScreen.get('currentScreen') === 'Home') {
+    if (currentScreen.get() === 'Home') {
       scrollToTop(MD.dgEBI(did), content);
     } else {
       toScreen('Home');

@@ -1,5 +1,5 @@
 { Template } = require 'meteor/templating'
-C = require('meteor/dgtlife:code-prism').default
+getText = require('meteor/dgtlife:code-prism').getText
 require './md-tooltip-demo.jade'
 
 Template.md_tooltip__demo.helpers
@@ -14,6 +14,6 @@ Template.md_tooltip__demo.helpers
       ripple: true
     ]
   code__spacebars: ->
-    C.getText 'md-tooltip__spacebars.txt'
+    getText 'md-tooltip__spacebars.txt'
   code__jade: ->
-    C.getText 'md-tooltip__jade.txt'
+    getText 'md-tooltip__jade.txt'

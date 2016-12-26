@@ -1,5 +1,5 @@
 { Template } = require 'meteor/templating'
-C = require('meteor/dgtlife:code-prism').default
+getText = require('meteor/dgtlife:code-prism').getText
 MD = require('meteor/dgtlife:material').default
 { Meteor } = require 'meteor/meteor'
 require './md-snackbar-demo.jade'
@@ -20,11 +20,11 @@ Template.md_snackbar__demo.helpers
       ripple: true
     ]
   code__spacebars: ->
-    C.getText 'md-snackbar__spacebars.txt'
+    getText 'md-snackbar__spacebars.txt'
   code__jade: ->
-    C.getText 'md-snackbar__jade.txt'
+    getText 'md-snackbar__jade.txt'
   code__js: ->
-    C.getText 'md-snackbar__js.txt'
+    getText 'md-snackbar__js.txt'
 
 Template.md_snackbar__demo.events
   'click #launch-snackbar--simple': ->

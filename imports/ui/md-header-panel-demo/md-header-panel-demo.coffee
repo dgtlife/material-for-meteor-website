@@ -1,5 +1,5 @@
 { Template } = require 'meteor/templating'
-C = require('meteor/dgtlife:code-prism').default
+getText = require('meteor/dgtlife:code-prism').getText
 require './md-header-panel-demo.jade'
 
 Template.md_header_panel__demo.helpers
@@ -14,8 +14,8 @@ Template.md_header_panel__demo.helpers
       ripple: true
     ]
   code__spacebars: ->
-    C.getText 'md-header-panel__spacebars.txt'
+    getText 'md-header-panel__spacebars.txt'
   code__jade: ->
-    C.getText 'md-header-panel__jade.txt'
+    getText 'md-header-panel__jade.txt'
   codeJS: ->
-    C.getText 'md-header-panel__js.txt'
+    getText 'md-header-panel__js.txt'

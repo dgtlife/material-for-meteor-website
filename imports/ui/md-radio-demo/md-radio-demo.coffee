@@ -1,5 +1,5 @@
 { Template } = require 'meteor/templating'
-C = require('meteor/dgtlife:code-prism').default
+getText = require('meteor/dgtlife:code-prism').getText
 require './md-radio-demo.jade'
 
 Template.md_radio__demo.helpers
@@ -41,8 +41,8 @@ Template.md_radio__demo.helpers
       label: 'Four'
     ]
   code__spacebars: ->
-    C.getText 'md-radio__spacebars.txt'
+    getText 'md-radio__spacebars.txt'
   code__jade: ->
-    C.getText 'md-radio__jade.txt'
+    getText 'md-radio__jade.txt'
   code__js: ->
-    C.getText 'md-radio__js.txt'
+    getText 'md-radio__js.txt'

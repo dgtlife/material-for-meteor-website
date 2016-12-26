@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import C from 'meteor/dgtlife:code-prism';
+import { getText } from 'meteor/dgtlife:code-prism';
 import './md-card-demo.jade';
 import './md-card-demo.styl';
 
@@ -21,10 +21,10 @@ Template.md_card__demo.helpers({
   },
 
   code__spacebars() {
-    return C.getText('md-card__spacebars.txt');
+    return getText('md-card__spacebars.txt');
   },
 
   code__jade() {
-    return C.getText('md-card__jade.txt');
+    return getText('md-card__jade.txt');
   }
 });

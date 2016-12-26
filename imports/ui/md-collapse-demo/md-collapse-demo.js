@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import C from 'meteor/dgtlife:code-prism';
+import { getText } from 'meteor/dgtlife:code-prism';
 import './md-collapse-demo.jade';
 import './md-collapse-demo.styl';
 
@@ -21,11 +21,11 @@ Template.md_collapse__demo.helpers({
   },
 
   code__spacebars() {
-    return C.getText('md-collapse__spacebars.txt');
+    return getText('md-collapse__spacebars.txt');
   },
 
   code__jade() {
-    return C.getText('md-collapse__jade.txt');
+    return getText('md-collapse__jade.txt');
   }
 });
 

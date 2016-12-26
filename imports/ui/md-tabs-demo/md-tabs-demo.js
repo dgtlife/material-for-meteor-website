@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating';
-import C from 'meteor/dgtlife:code-prism';
+import { getText } from 'meteor/dgtlife:code-prism';
 import './md-tabs-demo.jade';
 
 // Helpers for the MD Tabs demo block.
@@ -27,15 +27,15 @@ Template.md_tabs__demo.helpers({
   },
 
   code__spacebars() {
-    return C.getText('md-tabs__spacebars.txt');
+    return getText('md-tabs__spacebars.txt');
   },
 
   code__jade() {
-    return C.getText('md-tabs__jade.txt');
+    return getText('md-tabs__jade.txt');
   },
 
   code__js() {
-    return C.getText('md-tabs__js.txt');
+    return getText('md-tabs__js.txt');
   }
 });
 

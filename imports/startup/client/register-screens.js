@@ -4,13 +4,13 @@
  * @copyright DGTLife, LLC 2016
  * Created on 11/6/2016
  */
-import Nav from 'meteor/dgtlife:navigate';
+import { registerScreen } from 'meteor/dgtlife:navigate';
 import { navToDemo } from '../../api/mlib.js';
 import '../../ui/home/home.js';
 import '../../ui/includes/not-found/not-found.js';
 
 // Home screen.
-Nav.registerScreen('Home', {
+registerScreen('Home', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'home'
@@ -22,7 +22,7 @@ Nav.registerScreen('Home', {
 });
 
 // MD Header Panel API screen.
-Nav.registerScreen('MD Header Panel API', {
+registerScreen('MD Header Panel API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_header_panel__api'
@@ -33,7 +33,7 @@ Nav.registerScreen('MD Header Panel API', {
 });
 
 // MD Toolbar API screen.
-Nav.registerScreen('MD Toolbar API', {
+registerScreen('MD Toolbar API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_toolbar__api'
@@ -44,7 +44,7 @@ Nav.registerScreen('MD Toolbar API', {
 });
 
 // MD Drawer API screen.
-Nav.registerScreen('MD Drawer API', {
+registerScreen('MD Drawer API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_drawer__api'
@@ -55,7 +55,7 @@ Nav.registerScreen('MD Drawer API', {
 });
 
 // MD Dialog API screen.
-Nav.registerScreen('MD Dialog API', {
+registerScreen('MD Dialog API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_dialog__api'
@@ -66,7 +66,7 @@ Nav.registerScreen('MD Dialog API', {
 });
 
 // MD Snackbar API screen.
-Nav.registerScreen('MD Snackbar API', {
+registerScreen('MD Snackbar API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_snackbar__api'
@@ -77,7 +77,7 @@ Nav.registerScreen('MD Snackbar API', {
 });
 
 // MD Card API screen
-Nav.registerScreen('MD Card API', {
+registerScreen('MD Card API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_card__api'
@@ -88,7 +88,7 @@ Nav.registerScreen('MD Card API', {
 });
 
 // MD Tabs API screen.
-Nav.registerScreen('MD Tabs API', {
+registerScreen('MD Tabs API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_tabs__api'
@@ -99,7 +99,7 @@ Nav.registerScreen('MD Tabs API', {
 });
 
 // MD Text Input API screen.
-Nav.registerScreen('MD Text Input API', {
+registerScreen('MD Text Input API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_text_input__api'
@@ -110,7 +110,7 @@ Nav.registerScreen('MD Text Input API', {
 });
 
 // MD Icon API screen.
-Nav.registerScreen('MD Icon API', {
+registerScreen('MD Icon API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_icon__api'
@@ -121,7 +121,7 @@ Nav.registerScreen('MD Icon API', {
 });
 
 // MD Button API screen.
-Nav.registerScreen('MD Button API', {
+registerScreen('MD Button API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_button__api'
@@ -132,7 +132,7 @@ Nav.registerScreen('MD Button API', {
 });
 
 // MD Radio API screen.
-Nav.registerScreen('MD Radio API', {
+registerScreen('MD Radio API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_radio__api'
@@ -143,7 +143,7 @@ Nav.registerScreen('MD Radio API', {
 });
 
 // MD Checkbox API screen.
-Nav.registerScreen('MD Checkbox API', {
+registerScreen('MD Checkbox API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_checkbox__api'
@@ -154,7 +154,7 @@ Nav.registerScreen('MD Checkbox API', {
 });
 
 // MD Chip API screen.
-Nav.registerScreen('MD Chip API', {
+registerScreen('MD Chip API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_chip__api'
@@ -165,7 +165,7 @@ Nav.registerScreen('MD Chip API', {
 });
 
 // MD Collapse API screen.
-Nav.registerScreen('MD Collapse API', {
+registerScreen('MD Collapse API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_collapse__api'
@@ -177,7 +177,7 @@ Nav.registerScreen('MD Collapse API', {
 
 
 // MD Item API screen.
-Nav.registerScreen('MD Item API', {
+registerScreen('MD Item API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_item__api'
@@ -188,7 +188,7 @@ Nav.registerScreen('MD Item API', {
 });
 
 // MD Menu API screen.
-Nav.registerScreen('MD Menu API', {
+registerScreen('MD Menu API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_menu__api'
@@ -199,7 +199,7 @@ Nav.registerScreen('MD Menu API', {
 });
 
 // MD Popup Menu API screen.
-Nav.registerScreen('MD Popup Menu API', {
+registerScreen('MD Popup Menu API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_popup_menu__api'
@@ -210,7 +210,7 @@ Nav.registerScreen('MD Popup Menu API', {
 });
 
 // MD Dropdown Menu API screen.
-Nav.registerScreen('MD Dropdown Menu API', {
+registerScreen('MD Dropdown Menu API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_dropdown_menu__api'
@@ -221,7 +221,7 @@ Nav.registerScreen('MD Dropdown Menu API', {
 });
 
 // MD Image API screen.
-Nav.registerScreen('MD Image API', {
+registerScreen('MD Image API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_image__api'
@@ -232,7 +232,7 @@ Nav.registerScreen('MD Image API', {
 });
 
 // MD Tooltip API screen.
-Nav.registerScreen('MD Tooltip API', {
+registerScreen('MD Tooltip API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_tooltip__api'
@@ -243,7 +243,7 @@ Nav.registerScreen('MD Tooltip API', {
 });
 
 // MD Spinner API screen.
-Nav.registerScreen('MD Spinner API', {
+registerScreen('MD Spinner API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_spinner__api'
@@ -254,7 +254,7 @@ Nav.registerScreen('MD Spinner API', {
 });
 
 // MD Shadow API screen.
-Nav.registerScreen('MD Shadow API', {
+registerScreen('MD Shadow API', {
   contentHelperMap: [{
     helper: 'screen_content',
     template: 'md_shadow__api'
@@ -265,7 +265,7 @@ Nav.registerScreen('MD Shadow API', {
 });
 
 // Not Found.
-Nav.registerScreen('Not Found', {
+registerScreen('Not Found', {
   contentHelperMap: [{
     helper: 'top_content',
     template: 'notFound'

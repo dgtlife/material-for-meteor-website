@@ -7,7 +7,7 @@
 ###
 { Template } = require 'meteor/templating'
 { Meteor } = require 'meteor/meteor'
-Nav = require('meteor/dgtlife:navigate').default
+toScreen = require('meteor/dgtlife:navigate').toScreen
 MD = require('meteor/dgtlife:material').default
 require './layout.jade'
 require '../includes/loading/loading.jade'
@@ -35,7 +35,7 @@ Template.registerHelper 'connection_status__indication', ->
 
 Template.body.events
   'click [name="go-home"]': ->
-    Nav.toScreen 'Home'
+    toScreen 'Home'
 
   'click #more-menu--get-package': ->
     window.open 'https://github.com/dgtlife/material-for-meteor', '_blank'
@@ -54,7 +54,7 @@ Template.body.events
         MD.setTabGroupSelection tabGroup, '0'
 
   'click [name="api-button"]': ->
-    Nav.toScreen @_data
+    toScreen @_data
 
 # The Left drawer.
 Template.left_drawer__menu_content.events
@@ -149,89 +149,89 @@ Template.left_drawer__menu_content.events
 # The Right drawer.
 Template.right_drawer__menu_content.events
   'click #menu-item--md-icon-api': ->
-    Nav.toScreen 'MD Icon API'
+    toScreen 'MD Icon API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-header-panel-api': ->
-    Nav.toScreen 'MD Header Panel API'
+    toScreen 'MD Header Panel API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-toolbar-api': ->
-    Nav.toScreen 'MD Toolbar API'
+    toScreen 'MD Toolbar API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-tabs-api': ->
-    Nav.toScreen 'MD Tabs API'
+    toScreen 'MD Tabs API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-drawer-api': ->
-    Nav.toScreen 'MD Drawer API'
+    toScreen 'MD Drawer API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-dialog-api': ->
-    Nav.toScreen 'MD Dialog API'
+    toScreen 'MD Dialog API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-snackbar-api': ->
-    Nav.toScreen 'MD Snackbar API'
+    toScreen 'MD Snackbar API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-card-api': ->
-    Nav.toScreen 'MD Card API'
+    toScreen 'MD Card API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-shadow-api': ->
-    Nav.toScreen 'MD Shadow API'
+    toScreen 'MD Shadow API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-text-input-api': ->
-    Nav.toScreen 'MD Text Input API'
+    toScreen 'MD Text Input API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-button-api': ->
-    Nav.toScreen 'MD Button API'
+    toScreen 'MD Button API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-radio-api': ->
-    Nav.toScreen 'MD Radio API'
+    toScreen 'MD Radio API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-checkbox-api': ->
-    Nav.toScreen 'MD Checkbox API'
+    toScreen 'MD Checkbox API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-chip-api': ->
-    Nav.toScreen 'MD Chip API'
+    toScreen 'MD Chip API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-collapse-api': ->
-    Nav.toScreen 'MD Collapse API'
+    toScreen 'MD Collapse API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-item-api': ->
-    Nav.toScreen 'MD Item API'
+    toScreen 'MD Item API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-menu-api': ->
-    Nav.toScreen 'MD Menu API'
+    toScreen 'MD Menu API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-popup-menu-api': ->
-    Nav.toScreen 'MD Popup Menu API'
+    toScreen 'MD Popup Menu API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-dropdown-menu-api': ->
-    Nav.toScreen 'MD Dropdown Menu API'
+    toScreen 'MD Dropdown Menu API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-image-api': ->
-    Nav.toScreen 'MD Image API'
+    toScreen 'MD Image API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-tooltip-api': ->
-    Nav.toScreen 'MD Tooltip API'
+    toScreen 'MD Tooltip API'
     MD.closeDrawer 'right'
 
   'click #menu-item--md-spinner-api': ->
-    Nav.toScreen 'MD Spinner API'
+    toScreen 'MD Spinner API'
     MD.closeDrawer 'right'

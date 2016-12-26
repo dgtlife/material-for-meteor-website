@@ -6,7 +6,7 @@
  */
 /* global Prism:true */
 import C from 'meteor/dgtlife:code-prism';
-import Nav from 'meteor/dgtlife:navigate';
+import { run as runNav } from 'meteor/dgtlife:navigate';
 import MD from 'meteor/dgtlife:material';
 import { Meteor } from 'meteor/meteor';
 import './register-screens.js';
@@ -22,7 +22,7 @@ function isCodeReady() {
 }
 
 // Run Nav.
-Nav.run({
+runNav({
   contentHelpers: ['screen_content'],
 
   afterScreens() {

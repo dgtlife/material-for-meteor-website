@@ -7,7 +7,7 @@
  */
 import { Meteor } from 'meteor/meteor';
 import MD from 'meteor/dgtlife:material';
-import Nav from 'meteor/dgtlife:navigate';
+import { toScreen, currentScreen } from 'meteor/dgtlife:navigate';
 
 /**
  * Scrolls a child (demo) element to the top of the parent (content) element.
@@ -29,10 +29,10 @@ export const navToDemo = (id) => {
 
   // Handles on-Home and off-Home cases of menu item click.
   const handleMenuItemClick = (did) => {
-    if (Nav.reactive.get('currentScreen') === 'Home') {
+    if (currentScreen.get('currentScreen') === 'Home') {
       scrollToTop(MD.dgEBI(did), content);
     } else {
-      Nav.toScreen('Home');
+      toScreen('Home');
 
       // Wait for the demo element to render before scrolling up.
       MD.waitForElement(content, `#${did}`, scrollToTop, 0, content);

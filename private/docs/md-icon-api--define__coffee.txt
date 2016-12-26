@@ -1,4 +1,4 @@
-MD.defineIconAssets
+defineIconAssets
   iconsDefinedByG: [
     file: Assets.getText 'custom-gs-1.svg'
     include: [

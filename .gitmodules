@@ -1,0 +1,3 @@
+[submodule "packages/dgtlife__navigate"]
+	path = packages/dgtlife__navigate
+	url = git@github.com:dgtlife/dgtlife-navigate.git

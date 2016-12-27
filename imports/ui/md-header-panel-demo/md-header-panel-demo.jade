@@ -1,17 +1,18 @@
 template(name="md_header_panel__demo")
   .component-title MD Header Panel
-  p.docs
-    span The MD Header Panel demo involves the header panel on this site itself. The site loads in
-    code.inline waterfall-collapse
-    span mode on a desktop/tablet, and
-    code.inline standard
-    span mode on a phone. Other modes can be experienced by executing the commands listed below in the web inspector console of the browser.
-  +api_box(
-    id="md-header-panel-demo-commands"
-    classes="md-header-panel-demo-commands"
-    codeBoxClasses="with-one-box"
-    code__js=codeJS
-  )
+  // Hide this.
+    p.docs
+      span The MD Header Panel demo involves the header panel on this site itself. The site loads in
+      code.inline waterfall-collapse
+      span mode on a desktop/tablet, and
+      code.inline standard
+      span mode on a phone. Other modes can be experienced by executing the commands listed below in the web inspector console of the browser.
+    +api_box(
+      id="md-header-panel-demo-commands"
+      classes="md-header-panel-demo-commands"
+      codeBoxClasses="with-one-box"
+      code__js=codeJS
+    )
   p.docs
     span The MD Header Panel on this site is generated using the following code.
   +doc_box(

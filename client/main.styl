@@ -11,6 +11,7 @@ $color--helper-text = rgba(0, 0, 0, 0.38)
 $color--drawer__border = rgba(0, 0, 0, 0.12)
 $color--drawer__menu-bg = #F5F5F5
 $color--attention = #FFEE58
+$color--demo-blue = #2196F3
 
 /// MD typography scale
 $display2-size = 2.8125rem            // 45sp
@@ -45,6 +46,10 @@ $align-items-center()
   -ms-flex-align center
   -webkit-align-items center
   align-items center
+$align-items-end()
+  -ms-flex-align end
+  -webkit-align-items flex-end
+  align-items flex-end
 $appearance-none()
   -ms-appearance none
   -moz-appearance none
@@ -161,9 +166,20 @@ a
   background-color $color--drawer__menu-bg
   height 100%
   overflow scroll
+// Header Panel
+.md-header-panel[data-mode=scroll]
+  .md-toolbar__bar.middle,
+  .md-toolbar__bar.bottom
+    display none
+// Content
 .__content
   background-color #FFFFFF
+.md-covering-content.__covering-content
   max-width 1440px
+.md-covering-content.__covering-content:not([data-mode=cover])
+  margin 0 auto 1rem
+.md-covering-content.__covering-content[data-mode=cover]
+  width 80%
 /// DEMO
 .home-intro
   padding 1rem 0
@@ -179,11 +195,20 @@ a
   $justify-content-around()
 .demo-group.group--toolbar
   $flex-direction(column)
+.demo-group.group--header-panel,
+.demo-group.group--dialog,
+.demo-group.group--checkbox,
+.demo-group.group--chip
+  $flex-wrap(wrap)
+.demo-group.group--snackbar
+  $align-items-end()
 p.docs
   margin 1rem 0
 p.strong,
 span.strong
   font-weight 500
+p.hp-demo-info
+  color #D50000
 .component-title
   background-color $color--mfm__primary--2
   color $color--secondary-text
@@ -199,6 +224,10 @@ span.strong
   font-size 0.83rem
   font-weight 400
   margin 0.5rem 0 1rem
+.demo--header-panel,
+.demo--dialog
+  .md-button
+    margin 0 0.5rem 1rem 0
 .demo--toolbar
   background-color rgba(0,0,0,0.12)
   border 1px solid rgba(0,0,0,0.12)
@@ -206,7 +235,7 @@ span.strong
   position relative
   width 100%
 .demo--toolbar .md-toolbar
-  background-color #2196F3
+  background-color $color--demo-blue
   color $color--primary-text
   position absolute
 .demo--toolbar.toolbar--standard
@@ -218,8 +247,14 @@ span.strong
   height 14rem
 .demo--toolbar.toolbar--tall
   height 18rem
+.demo--card
+  margin 0.5rem
 .demo--tabs
-  border 0.0625rem solid $color--mfm__primary--1
+  border 0.0625rem solid $color--demo-blue
+  .md-tabs__tab-bar
+    background-color $color--demo-blue
+  .md-tabs__indicator
+    background-color #FFFFFF
 .demo--tabs__tab-panes .md-tab-pane
   padding 1rem
 .demo--icon
@@ -228,6 +263,9 @@ span.strong
     margin auto
 .md-icon
   color #757575
+.demo--chip,
+.demo--checkbox
+  margin 0 0.75rem 1rem 0
 .demo--shadow
   text-align center
 .div--shadow
@@ -257,7 +295,7 @@ span.strong
   text-align right
 .demo--input,
 .demo--image
-  padding-bottom 1rem
+  padding 0.5rem
 .demo--image,
 .demo--image .md-helper-text
   text-align center
@@ -398,7 +436,71 @@ td.method
 .status--connection.offline
   color #383838
 
-/////  RESPONSIVE  /////
+/////  MEDIA QUERIES/RESPONSIVE  /////
+// Left-align wrapping Checkbox demos
+// In "cover" mode
+@media only screen and (max-width: 1119px)
+  [data-header-panel][data-mode=cover]
+    .demo-group.group--checkbox
+      $justify-content-start()
+
+// In any other mode
+@media only screen and (max-width: 1084px)
+  [data-header-panel]:not([data-mode=cover])
+    .demo-group.group--checkbox
+      $justify-content-start()
+
+// Wrapping of radio buttons.
+@media only screen and (max-width: 839px)
+  .demo--radio .md-radio-button
+    display block
+
+// Left-align wrapping Chip demos
+// In "cover" mode
+@media only screen and (max-width: 942px)
+  [data-header-panel][data-mode=cover]
+    .demo-group.group--chip
+      $justify-content-start()
+
+// In any other mode
+@media only screen and (max-width: 751px)
+  [data-header-panel]:not([data-mode=cover])
+    .demo-group.group--chip
+      $justify-content-start()
+
+@media only screen and (max-width: 719px)
+  .fake-row.row--mode
+    $flex-direction(column)
+    .fake-cell.hp-mode__description
+      border-top 1px solid rgba(0,0,0,0.12)
+
+// Left-align wrapping Header Panel demo buttons
+// In "cover" mode
+@media only screen and (max-width: 844px)
+  [data-header-panel][data-mode=cover]
+    .demo-group.group--header-panel
+      $justify-content-start()
+
+// In any other mode
+@media only screen and (max-width: 672px)
+  [data-header-panel]:not([data-mode=cover])
+    .demo-group.group--header-panel
+      $justify-content-start()
+
+// Left-align wrapping Dialog demo buttons
+// In "cover" mode
+@media only screen and (max-width: 753px)
+  [data-header-panel][data-mode=cover]
+    .demo-group.group--dialog
+      $justify-content-start()
+
+  // In any other mode
+@media only screen and (min-width: 600px) and (max-width: 600px)
+  [data-header-panel]:not([data-mode=cover])
+    .demo-group.group--dialog
+      $justify-content-start()
+
+// Desktop and large tablet screens
 @media only screen and (min-width: 600px)
   .__appbar .md-toolbar__bar.top .title
     font-size $headline-size
@@ -409,6 +511,8 @@ td.method
   .__content
     margin auto
     padding 0.5rem 1.5rem 1.5rem
+  .md-covering-content.__covering-content[data-mode=cover]
+    margin 7rem auto 1rem
   .component-title
     margin 0 -1.5rem
     padding 1.17rem 1.5rem
@@ -439,17 +543,7 @@ td.method
   .fake-table.hp-modes .fake-row:last-of-type
     border-bottom 1px solid rgba(0,0,0,0.12)
 
-@media only screen and (max-width: 839px)
-  .demo--radio .md-radio-button
-    display block
-
-@media only screen and (max-width: 719px)
-  .fake-row.row--mode
-    $flex-direction(column)
-    .fake-cell.hp-mode__description
-      border-top 1px solid rgba(0,0,0,0.12)
-
-// Small tablet
+// Small tablets and phones
 @media only screen and (max-width: 599px)
   .__appbar .md-toolbar__bar.middle .title
     font-size $title-size
@@ -458,18 +552,32 @@ td.method
     font-size $subhead-size
   .__content
     padding 0.5rem 1rem 1.5rem
+  .md-covering-content.__covering-content[data-mode=cover]
+    margin 3rem auto 1rem
   .component-title
     margin 0 -1rem
     padding 1.17rem 1rem
   .demo-box
     margin 0 -1rem
     padding 1rem
+  .demo-group.group--header-panel,
+  .demo-group.group--dialog,
   .demo-group.group--menu,
   .demo-group.group--input,
+  .demo-group.group--card,
+  .demo-group.group--button__no-ripple,
+  .demo-group.group--checkbox,
+  .demo-group.group--chip,
+  .demo-group.group--image,
+  .demo-group.group--item,
+  .demo-group.group--tooltip,
   .demo-group.vertical-when-narrow
     $flex-direction(column)
-  .demo-group.group--dialog
-    $flex-wrap(wrap)
+  .demo-group.group--checkbox,
+  .demo-group.group--chip
+    $align-items-start()
+  .demo--card
+    margin 0.5rem auto
   .demo--input
     width 100%
   .demo-username-label,

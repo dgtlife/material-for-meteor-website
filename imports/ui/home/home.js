@@ -7,7 +7,7 @@
 import './home.jade';
 import '../includes/doc-box/doc-box.js';
 import '../includes/lorem-ipsum.jade';
-import '../md-header-panel-demo/md-header-panel-demo.coffee';
+import '../md-header-panel-demo/md-header-panel-demo.js';
 import '../md-toolbar-demo/md-toolbar-demo.coffee';
 import '../md-drawer-demo/md-drawer-demo.coffee';
 import '../md-dialog-demo/md-dialog-demo.js';

@@ -21,7 +21,6 @@ import '../includes/loading/loading.jade';
 import '../includes/loading/loading.styl';
 import '../includes/coming-soon.jade';
 
-
 // Connection Status indicator helpers.
 Template.registerHelper('connection_status__icon_id', () => {
   const status = Meteor.status().status;

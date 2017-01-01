@@ -12,7 +12,7 @@ template(name="md_image__demo")
     | package). In order to observe the features, reload the page and quickly
     | click MD Image on the Catalog menu.
   .demo-box
-    .demo-group.vertical-when-narrow
+    .demo-group.group--image
       .demo--image
         .element-title Image at intrinsic size
         +md_image(
@@ -27,7 +27,7 @@ template(name="md_image__demo")
           height="147"
           width="150"
         )
-    .demo-group
+    .demo-group.group--image
       .demo--image.fixed-size
         .element-title Image with 'contain' sizing
         +md_image(
@@ -46,7 +46,7 @@ template(name="md_image__demo")
           width="150"
           sizing="cover"
         )
-    .demo-group
+    .demo-group.group--image
       .demo--image.fixed-size
         .element-title With placeholder background and fade
         +md_image(
@@ -66,7 +66,7 @@ template(name="md_image__demo")
           width="150"
           bg_color="rgb(180,180,180)"
         )
-    .demo-group
+    .demo-group.group--image
       .demo--image.fixed-size
         .element-title With placeholder image and fade
         +md_image(

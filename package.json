@@ -48,13 +48,19 @@
           "avoidQuotes": false
         }
       ],
-      "import/extensions": [1, "never", {
-        "js": "always",
-        "coffee": "always",
-        "jade": "always",
-        "html": "always",
-        "json": "always"
-      }],
+      "import/extensions": [
+        1,
+        "never",
+        {
+          "coffee": "always",
+          "jade": "always",
+          "html": "always",
+          "json": "always",
+          "svg": "always",
+          "jpeg": "always",
+          "png": "always"
+        }
+      ],
       "import/no-unresolved": [
         2,
         {

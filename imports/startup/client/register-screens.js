@@ -5,7 +5,7 @@
  * Created on 11/6/2016
  */
 import { registerScreen } from 'meteor/dgtlife:navigate';
-import { navToDemo } from '../../api/mlib.js';
+import { navToDemo, changeHeaderPanelMode } from '../../api/mlib.js';
 import '../../ui/home/home.js';
 import '../../ui/includes/not-found/not-found.js';
 
@@ -19,6 +19,78 @@ registerScreen('Home', {
   path: '/',
   pathPattern: /^\/$/,
   after: navToDemo
+});
+
+// Standard Header Panel screen.
+// registerScreen('Standard Header Panel', {
+//   contentHelperMap: [{
+//     helper: 'screen_content',
+//     template: 'home__with_standard_hp'
+//   }],
+//   title: 'standard Header Panel',
+//   path: '/standard-header-panel',
+//   pathPattern: /^\/standard-header-panel$/,
+//   after: () => changeHeaderPanelMode('standard')
+// });
+
+// Seamed Header Panel screen.
+registerScreen('Seamed Header Panel', {
+  contentHelperMap: [{
+    helper: 'screen_content',
+    template: 'home__with_seamed_hp'
+  }],
+  title: 'Seamed Header Panel',
+  path: '/seamed-header-panel',
+  pathPattern: /^\/seamed-header-panel$/,
+  after: () => changeHeaderPanelMode('seamed')
+});
+
+// Scroll Header Panel screen.
+registerScreen('Scroll Header Panel', {
+  contentHelperMap: [{
+    helper: 'screen_content',
+    template: 'home__with_scroll_hp'
+  }],
+  title: 'Scroll Header Panel',
+  path: '/scroll-header-panel',
+  pathPattern: /^\/scroll-header-panel$/,
+  after: () => changeHeaderPanelMode('scroll')
+});
+
+// Waterfall Header Panel screen.
+registerScreen('Waterfall Header Panel', {
+  contentHelperMap: [{
+    helper: 'screen_content',
+    template: 'home__with_waterfall_hp'
+  }],
+  title: 'Waterfall Header Panel',
+  path: '/waterfall-header-panel',
+  pathPattern: /^\/waterfall-header-panel$/,
+  after: () => changeHeaderPanelMode('waterfall')
+});
+
+// Expand on Scroll Header Panel screen.
+registerScreen('Expand on Scroll Header Panel', {
+  contentHelperMap: [{
+    helper: 'screen_content',
+    template: 'home__with_waterfall_collapse__expand_on_scroll_hp'
+  }],
+  title: 'Expand on Scroll Header Panel',
+  path: '/expand-on-scroll-header-panel',
+  pathPattern: /^\/expand-on-scroll-header-panel$/,
+  after: () => changeHeaderPanelMode('expand on scroll')
+});
+
+// Cover Header Panel screen.
+registerScreen('Cover Header Panel', {
+  contentHelperMap: [{
+    helper: 'screen_content',
+    template: 'home__with_cover_hp'
+  }],
+  title: 'Cover Header Panel',
+  path: '/cover-header-panel',
+  pathPattern: /^\/cover-header-panel$/,
+  after: () => changeHeaderPanelMode('cover')
 });
 
 // MD Header Panel API screen.

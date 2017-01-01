@@ -6,7 +6,15 @@
  * Created on 12/20/2015
  */
 import { Meteor } from 'meteor/meteor';
-import { dqS, dgEBI, waitForElement } from 'meteor/dgtlife:material';
+import { _ } from 'meteor/underscore';
+import {
+  dqS,
+  dqSA,
+  dgEBI,
+  waitForElement,
+  resetHeaderPanelSystem,
+  initializeHeaderPanelSystem
+} from 'meteor/dgtlife:material';
 import { toScreen, currentScreen } from 'meteor/dgtlife:navigate';
 
 /**
@@ -17,6 +25,82 @@ import { toScreen, currentScreen } from 'meteor/dgtlife:navigate';
 const scrollToTop = (child, parent) => {
   // eslint-disable-next-line no-param-reassign
   parent.scrollTop = (child.offsetTop - child.parentNode.offsetTop) + 8;
+};
+
+/**
+ * Set the width of a code box based on the width of the window.
+ * @param {object} codeBox - the code box element
+ */
+export const setBoxWidth = (codeBox) => {
+  const box = codeBox;
+  const windowWidth = window.innerWidth;
+  const mode = dqS('[data-header-panel]').getAttribute('data-mode');
+  let boxWidth;
+  if (mode !== 'cover') {
+    if (windowWidth < 600) {
+      boxWidth = windowWidth - 32;
+    } else if ((windowWidth >= 600) && (windowWidth < 960)) {
+      boxWidth = windowWidth - 48;
+    } else if ((windowWidth >= 960) && (windowWidth < 1440)) {
+      boxWidth = windowWidth - 192 - 48;
+    } else if ((windowWidth >= 1440) && (windowWidth < 1824)) {
+      boxWidth = windowWidth - 192 - 192 - 48;
+    } else {
+      boxWidth = 1440;
+    }
+  } else if (windowWidth < 600) {
+    boxWidth = (windowWidth * 0.8) - 32;
+  } else {
+    boxWidth = (windowWidth * 0.8) - 48;
+  }
+
+  box.style.width = `${boxWidth}px`;
+};
+
+/**
+ * Sets the mode of the Header Panel on this site.
+ * @param {string} mode - the mode
+ */
+export const changeHeaderPanelMode = (mode) => {
+  resetHeaderPanelSystem();
+
+  if (mode === 'expand on scroll') {
+    dqS('[data-header-panel]').setAttribute('data-mode', 'waterfall-collapse');
+    dqS('[data-header-panel]').setAttribute('data-expand-on-scroll', 'true');
+  } else {
+    dqS('[data-header-panel]').removeAttribute('data-expand-on-scroll');
+    dqS('[data-header-panel]').setAttribute('data-mode', mode);
+  }
+
+  // Engage the new setting.
+  initializeHeaderPanelSystem();
+
+  // Resize the code boxes.
+  const docBoxes = dqSA('.doc-box');
+  if (docBoxes) {
+    _.each(docBoxes, (docBox) => {
+      setBoxWidth(docBox);
+    });
+  }
+
+  const apiBoxes = dqSA('.api-box');
+  if (apiBoxes) {
+    _.each(apiBoxes, (apiBox) => {
+      setBoxWidth(apiBox);
+    });
+  }
+};
+
+/**
+ * Reset the mode of the Header Panel mode (if returning from a Header Panel
+ * demo screen)
+ */
+const resetHeaderPanelMode = () => {
+  const headerPanelMode = dqS('[data-header-panel').getAttribute('data-mode');
+  if (headerPanelMode !== 'waterfall-collapse') {
+    changeHeaderPanelMode('waterfall-collapse');
+    dqS('[data-header-panel]').removeAttribute('data-expand-on-scroll');
+  }
 };
 
 /**
@@ -33,6 +117,7 @@ export const navToDemo = (id) => {
       scrollToTop(dgEBI(did), content);
     } else {
       toScreen('Home');
+      resetHeaderPanelMode();
 
       // Wait for the demo element to render before scrolling up.
       waitForElement(content, `#${did}`, scrollToTop, 0, content);
@@ -52,28 +137,7 @@ export const navToDemo = (id) => {
         scrollToTop(dgEBI(demoId), content);
       }, 10);
     }
-  }
-};
 
-/**
- * Set the width of a code box based on the width of the window.
- * @param {object} codeBox - the code box element
- */
-export const setBoxWidth = (codeBox) => {
-  const box = codeBox;
-  const windowWidth = window.innerWidth;
-  let boxWidth;
-  if (windowWidth < 600) {
-    boxWidth = windowWidth - 32;
-  } else if ((windowWidth >= 600) && (windowWidth < 960)) {
-    boxWidth = windowWidth - 48;
-  } else if ((windowWidth >= 960) && (windowWidth < 1440)) {
-    boxWidth = windowWidth - 192 - 48;
-  } else if ((windowWidth >= 1440) && (windowWidth < 1824)) {
-    boxWidth = windowWidth - 192 - 192 - 48;
-  } else {
-    boxWidth = 1440;
+    resetHeaderPanelMode();
   }
-
-  box.style.width = `${boxWidth}px`;
 };

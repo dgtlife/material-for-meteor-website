@@ -248,10 +248,6 @@ loadCode(
       fileText: Assets.getText('docs/md-header-panel__jade.txt')
     },
     {
-      fileName: 'md-header-panel__js.txt',
-      fileText: Assets.getText('docs/md-header-panel__js.txt')
-    },
-    {
       fileName: 'md-header-panel__spacebars.txt',
       fileText: Assets.getText('docs/md-header-panel__spacebars.txt')
     },

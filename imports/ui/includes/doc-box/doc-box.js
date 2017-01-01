@@ -27,7 +27,7 @@ Template.api_box.onRendered(function onRenderedApiBox() {
   const apiBox = this.firstNode;
 
   // Set the api box width, initially ...
-  setBoxWidth(apiBox);
+  // setBoxWidth(apiBox);
 
   // ... and on resize.
   window.addEventListener('resize', () => {

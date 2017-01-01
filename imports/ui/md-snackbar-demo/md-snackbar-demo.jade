@@ -2,7 +2,7 @@ template(name="md_snackbar__demo")
   .component-title MD Snackbar
   p.docs The buttons below each display a snackbar of the type indicated by the title above the button.
   .demo-box
-    .demo-group
+    .demo-group.group--snackbar
       .demo--snackbar
         .element-title Single-line message only
         +md_button(id="launch-snackbar--simple" label="simple")
@@ -12,7 +12,7 @@ template(name="md_snackbar__demo")
       .demo--snackbar
         .element-title Multiple single-line messages
         +md_button(id="launch-snackbar--multiple" label="multiple")
-    .demo-group
+    .demo-group.group--snackbar
       .demo--snackbar
         .element-title Multi-line message only
         +md_button(id="launch-snackbar--simple-multi" label="simple")

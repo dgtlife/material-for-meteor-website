@@ -21,18 +21,6 @@ registerScreen('Home', {
   after: navToDemo
 });
 
-// Standard Header Panel screen.
-// registerScreen('Standard Header Panel', {
-//   contentHelperMap: [{
-//     helper: 'screen_content',
-//     template: 'home__with_standard_hp'
-//   }],
-//   title: 'standard Header Panel',
-//   path: '/standard-header-panel',
-//   pathPattern: /^\/standard-header-panel$/,
-//   after: () => changeHeaderPanelMode('standard')
-// });
-
 // Seamed Header Panel screen.
 registerScreen('Seamed Header Panel', {
   contentHelperMap: [{

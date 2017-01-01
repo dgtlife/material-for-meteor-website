@@ -52,6 +52,7 @@
         1,
         "never",
         {
+          "js": "always",
           "coffee": "always",
           "jade": "always",
           "html": "always",

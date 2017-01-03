@@ -51,7 +51,7 @@ export const setBoxWidth = (codeBox) => {
   } else if (windowWidth < 600) {
     boxWidth = (windowWidth * 0.8) - 32;
   } else {
-    boxWidth = (windowWidth * 0.8) - 48;
+    boxWidth = Math.min(((windowWidth * 0.8) - 48), 1440);
   }
 
   box.style.width = `${boxWidth}px`;
@@ -96,7 +96,7 @@ export const changeHeaderPanelMode = (mode) => {
  * demo screen)
  */
 const resetHeaderPanelMode = () => {
-  const headerPanelMode = dqS('[data-header-panel').getAttribute('data-mode');
+  const headerPanelMode = dqS('[data-header-panel]').getAttribute('data-mode');
   if (headerPanelMode !== 'waterfall-collapse') {
     changeHeaderPanelMode('waterfall-collapse');
     dqS('[data-header-panel]').removeAttribute('data-expand-on-scroll');

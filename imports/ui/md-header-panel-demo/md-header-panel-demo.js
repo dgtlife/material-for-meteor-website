@@ -2,7 +2,6 @@ import { Template } from 'meteor/templating';
 import { getText } from 'meteor/dgtlife:code-prism';
 import { toScreen, toHome } from 'meteor/dgtlife:navigate';
 import {
-  changeHeaderPanelMode,
   resetHeaderPanelMode
 } from '../../api/mlib.js';
 import './md-header-panel-demo.jade';

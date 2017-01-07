@@ -5,7 +5,8 @@
  * Created on 11/1/2015
  */
 import './home.jade';
-import '../includes/doc-box/doc-box.js';
+import '../includes/doc-box/doc-box.jade';
+import '../includes/doc-box/doc-box.styl';
 import '../includes/lorem-ipsum.jade';
 import '../md-header-panel-demo/md-header-panel-demo.js';
 import '../md-toolbar-demo/md-toolbar-demo.coffee';

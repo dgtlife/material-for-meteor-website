@@ -28,36 +28,6 @@ const scrollToTop = (child, parent) => {
 };
 
 /**
- * Set the width of a code box based on the width of the window.
- * @param {object} codeBox - the code box element
- */
-export const setBoxWidth = (codeBox) => {
-  const box = codeBox;
-  const windowWidth = window.innerWidth;
-  const mode = dqS('[data-header-panel]').getAttribute('data-mode');
-  let boxWidth;
-  if (mode !== 'cover') {
-    if (windowWidth < 600) {
-      boxWidth = windowWidth - 32;
-    } else if ((windowWidth >= 600) && (windowWidth < 960)) {
-      boxWidth = windowWidth - 48;
-    } else if ((windowWidth >= 960) && (windowWidth < 1440)) {
-      boxWidth = windowWidth - 192 - 48;
-    } else if ((windowWidth >= 1440) && (windowWidth < 1824)) {
-      boxWidth = windowWidth - 192 - 192 - 48;
-    } else {
-      boxWidth = 1440;
-    }
-  } else if (windowWidth < 600) {
-    boxWidth = (windowWidth * 0.8) - 32;
-  } else {
-    boxWidth = Math.min(((windowWidth * 0.8) - 48), 1440);
-  }
-
-  box.style.width = `${boxWidth}px`;
-};
-
-/**
  * Sets the mode of the Header Panel on this site.
  * @param {string} mode - the mode
  */
@@ -74,21 +44,6 @@ export const changeHeaderPanelMode = (mode) => {
 
   // Engage the new setting.
   initializeHeaderPanelSystem();
-
-  // Resize the code boxes.
-  const docBoxes = dqSA('.doc-box');
-  if (docBoxes) {
-    _.each(docBoxes, (docBox) => {
-      setBoxWidth(docBox);
-    });
-  }
-
-  const apiBoxes = dqSA('.api-box');
-  if (apiBoxes) {
-    _.each(apiBoxes, (apiBox) => {
-      setBoxWidth(apiBox);
-    });
-  }
 };
 
 /**

@@ -22,35 +22,19 @@ body(class="app")
       menu__id="drawer-menu--right"
       menu__content="right_drawer__menu_content"
     )
-    unless on_phone
-      +md_header_panel(
-        classes="__container"
-        mode="waterfall-collapse"
-        has_toolbar=true
-        toolbar__id="__appbar"
-        toolbar__classes="__appbar tall"
-        use_bar_templates=true
-        toolbar__top_content="__appbar_top"
-        toolbar__middle_content="__appbar_middle"
-        toolbar__bottom_content="__appbar_bottom"
-        content__classes="__content"
-        using_cover_mode=true
-        covering_content__classes="__covering-content"
-        content="main_content"
-      )
-    if on_phone
-      +md_header_panel(
-        classes="__container"
-        has_toolbar=true
-        toolbar__id="__appbar"
-        toolbar__classes="__appbar"
-        use_bar_templates=true
-        toolbar__top_content="__appbar_top"
-        content__classes="__content"
-        using_cover_mode=true
-        covering_content__classes="__covering-content"
-        content="main_content"
-      )
+    +md_header_panel(
+      classes="__container"
+      mode="waterfall-collapse"
+      has_toolbar=true
+      toolbar__id="__appbar"
+      toolbar__classes="__appbar tall"
+      use_bar_templates=true
+      toolbar__top_content="__appbar_top"
+      toolbar__middle_content="__appbar_middle"
+      toolbar__bottom_content="__appbar_bottom"
+      content__classes="__content"
+      content="main_content"
+    )
     #__indicators.__indicators
       +md_icon(
         icon=connection_status__icon_id

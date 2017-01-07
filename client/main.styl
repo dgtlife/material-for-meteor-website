@@ -167,18 +167,16 @@ a
   height 100%
   overflow scroll
 // Header Panel
-.md-header-panel[data-mode=scroll]
-  .md-toolbar__bar.middle,
-  .md-toolbar__bar.bottom
-    display none
+//.md-header-panel[data-mode=scroll]
+//  .md-toolbar__bar.middle,
+//  .md-toolbar__bar.bottom
+//    display none
 // Content
 .__content
   background-color #FFFFFF
-.md-covering-content.__covering-content
   max-width 1440px
-.md-covering-content.__covering-content:not([data-mode=cover])
   margin 0 auto 1rem
-.md-covering-content.__covering-content[data-mode=cover]
+.__content[data-mode=cover]
   width 80%
 /// DEMO
 .home-intro
@@ -511,7 +509,7 @@ td.method
   .__content
     margin auto
     padding 0.5rem 1.5rem 1.5rem
-  .md-covering-content.__covering-content[data-mode=cover]
+  .__content[data-mode=cover]
     margin 7rem auto 1rem
   .component-title
     margin 0 -1.5rem
@@ -552,7 +550,7 @@ td.method
     font-size $subhead-size
   .__content
     padding 0.5rem 1rem 1.5rem
-  .md-covering-content.__covering-content[data-mode=cover]
+  .__content[data-mode=cover]
     margin 3rem auto 1rem
   .component-title
     margin 0 -1rem

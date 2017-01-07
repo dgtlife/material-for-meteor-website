@@ -1,7 +1,10 @@
 import { Template } from 'meteor/templating';
 import { getText } from 'meteor/dgtlife:code-prism';
 import { toScreen, toHome } from 'meteor/dgtlife:navigate';
-import { changeHeaderPanelMode } from '../../api/mlib.js';
+import {
+  changeHeaderPanelMode,
+  resetHeaderPanelMode
+} from '../../api/mlib.js';
 import './md-header-panel-demo.jade';
 
 Template.md_header_panel__demo.helpers({
@@ -31,8 +34,7 @@ Template.md_header_panel__demo.helpers({
 
 Template.md_header_panel__demo.events({
   'click #to-standard-screen'() {
-    toHome();
-    changeHeaderPanelMode('standard');
+    toScreen('Standard Header Panel');
   },
 
   'click #to-seamed-screen'() {
@@ -53,5 +55,10 @@ Template.md_header_panel__demo.events({
 
   'click #to-cover-screen'() {
     toScreen('Cover Header Panel');
+  },
+
+  'click #reset-site'() {
+    toHome();
+    resetHeaderPanelMode();
   }
 });

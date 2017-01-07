@@ -95,7 +95,7 @@ export const changeHeaderPanelMode = (mode) => {
  * Reset the mode of the Header Panel mode (if returning from a Header Panel
  * demo screen)
  */
-const resetHeaderPanelMode = () => {
+export const resetHeaderPanelMode = () => {
   const headerPanelMode = dqS('[data-header-panel]').getAttribute('data-mode');
   if (headerPanelMode !== 'waterfall-collapse') {
     changeHeaderPanelMode('waterfall-collapse');

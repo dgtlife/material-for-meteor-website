@@ -172,7 +172,7 @@ a
   max-width 1440px
   margin 0 auto 1rem
 .__content[data-mode=cover]
-  width 80%
+  margin-top 8rem
 /// DEMO
 .home-intro
   padding 1rem 0
@@ -432,6 +432,10 @@ td.method
 /////  MEDIA QUERIES/RESPONSIVE  /////
 // Left-align wrapping Checkbox demos
 // In "cover" mode
+@media only screen and (min-width: 1928px)
+  .md-content.__content[data-mode=cover]
+    margin-left auto
+    margin-right auto
 @media only screen and (max-width: 1119px)
   [data-header-panel][data-mode=cover]
     .demo-group.group--checkbox
@@ -501,11 +505,15 @@ td.method
     font-size $title-size
   .__appbar .md-toolbar__bar.bottom .title
     font-size $subhead-size
+  .md-header-panel:not([data-docked-left])
+    .md-content__container[data-mode=cover]
+      left 3.75rem
+  .md-header-panel:not([data-docked-right])
+    .md-content__container[data-mode=cover]
+      right 6.5rem
   .__content
     margin auto
     padding 0.5rem 1.5rem 1.5rem
-  .__content[data-mode=cover]
-    margin 7rem auto 1rem
   .component-title
     margin 0 -1.5rem
     padding 1.17rem 1.5rem
@@ -543,10 +551,14 @@ td.method
   .__appbar .md-toolbar__bar.middle .title,
   .__appbar .md-toolbar__bar.bottom .title
     font-size $subhead-size
+  .md-header-panel:not([data-docked-left])
+    .md-content__container[data-mode=cover]
+      left 3.25rem
+  .md-header-panel:not([data-docked-right])
+    .md-content__container[data-mode=cover]
+      right 5.5rem
   .__content
     padding 0.5rem 1rem 1.5rem
-  .__content[data-mode=cover]
-    margin 3rem auto 1rem
   .component-title
     margin 0 -1rem
     padding 1.17rem 1rem

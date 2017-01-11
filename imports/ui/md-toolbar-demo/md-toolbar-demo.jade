@@ -5,14 +5,26 @@ template(name="md_toolbar__demo")
       .demo--toolbar.toolbar--standard
         +md_toolbar(id="demo-toolbar--standard" with_shadow=true)
         div(data-content-for-toolbar="demo-toolbar--standard")
-          +md_button(name="menu-1" icon="menu" icon_button="" toolbar_menu_button="")
+          +md_button(
+            name="menu-1"
+            icon="menu"
+            icon_button=""
+            toolbar_menu_button=""
+            drawer_toggle=""
+          )
           .title Standard toolbar
           .flex
           +md_button(icon="more-vert" icon_button="")
       .demo--toolbar.toolbar--medium
         +md_toolbar(id="demo-toolbar--medium" classes="medium-tall")
         div(data-content-for-toolbar="demo-toolbar--medium" data-bar="top")
-          +md_button(name="menu-2" icon="menu" icon_button="" toolbar_menu_button="")
+          +md_button(
+            name="menu-2"
+            icon="menu"
+            icon_button=""
+            toolbar_menu_button=""
+            drawer_toggle=""
+          )
           .title Medium tall toolbar
           .flex
           +md_button(icon="more-vert" icon_button="")
@@ -35,7 +47,13 @@ template(name="md_toolbar__demo")
 
 template(name="tallToolbarContent")
   .md-toolbar__bar.top(data-top-bar="")
-    +md_button(name="menu-3" icon="menu" icon_button="" toolbar_menu_button="")
+    +md_button(
+      name="menu-3"
+      icon="menu"
+      icon_button=""
+      toolbar_menu_button=""
+      drawer_toggle=""
+    )
     .title Tall toolbar
     .flex
     +md_button(icon="more-vert" icon_button="")

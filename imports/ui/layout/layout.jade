@@ -5,7 +5,7 @@ body(class="app")
       position="left"
       responsive_width="960"
       has_toolbar=true
-      toolbar__classes="toolbar--demo-nav"
+      toolbar__classes="toolbar--catalog-nav"
       use_bar_templates=true
       toolbar__top_content="left_drawer__toolbar__top_content"
       has_menu=true
@@ -47,7 +47,7 @@ body(class="app")
 //- //////////  SUBORDINATE TEMPLATES  //////////
 //- Left drawer toolbar.
 template(name="left_drawer__toolbar__top_content")
-  .title Catalog Menu
+  .title Catalog
 
 template(name="left_drawer__menu_content")
   #mfm-catalog-menu.mfm-catalog-menu
@@ -100,7 +100,7 @@ template(name="__appbar_bottom")
 
 //- Right drawer toolbar.
 template(name="right_drawer__header_content")
-  .title API Menu
+  .title API
 
 template(name="right_drawer__menu_content")
   .mfm-api-menu__container

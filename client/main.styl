@@ -9,6 +9,8 @@ $color--primary-text = rgba(0, 0, 0, 0.87)
 $color--secondary-text = rgba(0, 0, 0, 0.54)
 $color--helper-text = rgba(0, 0, 0, 0.38)
 $color--drawer__border = rgba(0, 0, 0, 0.12)
+$color--drawer__toolbar-bg = #E5E5E5
+$color--drawer__toolbar-border = #D0D0D0
 $color--drawer__menu-bg = #F5F5F5
 $color--attention = #FFEE58
 $color--demo-blue = #2196F3
@@ -156,12 +158,15 @@ a
 .md-drawer__header
   $justify-content-center()
   padding-left 1rem
-.md-toolbar.toolbar--demo-nav,
+.md-toolbar.toolbar--catalog-nav,
 .md-drawer__header.toolbar--api-nav
   color $color--primary-text
-.md-toolbar.toolbar--demo-nav,
+.md-toolbar.toolbar--catalog-nav,
 .md-drawer__header.toolbar--api-nav
-  background-color $color--mfm__primary--1
+  background-color $color--drawer__toolbar-bg
+  border-bottom 1px solid $color--drawer__toolbar-border
+.md-toolbar.toolbar--catalog-nav .md-toolbar__bar
+  background-color transparent
 [data-drawer-menu]
   background-color $color--drawer__menu-bg
   height 100%

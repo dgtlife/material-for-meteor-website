@@ -64,8 +64,6 @@ export const resetHeaderPanelMode = () => {
  * @param {string} [id] - the id of the demo section
  */
 export const navToDemo = (id) => {
-  console.log('navToDemo was called');
-
   const container = dqS('[data-content-container]');
 
   // Handles on-Home and off-Home cases of menu item click.

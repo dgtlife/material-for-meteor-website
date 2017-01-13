@@ -6,10 +6,8 @@
  * Created on 12/20/2015
  */
 import { Meteor } from 'meteor/meteor';
-import { _ } from 'meteor/underscore';
 import {
   dqS,
-  dqSA,
   dgEBI,
   waitForElement,
   resetHeaderPanelSystem,

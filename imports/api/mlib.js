@@ -64,18 +64,20 @@ export const resetHeaderPanelMode = () => {
  * @param {string} [id] - the id of the demo section
  */
 export const navToDemo = (id) => {
-  const content = dqS('[data-content]');
+  console.log('navToDemo was called');
+
+  const container = dqS('[data-content-container]');
 
   // Handles on-Home and off-Home cases of menu item click.
   const handleMenuItemClick = (did) => {
     if (currentScreen.get() === 'Home') {
-      scrollToTop(dgEBI(did), content);
+      scrollToTop(dgEBI(did), container);
     } else {
       toScreen('Home');
       resetHeaderPanelMode();
 
       // Wait for the demo element to render before scrolling up.
-      waitForElement(content, `#${did}`, scrollToTop, 0, content);
+      waitForElement(container, `#${did}`, scrollToTop, 0, container);
     }
   };
 
@@ -89,7 +91,7 @@ export const navToDemo = (id) => {
     if (selectedValue) {
       demoId = `${selectedValue.toLowerCase().replace(/ /g, '-')}--demo`;
       Meteor.setTimeout(() => {
-        scrollToTop(dgEBI(demoId), content);
+        scrollToTop(dgEBI(demoId), container);
       }, 10);
     }
 

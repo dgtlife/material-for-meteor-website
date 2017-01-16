@@ -45,15 +45,12 @@ export const changeHeaderPanelMode = (mode) => {
 };
 
 /**
- * Reset the mode of the Header Panel mode (if returning from a Header Panel
- * demo screen)
+ * Reset the mode of the Header Panel to the default (if returning from a Header
+ * Panel demo screen)
  */
 export const resetHeaderPanelMode = () => {
-  const headerPanelMode = dqS('[data-header-panel]').getAttribute('data-mode');
-  if (headerPanelMode !== 'waterfall-collapse') {
-    changeHeaderPanelMode('waterfall-collapse');
-    dqS('[data-header-panel]').removeAttribute('data-expand-on-scroll');
-  }
+  changeHeaderPanelMode('waterfall-collapse');
+  dqS('[data-header-panel]').removeAttribute('data-expand-on-scroll');
 };
 
 /**

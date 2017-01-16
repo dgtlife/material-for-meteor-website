@@ -71,10 +71,12 @@ template(name="demo_dialogs")
   div(data-content-for="demo-dialog--scrollable")
     .md-dialog__title Scrollable dialog
     .md-dialog__content.content--scrollable
-      .md-dialog__content-to-scroll
+      div(data-overflow-indicator="top")
+      .md-dialog__content-to-scroll(data-scrollable="")
         p This dialog has a scrollable content area. It typically has a preset width and height.
         +lorem_ipsum
         +lorem_ipsum
+      div(data-overflow-indicator="bottom")
     .md-dialog__actions
       +md_button(classes="dialog__button--decline" label="decline")
       +md_button(classes="dialog__button--accept" label="accept")

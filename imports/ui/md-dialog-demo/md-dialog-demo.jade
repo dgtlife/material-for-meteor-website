@@ -71,12 +71,10 @@ template(name="demo_dialogs")
   div(data-content-for="demo-dialog--scrollable")
     .md-dialog__title Scrollable dialog
     .md-dialog__content.content--scrollable
-      div(data-overflow-indicator="top")
-      .md-dialog__content-to-scroll(data-scrollable="")
-        p This dialog has a scrollable content area. It typically has a preset width and height.
-        +lorem_ipsum
-        +lorem_ipsum
-      div(data-overflow-indicator="bottom")
+      +md_scrollable(
+        classes="md-dialog__content-to-scroll"
+        content="scrollable_dialog__content"
+      )
     .md-dialog__actions
       +md_button(classes="dialog__button--decline" label="decline")
       +md_button(classes="dialog__button--accept" label="accept")
@@ -95,6 +93,12 @@ template(name="action_dialog__content")
   .md-dialog__actions
     +md_button(classes="dialog__button--cancel" label="cancel")
     +md_button(classes="dialog__button--ok" label="ok")
+
+//- Content for the Scrollable dialog
+template(name="scrollable_dialog__content")
+  p This dialog has a scrollable content area. It typically has a preset width and height.
+    +lorem_ipsum
+    +lorem_ipsum
 
 //- MD Dialog API Docs.
 template(name="md_dialog__api")

@@ -2,7 +2,6 @@
  * @file Initialize the server
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2016
- * Created on 1/20/2016
  */
 
 import { selectIcons, defineIconAssets } from 'meteor/dgtlife:material';

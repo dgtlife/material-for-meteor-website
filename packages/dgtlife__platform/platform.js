@@ -2,8 +2,6 @@
  * @file Parse the user agent string to detect browser/device cases
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2014
- *
- * Created on 7/2/14
  */
 /* eslint max-len: ["error", { "ignoreComments": true }] */
 import { Meteor } from 'meteor/meteor';

@@ -2,8 +2,6 @@
  * @file Helpers, event handlers, and the on-render callback for the layout template
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2015
- *
- * Created on 11/2/2015
  */
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';

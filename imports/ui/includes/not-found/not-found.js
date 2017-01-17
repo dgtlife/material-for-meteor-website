@@ -2,7 +2,6 @@
  * @file Controls the Not Found screen
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2014
- * Created on 1/30/14
  */
 // ToDo: Remove the need for this template with a config property
 

@@ -2,7 +2,6 @@
  * @file Initialize the client
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2016
- * Created on 1/20/2016
  */
 /* global Prism:true */
 import { metadata as codeMetadata } from 'meteor/dgtlife:code-prism';

@@ -2,8 +2,6 @@
  * @file Defines and exports the C object.
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2015
- *
- * Created on 11/27/2015
  */
 
 import { Mongo } from 'meteor/mongo';

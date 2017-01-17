@@ -2,8 +2,6 @@
  * @file Define the Code package
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2014
- *
- * Created on 11/27/2015
  */
 Package.describe({
   summary: 'Render code as text into a Blaze template helper and color with Prism',

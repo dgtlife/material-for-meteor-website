@@ -2,7 +2,6 @@
  * @file Register all screens
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2016
- * Created on 11/6/2016
  */
 import { registerScreen } from 'meteor/dgtlife:navigate';
 import { navToDemo, changeHeaderPanelMode } from '../../api/mlib.js';

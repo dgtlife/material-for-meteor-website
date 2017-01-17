@@ -2,7 +2,6 @@
  * @file Imports the modules needed for the Home template to render completely.
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2015
- * Created on 11/1/2015
  */
 import './home.jade';
 import '../includes/doc-box/doc-box.jade';

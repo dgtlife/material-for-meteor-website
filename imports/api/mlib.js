@@ -2,8 +2,6 @@
  * @file Defines a library of utility functions for MFM (Mlib)
  * @author Derek Gransaull <derek@dgtlife.com>
  * @copyright DGTLife, LLC 2015
- *
- * Created on 12/20/2015
  */
 import { Meteor } from 'meteor/meteor';
 import {

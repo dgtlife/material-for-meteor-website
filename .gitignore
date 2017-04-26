@@ -1,6 +1,7 @@
 .meteor/local/
 .DS_store
 .idea/
+.vscode/
 node_modules/
 automation/
 npm-debug.log

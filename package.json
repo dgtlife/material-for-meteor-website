@@ -41,6 +41,7 @@
           "capIsNewExceptionPattern": "^Match."
         }
       ],
+      "new-parens": 0,
       "object-shorthand": [
         "error",
         "methods",

@@ -1,20 +1,20 @@
 import { Template } from 'meteor/templating';
 import { getText } from 'meteor/dgtlife:code-prism';
 import { toScreen, toHome } from 'meteor/dgtlife:navigate';
-import {
-  resetHeaderPanelMode
-} from '../../api/mlib.js';
+import { resetHeaderPanelMode } from '../../api/mlib.js';
 import './md-header-panel-demo.jade';
 
 Template.md_header_panel__demo.helpers({
   tabs() {
     return [
       {
+        index: '0',
         name: 'md-header-panel__spacebars',
         label: 'Spacebars',
         ripple: true
       },
       {
+        index: '1',
         name: 'md-header-panel__jade',
         label: 'Jade',
         ripple: true
